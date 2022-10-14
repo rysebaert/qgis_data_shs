@@ -1,0 +1,30 @@
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Helvetica", Helvetica,
+  FreeSerif, serif !default;
+
+// colors
+$body-bg: #ffffff !default;
+$body-color: #000 !default;
+$link-color: #51483d !default;
+$selection-bg: #26351c !default;
+
+// headings
+$presentation-heading-font: "Palatino Linotype", "Book Antiqua", Palatino,
+  FreeSerif, serif !default;
+$presentation-heading-color: #383d3d !default;
+
+$presentation-font-size-root:	22px !default;
+
+$presentation-heading-color: #395F94 !default;
+
+/*-- scss:rules --*/
+
+.reveal a {
+  line-height: 1.3em;
+}
+
+.align-center h1 {
+  text-align: center;
+}

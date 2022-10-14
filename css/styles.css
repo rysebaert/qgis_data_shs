@@ -34,7 +34,7 @@
          url('fonts/Roboto-Bold-webfont.woff') format('woff'),
          url('fonts/Roboto-Bold-webfont.ttf') format('truetype'),
          url('fonts/Roboto-Bold-webfont.svg') format('svg');
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
 
 }

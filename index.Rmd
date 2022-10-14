@@ -126,7 +126,7 @@ class: inverse middle center
 
 ### Atelier
 
-*Implantation d'une médiathèque dans une communauté d'agglomération de la Métropole du Grand Paris.* 
+*Implantation d'un équipement dans la Métropole Européenne de Lille.* 
 
 .small[
 
@@ -144,6 +144,15 @@ class: inverse middle center
 
 
 ---
+## Télécharger les données de l'atelier
+
+[https://github.com/rysebaert/qgis_data_shs](https://github.com/rysebaert/qgis_data_shs){target="_blank"}
+
+![](fig/git.PNG)
+
+data > data.zip > download
+
+--- 
 
 class: inverse middle center
 
@@ -212,7 +221,7 @@ Le **niveau géométrique** d'un objet géographique correspond à **sa forme et
    
 
 ```{r, echo = FALSE, out.width = "900px"}
-knitr::include_graphics('figures/geom.png')
+knitr::include_graphics('fig/geom.png')
 ```
 
 
@@ -239,7 +248,7 @@ La manipulation des rasters nécessite des méthodes et des outils spécialisés
 
 .pull-right[
 <span style="color:#9c2005;font-weight:bold;">Raster</span>  
-<img src="figures/Capture1.PNG" width="512" />
+<img src="fig/Capture1.PNG" width="512" />
 </div>
 
 ]
@@ -267,7 +276,7 @@ Leur manipulation est simple et permet de puissants traitements.
 
 <div class="centered">
 <span style="color:#9c2005;font-weight:bold;">Vecteur</span>  
-<img src="figures/Capture2.PNG" width="400" />
+<img src="fig/Capture2.PNG" width="400" />
 </div>
 </div>
 
@@ -282,7 +291,7 @@ Leur manipulation est simple et permet de puissants traitements.
 Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le raster et le vecteur. 
 
 ```{r, echo = FALSE, out.width = "600px", fig.align='center'}
-knitr::include_graphics('figures/raster_vecteur_2.png')
+knitr::include_graphics('fig/raster_vecteur_2.png')
 ```
 
 ---
@@ -295,7 +304,7 @@ Le niveau topologique  **d'un objet géographique se déduit du niveau géométr
 
 
 ```{r, echo = FALSE, fig.align='center', out.width = "500px"}
-knitr::include_graphics('figures/topologie.gif')
+knitr::include_graphics('fig/topologie.gif')
 ```
 
 
@@ -308,7 +317,7 @@ knitr::include_graphics('figures/topologie.gif')
 <br>
 
 ```{r, echo = FALSE, out.width = "800px", fig.align='center'}
-knitr::include_graphics('figures/attribut.gif')
+knitr::include_graphics('fig/attribut.gif')
 ```
 
 
@@ -321,7 +330,7 @@ knitr::include_graphics('figures/attribut.gif')
 
 
 ```{r, echo = FALSE, out.width = "700px", fig.align='center'}
-knitr::include_graphics('figures/attribut.png')
+knitr::include_graphics('fig/attribut.png')
 ```
 
 
@@ -338,8 +347,8 @@ Le **relevé de point GPS** permet de collecter la localisation précise d'objet
 
 ```{r image_grobs, fig.show = "hold", out.width = "40%", fig.align = "default"}
 
-knitr::include_graphics('figures/triangualtion.png')
-knitr::include_graphics('figures/gps.jpg')
+knitr::include_graphics('fig/triangualtion.png')
+knitr::include_graphics('fig/gps.jpg')
 ```
 
 
@@ -353,7 +362,7 @@ knitr::include_graphics('figures/gps.jpg')
 
 
 ```{r, echo = FALSE, out.width = "830px",fig.align='center'}
-knitr::include_graphics('figures/teledec.jpg')
+knitr::include_graphics('fig/teledec.jpg')
 ```
 
 
@@ -366,7 +375,7 @@ knitr::include_graphics('figures/teledec.jpg')
 
 
 ```{r, echo = FALSE, out.width = "800px",fig.align='center'}
-knitr::include_graphics('figures/photogrametrie.jpg')
+knitr::include_graphics('fig/photogrametrie.jpg')
 ```
 
 <p style="line-height:1.3;font-size:10pt;">La photogrammétrie est une technologie passive. Elle est basée sur des images transformées de la 2D en modèles cartométriques 3D. Elle utilise le même principe que les yeux humains pour établir une perception de profondeur. La limitation de la photogrammétrie est qu’elle ne peut générer que des points basés sur ce que le capteur de la caméra peut voir.</p>      
@@ -382,7 +391,7 @@ knitr::include_graphics('figures/photogrametrie.jpg')
 **La digitalisation consiste à numériser des points à partir d'un support visuel**, c'est à dire à attribuer à chaque point des coordonnées X et Y dans un système quelconque. Cela revient le plus souvent à **créer des objets géographiques vectoriels à partir d'information géographique en mode RASTER (ex : photo aérienne)**. 
 
 ```{r, echo = FALSE, out.width = "930px",fig.align='center'}
-knitr::include_graphics('figures/digitalisation2.PNG')
+knitr::include_graphics('fig/digitalisation2.PNG')
 ```
 
 
@@ -396,7 +405,7 @@ knitr::include_graphics('figures/digitalisation2.PNG')
 .pull-left[
 
 <div class="centered">
-<img src="figures/carte.png" width="450" />
+<img src="fig/carte.png" width="450" />
 </div>
 
 <p style="line-height:1.3;font-size:13pt;">Les données issues de recensements et d'enquêtes sont le plus souvent des données attributaires d'objets géographiques !</p>
@@ -421,8 +430,8 @@ Les **SIG grand public** (ex : OpenStreetMap), les **bases de données participa
 
 ```{r image_grobs2, fig.show = "hold", out.width = "45%", fig.align = "default"}
 
-knitr::include_graphics('figures/cat-map.png')
-knitr::include_graphics('figures/gps2.jpg')
+knitr::include_graphics('fig/cat-map.png')
+knitr::include_graphics('fig/gps2.jpg')
 
 ```
 
@@ -433,7 +442,7 @@ knitr::include_graphics('figures/gps2.jpg')
 Un exemple d'une application de suivi de bouquetins mis en oeuvre par le [Parc National du Mercantour](https://bouquetin.mercantour-parcnational.fr).
 
 ```{r, echo = FALSE, out.width = "900px",fig.align='center'}
-knitr::include_graphics('figures/bouquetins.PNG')
+knitr::include_graphics('fig/bouquetins.PNG')
 ```
 
 ---
@@ -483,7 +492,7 @@ knitr::include_graphics('figures/bouquetins.PNG')
 OpenStreetMap (OSM) est un projet de cartographie lancé en 2004 qui a pour but de **constituer une base de données géographiques libre du monde** en utilisant le système GPS et d'autres données libres et ouvertes. **Tout le monde peut y contribuer et/ou utiliser les données**.
 
 ```{r, echo = FALSE, out.width = "960px",fig.align='center'}
-knitr::include_graphics('figures/osm.png')
+knitr::include_graphics('fig/osm.png')
 ```
 
 
@@ -492,7 +501,7 @@ knitr::include_graphics('figures/osm.png')
 ## OSM, la plateforme collaborative de l’IG libre
 
 ```{r, echo = FALSE, out.width = "800px",fig.align='center'}
-knitr::include_graphics('figures/barsOSM.png')
+knitr::include_graphics('fig/barsOSM.png')
 ```
 
 <p style="line-height:1.3;font-size:11pt;font-style:italic;text-align:center;">Densité des bars à Paris avec des données OSM ([T.Giraud, R Geomatic](https://rgeomatic.hypotheses.org/1244) ) </p>
@@ -531,7 +540,7 @@ Les métadonnées synthétisent des informations élémentaires et facilitent la
 
 .pull-right[
 ```{r, echo = FALSE, out.width = "700px",fig.align='center'}
-knitr::include_graphics('figures/meta.png')
+knitr::include_graphics('fig/meta.png')
 ```
 
 Consulter attentivement les métadonnées associées aux données géographiques est primordial.
@@ -593,7 +602,7 @@ Son extension est classiquement **.shp**, mais il est toujours accompagné de de
 
 
 .pull-right[
-<img src="figures/shape_ex.png" width="400" />
+<img src="fig/shape_ex.png" width="400" />
 ]
 
 
@@ -607,7 +616,7 @@ Son extension est classiquement **.shp**, mais il est toujours accompagné de de
 
 
 ```{r, echo = FALSE, out.width = "635px",fig.align='center'}
-knitr::include_graphics('figures/jointure.png')
+knitr::include_graphics('fig/jointure.png')
 ```
 
 <p style="font-size:12pt;line-height:1.3;font-style:italic;">Dans le cas ci-dessus, on utilise l'attribut (identifiant) NomC pour joindre la couche géographique (fichier shapefile) et la table d'attributs (fichier csv par exemple).</p>
@@ -623,11 +632,11 @@ L'INSEE et l'IGN utilisent des identifiants identiques pour qualifier les objets
 
 
 .pull-left[
-<img src="figures/Excel_tab.png" width="480" />
+<img src="fig/Excel_tab.png" width="480" />
 ]
 
 .pull-right[
-<img src="figures/qgis_IG.PNG" width="460" />
+<img src="fig/qgis_IG.PNG" width="460" />
 ]
 
 <p style="font-size:10pt;line-height:1.3;font-style:italic;">Dans les fichiers de données INSEE (à gauche) l'attribut qui sert d'identifiant unique pour les communes est nommé CODGEO (code INSEE des communes). La couche géographique des communes fournies par l'IGN (à droite), comportent le même identifiant unique nommé INSEE_COM** </p>
@@ -645,7 +654,7 @@ L'INSEE et l'IGN utilisent des identifiants identiques pour qualifier les objets
 
 # Atelier
 
-Organisez-vous en groupe et partez en quête d'informations géographiques ! Nous tentons de retrouver des couches géographiques 
+Partons en quête d'informations géographiques ! Nous tentons de retrouver :
 
 Objectifs :
 
@@ -676,7 +685,7 @@ Cette ressource permet d'accéder à tous les découpages géographiques officie
 
 .pull-right[
 ```{r, echo = FALSE, out.width = "800px",fig.align='center'}
-knitr::include_graphics('figures/admin_express.PNG')
+knitr::include_graphics('fig/admin_express.PNG')
 ```
 ]
 
@@ -688,11 +697,11 @@ L'ONF répertorie [les ressources géographiques utiles](https://www.onf.fr/onf/
 
 .pull-left[
 
-<img src="figures/ONF.png" width="425" />
+<img src="fig/ONF.png" width="425" />
 ]
 
 .pull-right[
-<img src="figures/FORET.PNG" width="425" />
+<img src="fig/FORET.PNG" width="425" />
 ]
 
 
@@ -704,11 +713,11 @@ Il est au préalable important de définir la clé-valeur de l'objet OpenStreetM
 
 .pull-left[
 
-<img src="figures/osm_1.PNG" width="425" />
+<img src="fig/osm_1.PNG" width="425" />
 ]
 
 .pull-right[
-<img src="figures/osm_2.PNG" width="425" />
+<img src="fig/osm_2.PNG" width="425" />
 ]
 
 ---
@@ -718,7 +727,7 @@ Il est au préalable important de définir la clé-valeur de l'objet OpenStreetM
 On peut ensuite exporter les résultats qui répondent à cette requête. 
 
 ```{r, echo = FALSE, out.width = "800px",fig.align='center'}
-knitr::include_graphics('figures/osm_3.PNG')
+knitr::include_graphics('fig/osm_3.PNG')
 ```
 
 
@@ -729,7 +738,7 @@ knitr::include_graphics('figures/osm_3.PNG')
 L'institut Copernicus [met à disposition](https://land.copernicus.eu/local/urban-atlas) des couches géographiques pour 788 villes européennes (en 2018) de couverture du sol. On peut retracer l'évolution des modifications d'occupation du sol entre 2006 et 2018. Il faut se créer un compte pour accéder aux données.
 
 ```{r, echo = FALSE, out.width = "800px",fig.align='center'}
-knitr::include_graphics('figures/copernicus.PNG')
+knitr::include_graphics('fig/copernicus.PNG')
 ```
 
 
@@ -744,7 +753,7 @@ Les logiciels d'analyse de données (R, SAS, SPSS, etc.) permettent de traiter, 
 
 
 ```{r, echo = FALSE, out.width = "590px", fig.align='center'}
-knitr::include_graphics('figures/rstudio.png')
+knitr::include_graphics('fig/rstudio.png')
 ```
 
 ---
@@ -755,7 +764,7 @@ knitr::include_graphics('figures/rstudio.png')
 Les SIG sont l'ensemble des outils informatiques permettant de **collecter, stocker, gérer, manipuler, analyser, modéliser et représenter de l’information géographique**. 
 
 .center[
-<img src="figures/qgis_style.png" width="480" />
+<img src="fig/qgis_style.png" width="480" />
 ]
 
 ---
@@ -766,8 +775,603 @@ Bien que les SIG permettent la réalisation de représentations cartographiques,
 
 
 ```{r, echo = FALSE, out.width = "500px",fig.align='center'}
-knitr::include_graphics('figures/Magrit.png')
+knitr::include_graphics('fig/Magrit.png')
 ```
+
+---
+
+class: inverse middle center
+
+#  Immersion dans l'univers des SIG
+
+---
+
+
+
+
+<br><br><br><br><br><br><br>
+# 1. Un peu d'histoire...
+
+---
+## Londres, 1854
+
+.pull-left[
+**John Snow** est un médecin britannique. Ses travaux sur la **propagation du choléra** dans le quartier de Soho à Londres en 1854 sont reconnus dans l'histoire de l'**épidémiologie moderne** et de l'**analyse spatiale**.
+
+.left-column[
+<br>
+![](fig/John_snow.jpg)
+]
+
+.right-column[
+.medium[
+Il va identifier la **cause de l'épidémie** en utilisant un procédé simple, mais innovant, qui repose sur le principes de fonctionnement des SIG : **superposer deux couches géographiques différentes** :
+
+- **Les lieux de résidence des décès liés à l'épidémie**.
+- **Les pompes à eau** du quartier.]]  
+
+.medium[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le foyer de contamination** : la pompe de Brewer Street.]
+]
+
+.pull-right[
+![](fig/map_snow.jpg)
+.leg-fig[**Carte de John Snow** avec la localisation des lieux de résidence des personnes décédées du choléra.]
+]
+
+---
+
+## Londres, 1854
+
+.pull-left[
+**John Snow** est un médecin britannique. Ses travaux sur la **propagation du choléra** dans le quartier de Soho à Londres en 1854 sont reconnus dans l'histoire de l'**épidémiologie moderne** et de l'**analyse spatiale**.
+
+.left-column[
+<br>
+![](fig/John_snow.jpg)
+]
+
+.right-column[
+.medium[
+Il va identifier la **cause de l'épidémie** en utilisant un procédé simple, mais innovant, qui repose sur le principes de fonctionnement des SIG : **superposer deux couches géographiques différentes** :
+
+- **Les lieux de résidence des décès liés à l'épidémie**.
+- **Les pompes à eau** du quartier.]]  
+
+.medium[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le foyer de contamination** : la pompe de Brewer Street.]
+]
+
+.pull-right[
+![](fig/snow_monmonier.png)
+.leg-fig[Carte de John Snow revue par Mark Monmonnier, 1996]
+]
+
+
+---
+
+## Un précurseur des applications SIG
+
+.center[Si John Snow avait utilisé un système d'information géographique...]
+
+.pull-left[
+<img src="fig/snow_2.png" height="500px">
+]
+
+.pull-right[
+<img src="fig/sig_cholera.png" height="450" />
+]
+
+---
+
+<br><br><br><br><br><br><br>
+# 2. Systèmes d'Information Géographique ?
+
+---
+
+## Historique
+
+**Le concept de Système d'Information Géographique s'est développé et a évolué avec le développement de l'informatique**. 
+
+- **1950 – 1970** : début de l’informatique, premières cartographies automatiques.
+
+- **1970 - 1980** : diffusion des outils de cartographie automatique/SIG dans les organismes d’État (armée, cadastre, services topographiques…
+
+- **1980 - 1990** : croissance du marché des logiciels SIG, développement des applications SIG.
+
+- **Depuis les années 90 et 2000** : diffusion de SIG plus légers, libres, d'applications web et banalisation de l’usage de l’information géographique (cartographie en ligne, calcul d’itinéraires, utilisation de la géolocalisation, base de données participatives.
+
+.medium[
+**Les SIG sont aujourd’hui utilisés dans de nombreux domaines** : 
+*Agriculture, aménagement du territoire, architecture, assurances & banque, automobile, BTP, cadastre, découpage électoral, défense, démographie, eau et assainissement, électricité, enseignement, environnement, épidémiologie, équipement, géologie, géomarketing, gestion de flotte, gestion de patrimoine, gestion de réseaux, gestion des sols, Internet, immobilier, implantation de commerces, ingénierie logistique, optimisation de parcours, pétrole et gaz, publicité, recherche, ressources naturelles, santé, services d'urgence, télécommunications, tourisme,...* ]
+
+---
+
+## Définition
+
+**Système informatique de matériels, de logiciels, et de processus conçus pour permettre la collecte, la gestion, la manipulation, l'analyse, la modélisation et l'affichage de données à référence spatiale** afin de résoudre des problèmes complexes d'aménagement et de gestion. (*Comité fédéral de coordination inter-agences pour la cartographie numérique, 1988*)</p> 
+
+.pull-left[
+La pratique des logiciels de SIG est un métier : **sigiste**. 
+
+Le SIG est également **l'outil de référence des géomaticiens**. 
+
+La géomatique est une discipline issue de la géographie et des développements de l'informatique (**GEO**graphie + infor**MATIQUE**). 
+
+La géomatique regroupe l'ensemble des outils et méthodes permettant d'acquérir, de représenter, d'analyser et d'intégrer des données géographiques.
+]
+
+.pull-right[
+![](fig/georezo.png)
+]
+
+---
+
+## Principes et fonctionnalités
+
+Les logiciels SIG permettent de **superposer des couches géographiques de différentes natures, dans un même système de projection**. Cela permet de réaliser de puissantes **analyses croisées**.
+
+.pull-left[
+<br><br><br>
+Ces logiciels permettent d'opérer sur l'intégralité de la chaîne de traitement des données géographiques :
+
+- **Digitalisation** (Saisir et abstraire)  
+- **Stockage** et **gestion** (Base de données)    
+- **Analyse** (Géotraitements, analyse spatiale)       
+- **Représentation** (Cartographie)   
+]
+
+.pull-right[
+<img src="fig/multi_couche.jpg" height="450" />
+]
+
+---
+
+## Principes et fonctionnalités
+
+.pull-left[
+<br><br><br>
+Pour **modéliser la réalité**, on superpose plusieurs couches d'information géographique, **vecteur et/ou raster**.
+
+Chaque **couche géographique contient des objets de même type** (adresses, parcelles, routes, bâtiments, cours d'eau, limites administratives...)
+
+**Une couche géographique = un type d'objet géographique** : point, ligne, polygone ou image géoréférencée (raster).
+]
+
+.center[
+.pull-right[
+<img src="fig/GIS_SPAIN.jpg" height="450" />
+]]
+
+---
+
+## Principes et fonctionnalités
+
+Un SIG permet de travailler sur les trois composantes de l'information géographique :
+
+.pull-left[
+.medium[
+### Niveau sémantique
+**Les attributs** qui décrivent les objets géographiques (ex : libellé, population, catégorie) **peuvent être modifiés, supprimés, ajoutés et surtout requêtés** : Il est possible de sélectionner des objets géographiques **en fonction de la valeur des attributs**.
+
+### Niveau géométrique
+Possibilité de **modifier la localisation** et/ou **la forme** des objets géographiques, de **calculer des surfaces**, **des distances**, ou encore des **zones tampons**, de **convertir des polygones en point**... Les opérations possibles sur la géométrie des objets sont multiples.
+]
+]
+
+.pull-right[
+.medium[
+### Niveau topologique
+Une fonctionnalité puissante qui consiste à **requêter des objets par localisation**, c'est à dire **en fonction de leur positionnement par rapport à d'autres objets**. Pour cela on peut utiliser une série d'opérateur, exemple : *Contient*, *Croise*, *Intersecte*, *Est à l’intérieur*...]
+
+.center[
+![](fig/GIS_by_loc.gif)
+
+.small[
+Ex : *Sélection d'objets géographiques ponctuels situés à une certaine distance (euclidienne) d'autres objets géographiques ponctuels*
+]]]
+
+---
+
+## Principaux logiciels SIG
+
+.center[
+<img src="fig/logiciels.PNG" height="500" />
+]
+---
+
+## Installez QGIS ! 
+
+Pour travailler depuis chez vous, nous vous conseillons d'installer QGIS sur votre ordinateur personnel *(https://www.qgis.org/fr/site/forusers/download.html)*. Choisissez la version long terme (la plus stable). 
+
+.center[
+<img src="fig/qgisinstall.PNG" height="450" />
+]
+
+---
+
+
+<br><br><br><br><br><br><br>
+# 3. Premiers pas dans un SIG et découverte de QGIS
+
+Téléchargez les données sur [Moodle](https://moodle.u-paris.fr/course/view.php?id=6316)
+---
+
+## Présentation des données à disposition - Couches géographiques
+
+Les couches géographiques vectorielles (points, lignes, surfaces) au format shapefile (. shp), auxquelles sont souvent associées des attributs (ex : capacité des salles de cinéma).
+
+.pull-left[
+.medium[
+
+**00_Équipements existants** 
+
+- Bibliothèques et médiathèques, conservatoires de musique, missions locales pour l'emploi, salles de cinéma, équipements sportifs, issues de la plateforme open data de la région Ile-de-France, contient les localisations des équipements cibles pour votre étude 
+
+- Hôtels à insecte, ruches, lieux d'écoute à oiseaux, issus de la plateforme collaborative OpenStreetMap. **Attention à la complétude des données** !
+
+**01_Maillages territoriaux** :  IRIS, communes, EPCI et départements de la Métropole du Grand
+Paris L’IRIS correspond au découpage territorial le plus fin en France. Ce sera aussi la brique
+territoriale que vous utiliserez pour définir le lieu d’implantation (favorisez l’implantation de
+l’équipement dans tel et tel IRIS…) IRIS…). Source : IGN en géographie du 1er janvier 2022).
+
+]
+]
+
+.pull-right[
+![](fig/infogeodata.PNG)]
+
+
+---
+
+## Présentation des données à disposition - Couches géographiques
+
+D’autres couches géographiques sont disponibles. Elles serviront à définir des critères d’implantation pour optimiser l’implantation de l’équipement que vous aurez choisi..
+
+.medium[
+.pull-left[
+
+
+**BPE** : une sélection pour l’Ile de France de 44 équipements géolocalisés que nous avons jugé
+adapté au regard des équipements à implanter. Source INEE, Base Permanente des
+Équipements 2021
+
+**Grille 200 m** : Des données socio économiques dans des carreaux réguliers de 200 mètres de
+côté (le plus fin existant en France).
+
+**Couverture du sol** : les parcs et jardins, les zones majoritairement dédiées aux fleurs, les
+forêts et vergers de la Métropole du Grand Paris. Source : OpenStreetMap.
+
+**Hydrologie** : Le réseau hydrologique principal d’Ile de France (Seine, Marne). Source
+Plateforme Open Data de la Région Ile de France.
+
+]
+
+.pull-right[
+**Transports** : Le réseau routier principal et le réseau ferré en Ile de Franc e (source :
+OpenStreetMap ), ainsi que la localisation des arrêts de bus, de train, de tram et de métro
+(source : Plateforme Open Data de la Région Ile de France.
+
+![](fig/infogeodata.PNG)]
+]
+
+
+
+---
+
+## Présentation des données à disposition - Données statistiques
+
+Fichiers au format Excel qui correspondent à des extraits pour la Métropole du Grand Paris des données officielles de
+l’INSEE à l’échelle des IRIS et à la commune. 
+
+.medium[
+.pull-left[
+**BPE** : Les mêmes équipements que ceux disponibles dans le dossier des couches
+géographiques, mais agrégés à l’échelle des IRIS et des communes (e.g. nombre de médecins
+généralistes par IRIS ou par commune). Source : INSEE, Base Permanente des équipements en
+2021.
+
+**Démo** : Population totale et structure par âge de la population. Source : INSEE.
+
+**Socio-éco** : Structure de l’emploi (chômage, type de salariat, catégories socioprofessionnelles)
+de la population de plus de 15 ans selon la situation d’activité  et niveaux de vie des ménages (pauvreté, revenus). Source : INSEE.
+
+A partir de ces données, vous pourrez être en mesure de calculer des ratios d'intérêt : taux de chômage, part de la population jeune / âgée...
+]
+
+.pull-right[
+![](fig/infogeostat.PNG)]
+]
+
+---
+
+
+## Présentation des données à disposition - Métadonnées
+
+Les métadonnées apportent des éléments essentiels pour comprendre le contenu des ressources à votre disposition, leur origine et d'éventuelles informations sur leur utilisation. Leur consultation attentive est primordiale.
+
+.medium[
+Avec ces métadonnées, vous êtes en mesure de répondre aux questions suivantes : *Quelle est la signification du code "P18_POP0002" ? Quelle est son unité de mesure ? Qui a produit la donnée, quand ? Quelle est l'année de référence de l'indicateur ??*
+]
+
+![](fig/metadatainsee.PNG)
+
+
+---
+
+## Ouvrir QGIS
+
+**Lancez l'application QGIS Desktop**, comme vous le feriez avec n'importe quel logiciel :
+
+<br><br>
+.center[
+<img src="fig/logo_qgis.PNG" width="520" />
+]
+---
+
+## Organiser son travail
+
+L'utilisation d'un SIG nécessite de la **rigueur méthodologique**, car l'on se retrouve vite submergé de fichiers. Vous devez donc :
+
+- Travailler en **projet**.
+
+- Utiliser des **intitulés de fichiers** intelligibles.
+
+- Ranger vos données en utilisant des **sous-répertoires**.
+
+- Stocker votre projet **sur une clef USB** (et faire une copie). 
+
+
+Commencez par **créer votre répertoire de travail** (sur une clé USB de préférence). Téléchargez les données du Moodle et décompressez-les dans votre répertoire de travail. **Ouvrez Qgis et créez un nouveau projet**. *(Projet/enregister/)*
+
+---
+
+## Organiser son projet
+
+Dans votre répertoire de travail, créez une architecture de sous-répertoires qui vous paraît cohérente et dans laquelle vous vous y retrouverez facilement. Ne gardez que les fichiers qui vous seront utiles !</p>
+
+.center[
+<img src="fig/orgaprojet.png" height="450" />
+]
+
+---
+.left-column[
+## L'Interface de QGIS
+
+.medium[
+1.  **Menu principal**
+
+2.  **La barre d’outils** : Raccourci vers les outils les plus récurrents utilisés
+
+3.  **Barre d’outils latérale** : Par défaut, raccourci vers les options d'import de données.
+
+4.  **La barre d’état** : Niveau de zoom, échelle, coordonnées géographiques
+
+5.  **Les panneaux** : Explorateur, listing des couches géographiques chargées...
+
+6.  **Le canevas de carte** : visualisation des couches géographiques.  
+]
+]
+
+.right-column[
+![](fig/interface_qgis.png)
+
+]
+
+---
+
+.left-column[
+## Importer une couche vectorielle
+
+**Pour importer des données facilement**, utilisez la barre d'outil latérale.
+
+Choisissez l'icône **en fonction du type de données à importer** (Vecteur, raster, csv...).
+
+Choisissez la couche *IRIS* (Couches Géo > 01_Découpages_territoriaux)
+]
+
+.right-column[
+![](fig/importvecteur.PNG)
+
+.center[
+Importez la couche **IRIS** dans QGIS
+]
+]
+
+---
+
+.left-column[
+## Sélection par attributs
+
+Il est possible de sélectionner les objets géographiques à partir de leur **table attributaire**
+
+1. Clic droit sur la couche IRIS
+2. Ouvrir la table d'attribut
+3. Sélectionner les entités en utilisant une expression 
+]
+
+
+.right-column[
+![](fig/selection_par_attribut.PNG)
+.center[
+Sélectionnez uniquement les IRIS de **votre espace d'étude**
+]
+]
+
+---
+
+.left-column[
+## Sélection par attributs
+
+Il est possible de sélectionner les objets géographiques à partir de leur **table attributaire**
+
+
+1. Clic droit sur la couche IRIS
+2. Ouvrir la table d'attribut
+3. Sélectionner les entités en utilisant une expression 
+4. Choisir son espace d'étude (champ LIB_EPCI)
+]
+
+.right-column[
+![](fig/selection_par_attribut_2.PNG)
+
+.center[
+Sélectionnez uniquement les IRIS de **votre espace d'étude**
+]
+]
+
+
+---
+.left-column[
+## Export d'une sélection
+
+
+1. Suite à la précédente sélection, clic droit sur la couche IRIS
+2. Sélectionner "Exporter, sauvegarder les entités sous...
+3. Sélectionner **l'emplacement de votre dossier de travail** et **nommer** la couche. Choisissez un format shapefile ou GEOJSON. 
+4. Sélectionner l'option **N'enregistrer que les entités sélectionnées**
+
+]
+
+.right-column[
+![](fig/export_sel.PNG)
+.center[
+**Exportez les IRIS** qui composent votre espace d'étude
+]
+]
+
+---
+.left-column[
+## Gestion de la projection
+
+**La projection** d'une couche géographique **est indiquée dans ses propriétés générales**.
+
+.medium[
+Les couches géographiques s'affichent automatiquement dans le système de projection de la première couche géographique importée.
+
+Pour modifier le système de projection, il suffit d'enregistrer une nouvelle version de la couche géographique concernée dans le système de projection souhaité (clic-droit sur la couche, enregistrez-sous...).
+]
+]
+
+.right-column[
+
+![](fig/projct_qgis.PNG)
+
+Importez la couche géographique contenant vos **équipements d'intérêt**, observez sa **projection** et enregistrez la dans la même projection que celle de vos **IRIS**.
+
+]
+
+---
+
+.left-column[
+
+## Quelques options utiles
+
+**Pour sélectionner et zoomer**, utilisez les différentes fonctionnalité de la barre d'outils.
+
+.medium[
+Les icônes *loupe* permettent de **zoomer/dé-zoomer**. Il est également possible d'utiliser la roulette de votre souris. **L'outil de sélection offre plusieurs solutions** : sélection par clic, par polygone, à main levée...
+
+]
+]
+
+.right-column[
+.center[
+![](fig/qgis_4.png)
+]
+]
+
+---
+.left-column[
+## Gestion de l'affichage graphique
+
+Pour changer l'ordre d'affichage des couches, il suffit de les faire glisser à la position de son choix, comme des onglets dans un navigateur Web.
+
+Pour **visualiser l'ensemble d'une couche géographique**, **cliquez droit sur la couche** concernée dans le panneau légende, puis cliquez sur *Zoomer sur la couche*.
+
+]
+
+.right-column[
+
+![](fig/qgis_2.png)
+
+.center[
+Importez la couche géographique des **communes**, placer les couches géographiques dans l'ordre suivant : **IRIS, communes, votre équipement** 
+]
+]
+
+---
+.left-column[
+## Gestion de l'affichage graphique
+
+Modifier le style graphique (**symbologie**) d'une couche géographique
+
+**Double-clic sur la couche géographique concernée**, puis onglet*symbologie*.
+
+
+]
+
+.right-column[
+
+![](fig/qgis_3.PNG)
+
+
+.center[
+Jouer sur le **style graphique** (couleur de fond, bordures) des couches IRIS, communes et équipement.
+]
+]
+
+
+---
+.left-column[
+## Gestion de l'affichage graphique
+
+Rajouter des **labels (étiquettes)** à la couche peut faciliter le repérage / la lecture de la carte.
+
+
+Clic-droit sur la couche commune, puis propriétés. Cliquez ensuite sur "étiquettes".
+
+]
+
+.right-column[
+.center[
+![](fig/etiquettes.PNG)
+
+Faites apparaître sur l'espace d'affichage **le nom des communes** de votre espace d'étude.
+]
+]
+---
+
+## Gestion de l'affichage graphique
+
+.center[
+
+<img src="fig/todostyles.PNG" width="600" />
+
+Familiarisez vous avec vos équipements et votre espace d'étude en **superposant intelligemment les couches IRIS, communes, départements** ainsi que celle contenant **votre équipement**. 
+
+Jouez sur les styles, et améliorez la **lisibilité**
+]
+
+
+---
+## Exportez une image, enregistrez votre projet
+
+.left-column[
+<img src="fig/export.PNG" height="300" />
+]
+
+.right-column[
+**Vous pouvez exporter le visuel créé au format .png**. 
+Attention néanmoins, il **manque beaucoup d'éléments** (titre, légende, sources...) etc. pour que cette carte soit valable ! Nous verrons cela dans les prochaines séances. Cela peut néanmoins constituer une base de travail et de réflexion. 
+
+**Enregistrez votre projet à la racine de votre dossier de travail**. Les couches que vous avec chargé et leur style associé seront ainsi enregistrées pour la prochaine utilisation 
+]
+
+---
+
 
 ---
 

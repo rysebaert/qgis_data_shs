@@ -220,7 +220,8 @@ thead, tfoot, tr:nth-child(even) { background: none; }
 
 /* Make bold syntax compile to RU-red */
 strong {
-  color: #cc0033;
+  color: #042047
+;
 }
 
 .RUred {
