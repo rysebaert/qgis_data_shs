@@ -7,7 +7,7 @@ date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
     self_contained: true
-    css: ["css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
+    css: ["css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -40,10 +40,11 @@ class: inverse middle center
 
 ---
 
-.pull-left[
-.medium[
-### Information géographique ?  (*9h - 9h45*)
+### test
 
+.pull-left[
+
+### Information géographique ?  (*9h - 9h45*)
 
 - Les composantes de l'information géographique
 - Où en trouver ?
@@ -60,11 +61,9 @@ class: inverse middle center
 #### Pause 10h30-10h45
 
 ]
-]
 
 .pull-right[
 
-.medium[
 
 ###  Systèmes de coordonnées de référence, projections *(10h45 - 11h15)*
 
@@ -78,7 +77,7 @@ class: inverse middle center
 - Sélections attributaires
 
 #### Déjeuner 12h30 - 14h
-]
+
 ]
 ---
 

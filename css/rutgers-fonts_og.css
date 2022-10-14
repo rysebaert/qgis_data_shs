@@ -1,14 +1,85 @@
 /* Add maven for code font (keep other xaringan defaults */
-@import url(https://fonts.googleapis.com/css?family=Inconsolata);
-@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700);
-
-body { font-family: 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif; }
-h1, h2, h3 {
-  font-family: 'Yanone Kaffeesatz';
-  font-weight: normal;
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica.eot');
+    src: local('Helvetica'),
+        url('fonts/Helvetica.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica.woff2') format('woff2'),
+        url('fonts/Helvetica.woff') format('woff'),
+        url('fonts/Helvetica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-Oblique.eot');
+    src: local('Helvetica Oblique'), local('Helvetica-Oblique'),
+        url('fonts/Helvetica-Oblique.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-Oblique.woff2') format('woff2'),
+        url('fonts/Helvetica-Oblique.woff') format('woff'),
+        url('fonts/Helvetica-Oblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-BoldOblique.eot');
+    src: local('Helvetica Bold Oblique'), local('Helvetica-BoldOblique'),
+        url('fonts/Helvetica-BoldOblique.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-BoldOblique.woff2') format('woff2'),
+        url('fonts/Helvetica-BoldOblique.woff') format('woff'),
+        url('fonts/Helvetica-BoldOblique.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-Light.eot');
+    src: local('Helvetica Light'), local('Helvetica-Light'),
+        url('fonts/Helvetica-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-Light.woff2') format('woff2'),
+        url('fonts/Helvetica-Light.woff') format('woff'),
+        url('fonts/Helvetica-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-Bold.eot');
+    src: local('Helvetica Bold'), local('Helvetica-Bold'),
+        url('fonts/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-Bold.woff2') format('woff2'),
+        url('fonts/Helvetica-Bold.woff') format('woff'),
+        url('fonts/Helvetica-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-LightOblique.eot');
+    src: local('Helvetica Light Oblique'), local('Helvetica-LightOblique'),
+        url('fonts/Helvetica-LightOblique.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-LightOblique.woff2') format('woff2'),
+        url('fonts/Helvetica-LightOblique.woff') format('woff'),
+        url('fonts/Helvetica-LightOblique.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+h1, h2, h3 {
+  font-family: 'Helvetica', serif;
+}
 .remark-code, .remark-inline-code { font-family: 'Inconsolata', monospace; }
 .remark-code-line-highlighted     { background-color: #ffff88; }
