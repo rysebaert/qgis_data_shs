@@ -1,0 +1,10 @@
+Code;Libellé;Source
+INSEE_COM ;Code communal INSEE ;INSEE (base-cc-emploi-pop-active-2016)
+NOM_COM;Libellé de commune;INSEE (base-cc-emploi-pop-active-2016)
+EPCI;Code de la métropole d'appartance;INSEE (table-appartenance-geo-communes-19)
+LIB_EPCI;Libellé de la métropole d'appartenance;INSEE (table-appartenance-geo-communes-19)
+EPCI_SUB;Code de l'EPCI entre la commune et la métropole (si adapté) ;RIATE (metropole.xls)
+LIB_EPCI_SUB;Libellé de l'EPCI entre la commune et la métropole (si adapté) ;RIATE (metropole.xls)
+P16_EMPLT;Nombre d'emplois au lieu de travail en 2016;INSEE (base-cc-emploi-pop-active-2016)
+C16_ACTOCC1564;Nombre de personnes actives de 15 à 64 ans en 2016;INSEE (base-cc-emploi-pop-active-2016)
+geom;Géométries des communes;IGN (CONTOUR-IRIS)
