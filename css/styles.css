@@ -1,48 +1,85 @@
-/* styles */
 @font-face {
-    font-family: 'roboto';
-    src: url('fonts/Roboto-Regular-webfont.eot');
-    src: url('fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Roboto-Regular-webfont.woff2') format('woff2'),
-         url('fonts/Roboto-Regular-webfont.woff') format('woff'),
-         url('fonts/Roboto-Regular-webfont.ttf') format('truetype'),
-         url('fonts/Roboto-Regular-webfont.svg') format('svg');
-    font-weight: 400;
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica.eot');
+    src: local('Helvetica'),
+        url('fonts/Helvetica.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica.woff2') format('woff2'),
+        url('fonts/Helvetica.woff') format('woff'),
+        url('fonts/Helvetica.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
-
-
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'roboto';
-    src: url('fonts/Roboto-Italic-webfont.eot');
-    src: url('fonts/Roboto-Italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Roboto-Italic-webfont.woff2') format('woff2'),
-         url('fonts/Roboto-Italic-webfont.woff') format('woff'),
-         url('fonts/Roboto-Italic-webfont.ttf') format('truetype'),
-         url('fonts/Roboto-Italic-webfont.svg') format('svg');
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-Oblique.eot');
+    src: local('Helvetica Oblique'), local('Helvetica-Oblique'),
+        url('fonts/Helvetica-Oblique.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-Oblique.woff2') format('woff2'),
+        url('fonts/Helvetica-Oblique.woff') format('woff'),
+        url('fonts/Helvetica-Oblique.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
-
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'roboto';
-    src: url('fonts/Roboto-Bold-webfont.eot');
-    src: url('fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Roboto-Bold-webfont.woff2') format('woff2'),
-         url('fonts/Roboto-Bold-webfont.woff') format('woff'),
-         url('fonts/Roboto-Bold-webfont.ttf') format('truetype'),
-         url('fonts/Roboto-Bold-webfont.svg') format('svg');
-    font-weight: 600;
-    font-style: normal;
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-BoldOblique.eot');
+    src: local('Helvetica Bold Oblique'), local('Helvetica-BoldOblique'),
+        url('fonts/Helvetica-BoldOblique.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-BoldOblique.woff2') format('woff2'),
+        url('fonts/Helvetica-BoldOblique.woff') format('woff'),
+        url('fonts/Helvetica-BoldOblique.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
 
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-Light.eot');
+    src: local('Helvetica Light'), local('Helvetica-Light'),
+        url('fonts/Helvetica-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-Light.woff2') format('woff2'),
+        url('fonts/Helvetica-Light.woff') format('woff'),
+        url('fonts/Helvetica-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-Bold.eot');
+    src: local('Helvetica Bold'), local('Helvetica-Bold'),
+        url('fonts/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-Bold.woff2') format('woff2'),
+        url('fonts/Helvetica-Bold.woff') format('woff'),
+        url('fonts/Helvetica-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-LightOblique.eot');
+    src: local('Helvetica Light Oblique'), local('Helvetica-LightOblique'),
+        url('fonts/Helvetica-LightOblique.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-LightOblique.woff2') format('woff2'),
+        url('fonts/Helvetica-LightOblique.woff') format('woff'),
+        url('fonts/Helvetica-LightOblique.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
 }
 
 
-body { font-family: 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif; }
+body { font-family: 'Helvetica', serif; }
 h1, h2, h3 {
-  font-family: 'roboto';
+  font-family: 'Helvetica', serif;
   font-weight: normal;
 }
 .remark-code, .remark-inline-code { font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace; }
