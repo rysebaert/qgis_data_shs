@@ -7,7 +7,7 @@ date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
     self_contained: true
-    css: ["css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
+    css: ["xaringan-themer.css", "css/rutgers-tidyverse.css"]
     lib_dir: libs
     nature:
       highlightStyle: github

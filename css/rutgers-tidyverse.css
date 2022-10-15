@@ -1,35 +1,92 @@
+/* Add maven for code font (keep other xaringan defaults */
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica.eot');
+    src: local('Helvetica'),
+        url('fonts/Helvetica.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica.woff2') format('woff2'),
+        url('fonts/Helvetica.woff') format('woff'),
+        url('fonts/Helvetica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-Oblique.eot');
+    src: local('Helvetica Oblique'), local('Helvetica-Oblique'),
+        url('fonts/Helvetica-Oblique.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-Oblique.woff2') format('woff2'),
+        url('fonts/Helvetica-Oblique.woff') format('woff'),
+        url('fonts/Helvetica-Oblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-BoldOblique.eot');
+    src: local('Helvetica Bold Oblique'), local('Helvetica-BoldOblique'),
+        url('fonts/Helvetica-BoldOblique.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-BoldOblique.woff2') format('woff2'),
+        url('fonts/Helvetica-BoldOblique.woff') format('woff'),
+        url('fonts/Helvetica-BoldOblique.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-Light.eot');
+    src: local('Helvetica Light'), local('Helvetica-Light'),
+        url('fonts/Helvetica-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-Light.woff2') format('woff2'),
+        url('fonts/Helvetica-Light.woff') format('woff'),
+        url('fonts/Helvetica-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-Bold.eot');
+    src: local('Helvetica Bold'), local('Helvetica-Bold'),
+        url('fonts/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-Bold.woff2') format('woff2'),
+        url('fonts/Helvetica-Bold.woff') format('woff'),
+        url('fonts/Helvetica-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/Helvetica-LightOblique.eot');
+    src: local('Helvetica Light Oblique'), local('Helvetica-LightOblique'),
+        url('fonts/Helvetica-LightOblique.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Helvetica-LightOblique.woff2') format('woff2'),
+        url('fonts/Helvetica-LightOblique.woff') format('woff'),
+        url('fonts/Helvetica-LightOblique.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+
 /*
 CSS for xaringan slides in RU flavor
 Author: Joseph V. Casillas
 Updated: 03/06/2018
 */
 
-/* Package defaults that we slightly tweak */
-body{
-    font-size: 14px;
-    font-family: 'Helvetica', serif; 
-}
-
-h1{
-    margin: 18px 0 10px;
-    font-family:'roboto'; 
-    color: #13389c;
-    font-size: 2.5rem;
-}
-
-h2{
-    font-size: 2rem;
-    color: #13389c;
-}
-
-h3{
-    font-size: 2rem;   
-    color: #13389c;
-}
-
-a, a > code {
-  color: #cc0033; /* rgb(249, 38, 114) */
-  text-decoration: none;
+*{
+    font-family:'Helvetica';
 }
 
 /* slightly lower and bigger than default */
@@ -144,10 +201,10 @@ thead, tfoot, tr:nth-child(even) { background: none; }
 
 /* H1 fonts */
 .title-slide h1 {
-  color: #515151;
-  padding-top: 250px;
+  color: #395F94;
+  padding-top: 200px;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 0.05;
   text-align: left;
   text-shadow: none;
@@ -157,8 +214,8 @@ thead, tfoot, tr:nth-child(even) { background: none; }
 
 /* H2 fonts */
 .title-slide h2 {
-  color: #515151;
-  font-size: 18px;
+  color: #395F94;
+  font-size: 20px;
   text-align: left;
   text-shadow: none;
   padding-top: 10px;
@@ -168,7 +225,7 @@ thead, tfoot, tr:nth-child(even) { background: none; }
 
 /* H3 fonts */
 .title-slide h3 {
-  font-size: 8px;
+  font-size: 16px;
   font-weight: normal;
   color: #666666;
   text-align: left;
@@ -274,25 +331,6 @@ strong {
 /* Add white tag */
 .white {
   color: white;
-}
-
-/* Color adjustments to headers */
-h1 {
-  font-weight: bold;
-  color: #395F94;
-}
-
-
-h2 {
-  font-weight: normal;
-  color: #395F94;
-  padding-top: 6px;
-}
-
-h3 {
-  font-weight: normal;
-  color: #395F94;
-  padding-top: 6px;
 }
 
 
