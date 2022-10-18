@@ -104,7 +104,7 @@ Updated: 03/06/2018
 
 /* color tweak */
 .inverse {
-  background-color: #395F94;
+  background-color: #F29D00;
   color: #f3f3f3;
   text-shadow: 0 0 20px #333;
 }
@@ -116,34 +116,8 @@ Updated: 03/06/2018
 }
 
 /* Two-column layout (slightly wider for aspect ration) */
-.left-column {
-  color: #777;
-  width: 15%;
-  height: 92%;
-  float: left;
-}
-
-.left-column h2:last-of-type, .left-column h3:last-child {
-  color: #000;
-}
 
 /* slightly thiner to suppor aspect ration */
-.right-column {
-  width: 85%;
-  float: right;
-  padding-top: 1em;
-}
-
-.pull-left {
-  float: left;
-  width: 46%;
-}
-
-.pull-right {
-  float: right;
-  width: 46%;
-}
-
 .pull-right ~ * {
   clear: both;
 }
@@ -192,20 +166,17 @@ thead, tfoot, tr:nth-child(even) { background: none; }
 
 /* Add image and change bg color */
 .title-slide {
-  background-image: url(../fig/qgis-logo.png), url(../fig/qgis-logo.png) ;
+  background-image: url(../fig/qgis.png), url(../fig/qgis.png) ;
   background-position: 10% 35%;
-  background-size: 150px;
+  background-size: 300px;
   background-color: #fff;
-  padding-left: 100px;  /* delete this for 4:3 aspect ratio */
 }
 
 /* H1 fonts */
 .title-slide h1 {
-  color: #395F94;
-  padding-top: 200px;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 0.05;
+  color: #515151;
+  padding-top: 250px;
+  font-size: 30px;
   text-align: left;
   text-shadow: none;
   padding-bottom: 18px;
@@ -214,23 +185,24 @@ thead, tfoot, tr:nth-child(even) { background: none; }
 
 /* H2 fonts */
 .title-slide h2 {
-  color: #395F94;
-  font-size: 20px;
+  color: #6ca444;
+  font-size: 25px;
+  font-weight: normal;
   text-align: left;
   text-shadow: none;
-  padding-top: 10px;
+  padding-top: 0px;
   margin-top: 0px;
 }
 
 
 /* H3 fonts */
 .title-slide h3 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: normal;
   color: #666666;
   text-align: left;
   text-shadow: none;
-  padding: 10px;
+  padding: 0px;
   margin: 0px;
   line-height: 1;
 }
@@ -240,13 +212,14 @@ thead, tfoot, tr:nth-child(even) { background: none; }
   text-shadow: none;
 }
 
+
 /*~~~~~~~~~~~~~~~~~~*/
 /* SECTION DIVIDERS */
 /*~~~~~~~~~~~~~~~~~~*/
 
 /* section divider red */
 .title-slide-section-red {
-  background-color: #395F94;
+  background-color: #6ca444;
   padding-left: 100px;  /* delete this for 4:3 aspect ratio */
 }
 
@@ -283,7 +256,7 @@ thead, tfoot, tr:nth-child(even) { background: none; }
 }
 
 .title-slide-final h1 {
-  color: #395F94;
+  color: #6ca444;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~*/
@@ -346,7 +319,7 @@ ru-blockquote {
   margin-bottom: 1em;
   margin-left: 40px;
   margin-right: 40px;
-  border-left: solid 10px #395F94;
+  border-left: solid 10px #6ca444;
   background-color: #818181;
   padding: 1em;
   color: #fff;
