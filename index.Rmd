@@ -39,8 +39,7 @@ class: inverse middle center
 #  Déroulé
 
 ---
-
-### test
+class: middle
 
 .pull-left[
 
@@ -60,55 +59,50 @@ class: inverse middle center
 
 #### Pause 10h30-10h45
 
+
 ]
 
-.pull-right[
-
-
+.pull-right[.center-right[
 ###  Systèmes de coordonnées de référence, projections *(10h45 - 11h15)*
 
 - Qu'est-ce qu'une projection ?
-- Comment gérer les projections de ses couches dans QGIS ? 
+- Gérer les projections de ses couches géographiques dans QGIS 
 
-### Manipulations de base *(11h15 - 12h30)*
+### Manipulations de base (données vectorielles) *(11h15 - 12h30)*
 - Import de données tabulaires
 - Jointure attributaire
 - Jointure spatiale
 - Sélections attributaires
 
-#### Déjeuner 12h30 - 14h
+#### Déjeuner 12h30 - 13h30
 
 ]
+]
 ---
+class: middle
 
-.pull-left[
-.medium[
-### Géotraitements 14h - 15h
+.pull-left[.center-left[
+### Géotraitements *13h30 - 14h30*
 - Présentation des géotraitements 
 - Cas d'usage de géotraitements
 
-### Bonnes pratiques 15h-15h15
-- Travailler avec des fichiers projet
-- Modéliser sa chaine de traitement
-- Etre très organisé dans la gestion et l'archivage de ses fichiers. 
+### Mettre en page une carte 14h30 - 15h15
+- Eléments fondamentaux sur l'habillage cartographique
+- Créer une mise en page avec QGIS
 
 
 #### Pause 15h15-15h30
 
-### Mettre en page une carte 15h30 - 16h
-- Eléments fondamentaux sur l'habillage cartographique
-- Créer une mise en page avec QGIS
+
 ]]
 
-.pull-right[
-.medium[
+.pull-right[.center-right[
 
-
-### Cartographie thématique dans QGIS 16h - 16h30
+### Cartographie thématique dans QGIS 15h30 - 16h15
 - Typologies (symboles catégorisés)
 - Cartes choroplèthes (symboles gradués)
 
-### Prolongements (non abordé dans le détail) 16h30 - 16h45
+### Prolongements (non abordé dans le détail) 16h15 - 16h30
 
 - Digitalisation
 - Statistiques spatiales
@@ -116,14 +110,13 @@ class: inverse middle center
 
 ### Moment d'échange
 
-
 ]]
 
 ---
 
 .left-column[
 
-### Atelier
+## Atelier
 
 *Implantation d'un équipement dans la Métropole Européenne de Lille.* 
 
@@ -138,7 +131,9 @@ class: inverse middle center
 ]
 
 .right-column[
-<img src="fig/seance5BIS.PNG" width="750" />
+<center>
+<img src="fig/seance5BIS.PNG" width="600" />
+</center>
 ]
 
 
@@ -153,15 +148,122 @@ data > data.zip > download
 
 --- 
 
+
+## Présentation des données à disposition - Couches géographiques
+
+Les couches géographiques vectorielles (points, lignes, surfaces) au format shapefile (. shp), auxquelles sont souvent associées des attributs (ex : capacité des salles de cinéma).
+
+.pull-left[
+.medium[
+
+**00_Équipements existants** 
+
+- Bibliothèques et médiathèques, conservatoires de musique, missions locales pour l'emploi, salles de cinéma, équipements sportifs, issues de la plateforme open data de la région Ile-de-France, contient les localisations des équipements cibles pour votre étude 
+
+- Hôtels à insecte, ruches, lieux d'écoute à oiseaux, issus de la plateforme collaborative OpenStreetMap. **Attention à la complétude des données** !
+
+**01_Maillages territoriaux** :  IRIS, communes, EPCI et départements de la Métropole du Grand
+Paris L’IRIS correspond au découpage territorial le plus fin en France. Ce sera aussi la brique
+territoriale que vous utiliserez pour définir le lieu d’implantation (favorisez l’implantation de
+l’équipement dans tel et tel IRIS…) IRIS…). Source : IGN en géographie du 1er janvier 2022).
+
+]
+]
+
+.pull-right[
+![](fig/infogeodata.PNG)]
+
+
+---
+
+## Présentation des données à disposition - Couches géographiques
+
+D’autres couches géographiques sont disponibles. Elles serviront à définir des critères d’implantation pour optimiser l’implantation de l’équipement que vous aurez choisi..
+
+.medium[
+.pull-left[
+
+
+**BPE** : une sélection pour l’Ile de France de 44 équipements géolocalisés que nous avons jugé
+adapté au regard des équipements à implanter. Source INEE, Base Permanente des
+Équipements 2021
+
+**Grille 200 m** : Des données socio économiques dans des carreaux réguliers de 200 mètres de
+côté (le plus fin existant en France).
+
+**Couverture du sol** : les parcs et jardins, les zones majoritairement dédiées aux fleurs, les
+forêts et vergers de la Métropole du Grand Paris. Source : OpenStreetMap.
+
+**Hydrologie** : Le réseau hydrologique principal d’Ile de France (Seine, Marne). Source
+Plateforme Open Data de la Région Ile de France.
+
+]
+
+.pull-right[
+**Transports** : Le réseau routier principal et le réseau ferré en Ile de Franc e (source :
+OpenStreetMap ), ainsi que la localisation des arrêts de bus, de train, de tram et de métro
+(source : Plateforme Open Data de la Région Ile de France.
+
+![](fig/infogeodata.PNG)]
+]
+
+
+
+---
+
+## Présentation des données à disposition - Données statistiques
+
+Fichiers au format Excel qui correspondent à des extraits pour la Métropole du Grand Paris des données officielles de
+l’INSEE à l’échelle des IRIS et à la commune. 
+
+.medium[
+.pull-left[
+**BPE** : Les mêmes équipements que ceux disponibles dans le dossier des couches
+géographiques, mais agrégés à l’échelle des IRIS et des communes (e.g. nombre de médecins
+généralistes par IRIS ou par commune). Source : INSEE, Base Permanente des équipements en
+2021.
+
+**Démo** : Population totale et structure par âge de la population. Source : INSEE.
+
+**Socio-éco** : Structure de l’emploi (chômage, type de salariat, catégories socioprofessionnelles)
+de la population de plus de 15 ans selon la situation d’activité  et niveaux de vie des ménages (pauvreté, revenus). Source : INSEE.
+
+A partir de ces données, vous pourrez être en mesure de calculer des ratios d'intérêt : taux de chômage, part de la population jeune / âgée...
+]
+
+.pull-right[
+![](fig/infogeostat.PNG)]
+]
+
+---
+
+
+## Présentation des données à disposition - Métadonnées
+
+Les métadonnées apportent des éléments essentiels pour comprendre le contenu des ressources à votre disposition, leur origine et d'éventuelles informations sur leur utilisation. Leur consultation attentive est primordiale.
+
+.medium[
+Avec ces métadonnées, vous êtes en mesure de répondre aux questions suivantes : *Quelle est la signification du code "P18_POP0002" ? Quelle est son unité de mesure ? Qui a produit la donnée, quand ? Quelle est l'année de référence de l'indicateur ??*
+]
+
+![](fig/metadatainsee.PNG)
+
+
+
+---
+
 class: inverse middle center
 
-#  1. Information géographique ? 
+#  Information géographique ? 
+
+- Les composantes de l'information géographique 
+- Où en trouver ?
+- Formats de fichiers
 
 
 ---
 
 ## Définition générale
-
 
 .pull-left[
 L'information géographique peut être définie comme «**l'ensemble de la description d'un objet et de sa position géographique à la surface de la Terre.**» (*Association Française pour l'Information Géographique*).
@@ -215,7 +317,6 @@ grViz("digraph dot {
 
 ## Niveau géométrique
 
-
 Le **niveau géométrique** d'un objet géographique correspond à **sa forme et sa localisation** sur la surface terrestre, exprimés dans un **système de coordonnées** explicite.
    
 
@@ -223,9 +324,7 @@ Le **niveau géométrique** d'un objet géographique correspond à **sa forme et
 knitr::include_graphics('fig/geom.png')
 ```
 
-
 ---
-
 
 ## Niveau géométrique
 
@@ -284,7 +383,6 @@ Leur manipulation est simple et permet de puissants traitements.
 
 ---
 
-
 ## Niveau géométrique
 
 Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le raster et le vecteur. 
@@ -294,8 +392,6 @@ knitr::include_graphics('fig/raster_vecteur_2.png')
 ```
 
 ---
-
-
 
 ## Niveau topologique
 
@@ -308,7 +404,6 @@ knitr::include_graphics('fig/topologie.gif')
 
 
 ---
-
 
 ## Niveau sémantique
 
@@ -332,14 +427,9 @@ knitr::include_graphics('fig/attribut.gif')
 knitr::include_graphics('fig/attribut.png')
 ```
 
-
----
-<br><br><br><br><br><br><br>
-# 2. Méthodes d'acquisition de l'information géographique
-
 ---
 
-## Relevés de terrain
+## Acquisition de l'IG : Relevés de terrain
 
 Le **levé topographique avec théodolite** permet de relever précisément l'étendue et la topographie d'un territoire.        
 Le **relevé de point GPS** permet de collecter la localisation précise d'objet dans l'espace.</p>
@@ -350,10 +440,9 @@ knitr::include_graphics('fig/triangualtion.png')
 knitr::include_graphics('fig/gps.jpg')
 ```
 
-
 ---
 
-## Télédétection (image satellite)
+## Acquisition de l'IG : télédétection (image satellite)
 
 **La télédétection comprend l’ensemble des procédés et techniques qui permettent d'acquérir à distance des informations sur les objets terrestres**, en utilisant les propriétés des ondes électromagnétiques émises ou réfléchies par ces objets. La collecte de données de télédétection est réalisée par des avions ou par des satellites. 
 
@@ -367,8 +456,7 @@ knitr::include_graphics('fig/teledec.jpg')
 
 ---
 
-## Photogrammétrie (photo aérienne) et LiDAR
-
+## Acquisition de l'IG : Photogrammétrie et LiDAR
 
 **Ces deux technologies permettent de déterminer la forme, les dimensions, la position dans l'espace d'un objet**. Elles sont très utilisées pour les levés topographiques, mais aussi pour de nombreuses autres applications.
 
@@ -384,8 +472,7 @@ knitr::include_graphics('fig/photogrametrie.jpg')
 
 ---
 
-## Digitalisation
-
+## Acquisition de l'IG : Digitalisation
 
 **La digitalisation consiste à numériser des points à partir d'un support visuel**, c'est à dire à attribuer à chaque point des coordonnées X et Y dans un système quelconque. Cela revient le plus souvent à **créer des objets géographiques vectoriels à partir d'information géographique en mode RASTER (ex : photo aérienne)**. 
 
@@ -396,7 +483,7 @@ knitr::include_graphics('fig/digitalisation2.PNG')
 
 ---
 
-## Les recensements et enquêtes 
+## Acquisition de l'IG : Recensements et enquêtes 
 
 **Les recensements de population et les enquêtes** contiennent la plupart du temps une dimension géographique. (ex : département de naissance, commune d'habitation, pays d'émigration...). Elles sont d'ailleurs **généralement diffusées par entités (objets) géographiques (IRIS, commune, département, région...)**.
 
@@ -420,6 +507,15 @@ Il suffit de les mettre en relation avec les polygones des limites communales fr
 ]
 
 ---
+## Acquistion de l'IG : Géolocalisation / GPS
+
+Un exemple d'une application de suivi de bouquetins mis en oeuvre par le [Parc National du Mercantour](https://bouquetin.mercantour-parcnational.fr).
+
+```{r, echo = FALSE, out.width = "900px",fig.align='center'}
+knitr::include_graphics('fig/bouquetins.PNG')
+```
+
+---
 
 ## Et... le Geoweb !
 
@@ -436,24 +532,8 @@ knitr::include_graphics('fig/gps2.jpg')
 
 
 ---
-### Géolocalisation / GPS
 
-Un exemple d'une application de suivi de bouquetins mis en oeuvre par le [Parc National du Mercantour](https://bouquetin.mercantour-parcnational.fr).
-
-```{r, echo = FALSE, out.width = "900px",fig.align='center'}
-knitr::include_graphics('fig/bouquetins.PNG')
-```
-
----
-
-
-<br><br><br><br><br><br><br>
-# 3. Où trouver de l'information géographique ?
-
-
----
-
-## Les fournisseurs d'IG (en France)  
+## Les sources de l'IG (France)
 
 ### Un incontournable : l'Institut Géographique National
 
@@ -474,7 +554,7 @@ knitr::include_graphics('fig/bouquetins.PNG')
 
 ---
 
-## Les fournisseurs d'IG (au niveau international)  
+## Les sources de l'IG (international)
 
 - [Eurostat - GISCO](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data)
 - [Copernicus](https://land.copernicus.eu/)
@@ -486,7 +566,7 @@ knitr::include_graphics('fig/bouquetins.PNG')
 
 ---
 
-## OSM, la plateforme collaborative de l’IG libre
+## OpenStreetMap
 
 OpenStreetMap (OSM) est un projet de cartographie lancé en 2004 qui a pour but de **constituer une base de données géographiques libre du monde** en utilisant le système GPS et d'autres données libres et ouvertes. **Tout le monde peut y contribuer et/ou utiliser les données**.
 
@@ -545,12 +625,6 @@ knitr::include_graphics('fig/meta.png')
 Consulter attentivement les métadonnées associées aux données géographiques est primordial.
 ]
 
-
-
----
-
-<br><br><br><br><br><br><br>
-# 4. Les formats
 
 ---
 
@@ -643,15 +717,7 @@ L'INSEE et l'IGN utilisent des identifiants identiques pour qualifier les objets
 
 ---
 
-
-<br><br><br><br><br><br><br>
-# Des questions ?
-
-
-
----
-
-# Atelier
+## Atelier
 
 Partons en quête d'informations géographiques ! Nous tentons de retrouver :
 
@@ -692,22 +758,6 @@ knitr::include_graphics('fig/admin_express.PNG')
 
 ## Atelier / Solution (2)
 
-L'ONF répertorie [les ressources géographiques utiles](https://www.onf.fr/onf/connaitre-lonf/+/35::open-data-pour-mieux-partager-les-donnees-forestieres.html) pour la gestion forestière. Il s'agit de données produites par l'ONF, mais pas exclusivement. Un bon réflexe consiste à regarder ce qui est aussi disponible du côté de l'[IGN](https://geoservices.ign.fr/documentation/donnees/vecteur/bdforet).
-
-.pull-left[
-
-<img src="fig/ONF.png" width="425" />
-]
-
-.pull-right[
-<img src="fig/FORET.PNG" width="425" />
-]
-
-
----
-
-## Atelier / Solution (3)
-
 Il est au préalable important de définir la clé-valeur de l'objet OpenStreetMap désiré grâce au [wiki OpenSteetMap](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark). Ensuite d'effectuer la requête de l'objet désiré via l'API overpass-turbo. 
 
 .pull-left[
@@ -721,7 +771,7 @@ Il est au préalable important de définir la clé-valeur de l'objet OpenStreetM
 
 ---
 
-## Atelier / Solution (3)
+## Atelier / Solution (2)
 
 On peut ensuite exporter les résultats qui répondent à cette requête. 
 
@@ -732,7 +782,7 @@ knitr::include_graphics('fig/osm_3.PNG')
 
 ---
 
-## Atelier / Solution (4)
+## Atelier / Solution (3)
 
 L'institut Copernicus [met à disposition](https://land.copernicus.eu/local/urban-atlas) des couches géographiques pour 788 villes européennes (en 2018) de couverture du sol. On peut retracer l'évolution des modifications d'occupation du sol entre 2006 et 2018. Il faut se créer un compte pour accéder aux données.
 
@@ -743,55 +793,20 @@ knitr::include_graphics('fig/copernicus.PNG')
 
 ---
 
-
----
-
-## Les outils : Logiciels d'analyse de données
-
-Les logiciels d'analyse de données (R, SAS, SPSS, etc.) permettent de traiter, explorer et analyser les données disposant d'une dimension géographique, grâce à du code et des fonctions.
-
-
-```{r, echo = FALSE, out.width = "590px", fig.align='center'}
-knitr::include_graphics('fig/rstudio.png')
-```
-
----
-
-
-## Les outils :  Systèmes d'Informations Géographiques (SIG)
-
-Les SIG sont l'ensemble des outils informatiques permettant de **collecter, stocker, gérer, manipuler, analyser, modéliser et représenter de l’information géographique**. 
-
-.center[
-<img src="fig/qgis_style.png" width="480" />
-]
-
----
-
-## Les outils :  Logiciels de cartographie thématique
-
-Bien que les SIG permettent la réalisation de représentations cartographiques, il ne s'agit pas de leur principale fonctionnalité et réaliser une carte peut s'avérer fastidieux... Si l'on souhaite rapidement réaliser une carte qui respecte l'ensemble des règles de la cartographie, **il est plus simple d'utiliser un logiciel spécialisé**.
-
-
-```{r, echo = FALSE, out.width = "500px",fig.align='center'}
-knitr::include_graphics('fig/Magrit.png')
-```
-
----
-
 class: inverse middle center
 
 #  Immersion dans l'univers des SIG
 
+Historique du développement des SIG
+
+Principes et fonctionnalités
+
+Outils SIG
+
+Présentation de QGIS
+
 ---
 
-
-
-
-<br><br><br><br><br><br><br>
-# 1. Un peu d'histoire...
-
----
 ## Londres, 1854
 
 .pull-left[
@@ -862,11 +877,6 @@ Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le
 .pull-right[
 <img src="fig/sig_cholera.png" height="450" />
 ]
-
----
-
-<br><br><br><br><br><br><br>
-# 2. Systèmes d'Information Géographique ?
 
 ---
 
@@ -979,6 +989,7 @@ Ex : *Sélection d'objets géographiques ponctuels situés à une certaine dista
 .center[
 <img src="fig/logiciels.PNG" height="500" />
 ]
+
 ---
 
 ## Installez QGIS ! 
@@ -991,112 +1002,36 @@ Pour travailler depuis chez vous, nous vous conseillons d'installer QGIS sur vot
 
 ---
 
+## Les outils : Logiciels d'analyse de données
 
-<br><br><br><br><br><br><br>
-# 3. Premiers pas dans un SIG et découverte de QGIS
-
-Téléchargez les données sur [Moodle](https://moodle.u-paris.fr/course/view.php?id=6316)
----
-
-## Présentation des données à disposition - Couches géographiques
-
-Les couches géographiques vectorielles (points, lignes, surfaces) au format shapefile (. shp), auxquelles sont souvent associées des attributs (ex : capacité des salles de cinéma).
-
-.pull-left[
-.medium[
-
-**00_Équipements existants** 
-
-- Bibliothèques et médiathèques, conservatoires de musique, missions locales pour l'emploi, salles de cinéma, équipements sportifs, issues de la plateforme open data de la région Ile-de-France, contient les localisations des équipements cibles pour votre étude 
-
-- Hôtels à insecte, ruches, lieux d'écoute à oiseaux, issus de la plateforme collaborative OpenStreetMap. **Attention à la complétude des données** !
-
-**01_Maillages territoriaux** :  IRIS, communes, EPCI et départements de la Métropole du Grand
-Paris L’IRIS correspond au découpage territorial le plus fin en France. Ce sera aussi la brique
-territoriale que vous utiliserez pour définir le lieu d’implantation (favorisez l’implantation de
-l’équipement dans tel et tel IRIS…) IRIS…). Source : IGN en géographie du 1er janvier 2022).
-
-]
-]
-
-.pull-right[
-![](fig/infogeodata.PNG)]
+Les logiciels d'analyse de données (R, SAS, SPSS, etc.) permettent de traiter, explorer et analyser les données disposant d'une dimension géographique, grâce à du code et des fonctions.
 
 
----
-
-## Présentation des données à disposition - Couches géographiques
-
-D’autres couches géographiques sont disponibles. Elles serviront à définir des critères d’implantation pour optimiser l’implantation de l’équipement que vous aurez choisi..
-
-.medium[
-.pull-left[
-
-
-**BPE** : une sélection pour l’Ile de France de 44 équipements géolocalisés que nous avons jugé
-adapté au regard des équipements à implanter. Source INEE, Base Permanente des
-Équipements 2021
-
-**Grille 200 m** : Des données socio économiques dans des carreaux réguliers de 200 mètres de
-côté (le plus fin existant en France).
-
-**Couverture du sol** : les parcs et jardins, les zones majoritairement dédiées aux fleurs, les
-forêts et vergers de la Métropole du Grand Paris. Source : OpenStreetMap.
-
-**Hydrologie** : Le réseau hydrologique principal d’Ile de France (Seine, Marne). Source
-Plateforme Open Data de la Région Ile de France.
-
-]
-
-.pull-right[
-**Transports** : Le réseau routier principal et le réseau ferré en Ile de Franc e (source :
-OpenStreetMap ), ainsi que la localisation des arrêts de bus, de train, de tram et de métro
-(source : Plateforme Open Data de la Région Ile de France.
-
-![](fig/infogeodata.PNG)]
-]
-
-
-
----
-
-## Présentation des données à disposition - Données statistiques
-
-Fichiers au format Excel qui correspondent à des extraits pour la Métropole du Grand Paris des données officielles de
-l’INSEE à l’échelle des IRIS et à la commune. 
-
-.medium[
-.pull-left[
-**BPE** : Les mêmes équipements que ceux disponibles dans le dossier des couches
-géographiques, mais agrégés à l’échelle des IRIS et des communes (e.g. nombre de médecins
-généralistes par IRIS ou par commune). Source : INSEE, Base Permanente des équipements en
-2021.
-
-**Démo** : Population totale et structure par âge de la population. Source : INSEE.
-
-**Socio-éco** : Structure de l’emploi (chômage, type de salariat, catégories socioprofessionnelles)
-de la population de plus de 15 ans selon la situation d’activité  et niveaux de vie des ménages (pauvreté, revenus). Source : INSEE.
-
-A partir de ces données, vous pourrez être en mesure de calculer des ratios d'intérêt : taux de chômage, part de la population jeune / âgée...
-]
-
-.pull-right[
-![](fig/infogeostat.PNG)]
-]
+```{r, echo = FALSE, out.width = "590px", fig.align='center'}
+knitr::include_graphics('fig/rstudio.png')
+```
 
 ---
 
 
-## Présentation des données à disposition - Métadonnées
+## Les outils :  Systèmes d'Informations Géographiques (SIG)
 
-Les métadonnées apportent des éléments essentiels pour comprendre le contenu des ressources à votre disposition, leur origine et d'éventuelles informations sur leur utilisation. Leur consultation attentive est primordiale.
+Les SIG sont l'ensemble des outils informatiques permettant de **collecter, stocker, gérer, manipuler, analyser, modéliser et représenter de l’information géographique**. 
 
-.medium[
-Avec ces métadonnées, vous êtes en mesure de répondre aux questions suivantes : *Quelle est la signification du code "P18_POP0002" ? Quelle est son unité de mesure ? Qui a produit la donnée, quand ? Quelle est l'année de référence de l'indicateur ??*
+.center[
+<img src="fig/qgis_style.png" width="480" />
 ]
 
-![](fig/metadatainsee.PNG)
+---
 
+## Les outils :  Logiciels de cartographie thématique
+
+Bien que les SIG permettent la réalisation de représentations cartographiques, il ne s'agit pas de leur principale fonctionnalité et réaliser une carte peut s'avérer fastidieux... Si l'on souhaite rapidement réaliser une carte qui respecte l'ensemble des règles de la cartographie, **il est plus simple d'utiliser un logiciel spécialisé**.
+
+
+```{r, echo = FALSE, out.width = "500px",fig.align='center'}
+knitr::include_graphics('fig/Magrit.png')
+```
 
 ---
 
@@ -1108,6 +1043,7 @@ Avec ces métadonnées, vous êtes en mesure de répondre aux questions suivante
 .center[
 <img src="fig/logo_qgis.PNG" width="520" />
 ]
+
 ---
 
 ## Organiser son travail
@@ -1341,6 +1277,7 @@ Clic-droit sur la couche commune, puis propriétés. Cliquez ensuite sur "étiqu
 Faites apparaître sur l'espace d'affichage **le nom des communes** de votre espace d'étude.
 ]
 ]
+
 ---
 
 ## Gestion de l'affichage graphique
@@ -1372,14 +1309,81 @@ Attention néanmoins, il **manque beaucoup d'éléments** (titre, légende, sour
 ---
 
 
+
+
+
+class: inverse middle center
+
+#  Systèmes de coordonnées de référence, projections
+
+Qu'est-ce qu'une projection
+
+Gérer la projection de ses couches géographiques dans QGIS
+
 ---
 
-<br><br><br>
-.center[
-# Merci !
+
+---
+
+---
+
+class: inverse middle center
+
+#  Manipulations de base (vecteur)
+
+Import de données tabulaires
+
+Jointure attributaire
+
+Jointure spatiale
+
+Sélections attributaires
+
+---
 
 
-<br><br>
+
+---
+
+class: inverse middle center
+
+#  Géotraitements
+
+---
+
+---
+class: inverse middle center
+
+#  Mettre en page une carte
+
+Éléments fondamentaux sur l'habillage cartographique
+
+Créer une mise en page avec QGIS
+
+---
+
+
+---
+
+class: inverse middle center
+
+#  Cartographie thématique dans QGIS
+
+Éléments fondamentaux de sémiologie graphique
+
+Typologies (catégories)
+
+Cartes choroplèthes (valeurs graduées, discrétisations)
+
+
+
+---
+
+class: middle 
+
+# A vous de jouer ! 
+
+<center>
 
 .medium[
 Présentation réalisée avec [xaringan](https://github.com/yihui/xaringan) et [R Markdown](https://rmarkdown.rstudio.com/)
@@ -1387,6 +1391,8 @@ Présentation réalisée avec [xaringan](https://github.com/yihui/xaringan) et [
 *css* s'inspirant du thème [css rutgers](https://github.com/jvcasillas/ru_xaringan) et diverses adaptations proposées par [@oliviergimenez](https://github.com/oliviergimenez)
 ]
 ]
+
+</center>
 
 <br><br><br><br>
 
@@ -1402,3 +1408,6 @@ Présentation réalisée avec [xaringan](https://github.com/yihui/xaringan) et [
 | `r icons::fontawesome("r-project")` | [github.com/rysebaert/mta_geoteca/script.R](https://github.com/rysebaert/mta_geoteca/blob/main/script.R) 
 
 ]]
+
+
+---

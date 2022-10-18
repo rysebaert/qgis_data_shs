@@ -25,7 +25,7 @@
 
 :root {
   /* Fonts */
-  --text-font-family: 'Noto Sans';
+  --text-font-family: 'Helvetica';
   --text-font-is-google: 1;
   --text-font-family-fallback: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial;
   --text-font-base: sans-serif;
@@ -38,8 +38,8 @@
   --text-font-size: 1rem;
   --code-font-size: 0.9rem;
   --code-inline-font-size: 1em;
-  --header-h1-font-size: 4rem;
-  --header-h2-font-size: 2rem;
+  --header-h1-font-size: 3rem;
+  --header-h2-font-size: 1.5rem;
   --header-h3-font-size: 1.2rem;
 
   /* Colors */
@@ -141,7 +141,7 @@ a, a > code {
 }
 /* Two-column layout */
 .left-column {
-  width: 30%;
+  width: 40%;
   height: 92%;
   float: left;
 }
@@ -152,7 +152,7 @@ a, a > code {
   color: #000;
 }
 .right-column {
-  width: 65%;
+  width: 55%;
   float: right;
   padding-top: 1em;
 }
@@ -267,5 +267,4 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
     left: 0 !important;
   }
 }
-
 
