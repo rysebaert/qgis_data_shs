@@ -231,3 +231,27 @@ com_sel <- aggregate(iris_sel[,c(8:length(iris_sel))],
 com_sel <- merge(com_sel, st_set_geometry(com, NULL), by = "INSEE_COM", all.x = TRUE)
 com_sel <- com_sel[,c(1, c((ncol(com_sel) -1) : ncol(com_sel)), c(2:(ncol(com_sel)-2)))]
 export_xls(x_iris = iris_sel, x_com = com_sel, x_meta = meta, file = "LILLE_BPE_extrait")
+
+
+# Parcs et jardins
+bbox <- st_transform(com, 4326)
+bb <- st_bbox(bbox)
+
+library(osmdata)
+bb <- opq(bbox = bb)
+q3 <- add_osm_feature(opq = bb, key = 'leisure', value = "park")
+res3 <- osmdata_sf(q3)
+parc1 <- res3$osm_polygons
+parc2 <- res3$osm_multipolygons
+parc1 <- parc1[,c("osm_id", "name")]
+parc2 <- parc2[,c("osm_id", "name")]
+parc2 <- st_cast(parc2, "POLYGON")
+
+parc <- rbind(parc1, parc2)
+parc$tag <- "leisure = park"
+
+parc <- st_transform(parc, 2154)
+parc$area <- as.numeric(st_area(parc))
+parc <- st_transform(parc, 4326)
+
+st_write(parc, "parc_osm.shp")
