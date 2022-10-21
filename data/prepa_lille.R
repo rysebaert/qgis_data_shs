@@ -83,50 +83,32 @@ export_xls(x_iris = iris_sel, x_com = com_sel, x_meta = meta_sel, file = "demo_M
 
 
 ## Socio éco ----
-# Activité des résidents
-var <- c("IRIS", "LIBIRIS",  "COM", "LIBCOM",  "C18_POP15P_CS1", "C18_POP15P_CS2",
-         "C18_POP15P_CS3", "C18_POP15P_CS4", "C18_POP15P_CS5", "C18_POP15P_CS6",
-         "C18_POP15P_CS7", "C18_POP15P_CS8")
-
-iris_sel <- df[,var]
-iris_sel <- merge(iris_sel, st_set_geometry(com[,c(1,3)], NULL),  by.x = "COM",
-                  by.y = "INSEE_COM", all.x = TRUE)
-iris_sel <- iris_sel[,c(c(1:4), ncol(iris_sel), c(5:(ncol(iris_sel)-1)))]
-
-meta_sel <- meta[meta$VAR_ID %in% var,]
-meta_sel$DATE <- meta1[1,1]
-meta_sel$SOURCE <- meta1[2,1]
-
-
-df <- read_xlsx("base-ic-activite-residents-2018.xlsx", sheet = "IRIS",
-                skip = 5)
-df <- data.frame(df[df$COM %in% lib,])
-var <- c("IRIS", "P18_POP1564", "P18_POP1524", "P18_POP2554", "P18_POP5564",
-         "P18_ACT1564", "P18_ACT1524", "P18_ACT2554", "P18_ACT5564",
-         "P18_CHOM1564", "P18_CHOM1524", "P18_CHOM2554", "P18_CHOM5564",
-         "P18_ETUD1564", "P18_RETR1564", "P18_SAL15P", "P18_SAL15P_CDD",
-         "P18_SAL15P_INTERIM", "P18_SAL15P_EMPAID", "P18_SAL15P_APPR", "P18_NSAL15P_INDEP",
-         "P18_NSAL15P_EMPLOY")
-
-df <- df[,var]
-iris_sel <- merge(iris_sel, df,  by = "IRIS", all.x = TRUE)
-
-meta1 <- data.frame(read_xlsx("base-ic-activite-residents-2018.xlsx", sheet = "Variables", skip = 1))
-meta <- data.frame(read_xlsx("base-ic-activite-residents-2018.xlsx", sheet = "Variables", skip = 5))
-meta_tmp <- meta[meta$VAR_ID %in% var,]
-meta_tmp$DATE <- meta1[1,1]
-meta_tmp$SOURCE <- meta1[2,1]
-meta_tmp <- meta_tmp[-1,]
-meta_sel <- rbind(meta_sel, meta_tmp)
-
-
 # Revenu https://www.insee.fr/fr/statistiques/6049648
 df <- read_xlsx("BASE_TD_FILO_DEC_IRIS_2019.xlsx", sheet = "IRIS_DEC",
                 skip = 5)
 df <- data.frame(df[df$COM %in% lib,])
-var <- c("IRIS", "DEC_TP6019", "DEC_Q119", "DEC_MED19", "DEC_Q319")
+var <- c("IRIS", "DEC_MED19")
+iris_sel <- merge(iris_sel, st_set_geometry(com[,c(1,3)], NULL),  by.x = "COM",
+                  by.y = "INSEE_COM", all.x = TRUE)
 df <- df[,var]
 iris_sel <- merge(iris_sel, df,  by = "IRIS", all.x = TRUE)
+
+# Missing value for communes
+df <- read_xlsx("data/FILO2019_DEC_COM.xlsx", sheet = "ENSEMBLE", skip = 5)
+iris_sel <- merge(iris_sel, df[, c("CODGEO", "Q219")], by.x = "INSEE_COM", by.y = "CODGEO", all.x = TRUE)
+iris_sel$DEC_MED19 <- ifelse(is.na(iris_sel$DEC_MED19), iris_sel$Q219, iris$DEC_MED19)
+df <- read_xlsx("data/STAT/demo_METRO_LILLE.xlsx")
+iris_sel <- merge(iris_sel, df[, c("IRIS", "P18_POP")], by.x = "CODE_IRIS", by.y = "IRIS", all.x = TRUE)
+iris_sel$Q219 <- NULL
+iris_sel <- st_set_geometry(iris_sel, NULL)
+
+
+head(gym)
+OUT <- createWorkbook()
+addWorksheet(OUT, "IRIS")
+addWorksheet(OUT, "META")
+writeData(OUT, sheet = "IRIS", x = iris_sel)
+saveWorkbook(OUT, "data/STAT/data_INSEE.xlsx")
 
 meta1 <- data.frame(read_xlsx("BASE_TD_FILO_DEC_IRIS_2019.xlsx", sheet = "Variables", skip = 1))
 meta <- data.frame(read_xlsx("BASE_TD_FILO_DEC_IRIS_2019.xlsx", sheet = "Variables", skip = 5))
@@ -135,6 +117,10 @@ meta_tmp$DATE <- meta1[1,1]
 meta_tmp$SOURCE <- meta1[2,1]
 meta_tmp <- meta_tmp[-1,]
 meta_sel <- rbind(meta_sel, meta_tmp)
+
+
+
+
 
 # Agrégation communes
 com_sel <- aggregate(iris_sel[,c(6: c(length(iris_sel)-4))],

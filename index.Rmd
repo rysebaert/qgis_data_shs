@@ -22,7 +22,7 @@ editor_options:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE, crayon.enabled = TRUE)
-knitr::opts_chunk$set(cache = FALSE,
+knitr::opts_chunk$set(cache = TRUE,
                       fig.align='center',
                       message = FALSE,
                       warning = FALSE,
@@ -122,21 +122,22 @@ class: middle
 
 ## Atelier
 
-*Implantation d'un équipement dans la Métropole Européenne de Lille.* 
+*Implantation d'une piste de* ***roller-derby*** *dans la Métropole Européenne de Lille*
 
-.small[
+
+.medium[
 
 4 critères proposés :
-- Dans un IRIS jeune
-- Dans un IRIS à faible revenu
-- A une certaine distance d'une médiathèque existante
-- Non loin du réseau de transport
+- **Minimser les frais** : Un gymnase préexistant qui présente de bonnes prédispositions (taille, type d'activité).
+- **Favoriser l'inclusion sociale** : un territoire dont le revenu médian se situe sous la moyenne de la Métropole Européenne de Lille.  
+- **Optimisation de localisation** : Plus de 2000 m à vol d'oiseau d'un équipement existant.
+- **Ouvrir aux jeunes populations** : au moins 5 écoles dans un voisinage géographique de 1000m.
 ]
 ]
 
 .right-column[
 <center>
-<img src="fig/seance5BIS.PNG" width="600" />
+<img src="fig/rouler_glisser.PNG" width="400" />
 </center>
 ]
 
@@ -144,111 +145,156 @@ class: middle
 ---
 ## Télécharger les données de l'atelier : <a href="https://github.com/rysebaert/qgis_data_shs" target="_blank">https://github.com/rysebaert/qgis_data_shs</a>
 
-![](fig/git.PNG)
+Puis cliquez sur *data > data.zip > download*
 
-data > data.zip > download
+![](fig/git.PNG)
 
 --- 
 
+---
+## Données à disposition
+.left-column[
 
-## Présentation des données à disposition - Couches géographiques
-
-Les couches géographiques vectorielles (points, lignes, surfaces) au format shapefile (. shp), auxquelles sont souvent associées des attributs (ex : capacité des salles de cinéma).
-
-.pull-left[
 .medium[
 
-**00_Équipements existants** 
+### Découpages géographiques 
 
-- Bibliothèques et médiathèques, conservatoires de musique, missions locales pour l'emploi, salles de cinéma, équipements sportifs, issues de la plateforme open data de la région Ile-de-France, contient les localisations des équipements cibles pour votre étude 
+Le découpage géographique 2019 des IRIS et des communes (polygones) de la Métropole Européenne de Lille. (Source : <a href="https://geoservices.ign.fr/adminexpress" target="_blank">Admin Express, IGN</a>).
 
-- Hôtels à insecte, ruches, lieux d'écoute à oiseaux, issus de la plateforme collaborative OpenStreetMap. **Attention à la complétude des données** !
-
-**01_Maillages territoriaux** :  IRIS, communes, EPCI et départements de la Métropole du Grand
-Paris L’IRIS correspond au découpage territorial le plus fin en France. Ce sera aussi la brique
-territoriale que vous utiliserez pour définir le lieu d’implantation (favorisez l’implantation de
-l’équipement dans tel et tel IRIS…) IRIS…). Source : IGN en géographie du 1er janvier 2022).
+*Fichiers : [data/GEOM/IRIS_METRO_LILLE.shp et data/GEOM/COMMUNES_METRO_LILLE.shp]*
 
 ]
 ]
+.right-column[
+<center>
+```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE, fig.height=7}
+library(sf)
+library(mapsf)
+library(readxl)
 
-.pull-right[
-![](fig/infogeodata.PNG)]
+iris <- st_read("data/GEOM/TERRITOIRES/IRIS_METRO_LILLE.shp", quiet = TRUE)
+com <- st_read("data/GEOM/TERRITOIRES/COMMUNES_METRO_LILLE.shp", quiet = TRUE)
+gym <- st_read("data/GEOM/EQUIPEMENTS/gym_osm.shp", quiet = TRUE)
+school <- st_read("data/GEOM/EQUIPEMENTS/LILLE_ECOLE.shp", quiet = TRUE)
 
+df <- read_excel("data/STAT/data_INSEE.xlsx")
+df <- aggregate(df[,"P18_POP"], by = list(df$INSEE_COM), FUN = sum)
+com <- merge(com, df, by.x = "INSEE_COM", by.y = "Group.1", all.x = TRUE)
+com <- com[order(com$P18_POP, decreasing = TRUE),]
+gym <- st_transform(gym, 2154)
+school <- st_transform(school, 2154)
+
+mf_shadow(com)
+mf_map(iris, border = "white", col = "peachpuff", lwd = .25, add = TRUE)
+mf_map(com, col = NA, add = TRUE)
+mf_label(com[1:4,], var = "NOM_COM", halo = TRUE)
+mf_scale(size = 5)
+mf_credits("Ronan Ysebaert, Violaine Jurie, 2022\nSource: IGN, 2022")
+mf_title("Contour des IRIS et des communes")
+
+```
+</center>
+
+]
 
 ---
-
-## Présentation des données à disposition - Couches géographiques
-
-D’autres couches géographiques sont disponibles. Elles serviront à définir des critères d’implantation pour optimiser l’implantation de l’équipement que vous aurez choisi..
+## Données à disposition
+.left-column[
 
 .medium[
-.pull-left[
 
+### Gymnases  
 
-**BPE** : une sélection pour l’Ile de France de 44 équipements géolocalisés que nous avons jugé
-adapté au regard des équipements à implanter. Source INEE, Base Permanente des
-Équipements 2021
+L'emprise géographique des gymnases (polygones) et quelques attributs associés : surface, nom, type de sport pratiqués dans le gymnase (Source : <a href="https://www.openstreetmap.org/#map=11/50.6273/3.0563" target="_blank">OpenStreetMap</a>, librairie R<a href="https://cran.r-project.org/web/packages/osmdata/index.html" target="_blank">`osmdata`</a>)
 
-**Grille 200 m** : Des données socio économiques dans des carreaux réguliers de 200 mètres de
-côté (le plus fin existant en France).
-
-**Couverture du sol** : les parcs et jardins, les zones majoritairement dédiées aux fleurs, les
-forêts et vergers de la Métropole du Grand Paris. Source : OpenStreetMap.
-
-**Hydrologie** : Le réseau hydrologique principal d’Ile de France (Seine, Marne). Source
-Plateforme Open Data de la Région Ile de France.
+*Fichier : [data/GEOM/gym_osm.shp]*
 
 ]
-
-.pull-right[
-**Transports** : Le réseau routier principal et le réseau ferré en Ile de Franc e (source :
-OpenStreetMap ), ainsi que la localisation des arrêts de bus, de train, de tram et de métro
-(source : Plateforme Open Data de la Région Ile de France.
-
-![](fig/infogeodata.PNG)]
 ]
+.right-column[
+<center>
+```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE, fig.height=7, fig.align='center'}
 
-
-
----
-
-## Présentation des données à disposition - Données statistiques
-
-Fichiers au format Excel qui correspondent à des extraits pour la Métropole du Grand Paris des données officielles de
-l’INSEE à l’échelle des IRIS et à la commune. 
-
-.medium[
-.pull-left[
-**BPE** : Les mêmes équipements que ceux disponibles dans le dossier des couches
-géographiques, mais agrégés à l’échelle des IRIS et des communes (e.g. nombre de médecins
-généralistes par IRIS ou par commune). Source : INSEE, Base Permanente des équipements en
-2021.
-
-**Démo** : Population totale et structure par âge de la population. Source : INSEE.
-
-**Socio-éco** : Structure de l’emploi (chômage, type de salariat, catégories socioprofessionnelles)
-de la population de plus de 15 ans selon la situation d’activité  et niveaux de vie des ménages (pauvreté, revenus). Source : INSEE.
-
-A partir de ces données, vous pourrez être en mesure de calculer des ratios d'intérêt : taux de chômage, part de la population jeune / âgée...
-]
-
-.pull-right[
-![](fig/infogeostat.PNG)]
+mf_shadow(com)
+mf_map(com, col = "peachpuff", add = TRUE)
+mf_map(gym, col = "lightcoral", border = "lightcoral", add = TRUE)
+mf_map(st_centroid(gym[gym$rllr_sk == 1,], 100), col = "red", border = "red", cex = 2, add = TRUE)
+mf_legend(type = "typo", val = c("Gymnases", "Activité roller derby identifiée"), 
+          pal = c("lightcoral", "red"), title = "", pos = "topleft")
+mf_label(com[1:4,], var = "NOM_COM", halo = TRUE)
+mf_scale(size = 5)
+mf_credits("Ronan Ysebaert, Violaine Jurie, 2022\nSource: (c) OpenStreetMap et contributeurs, 2022")
+mf_title("Emprise des gymnases")
+```
+</center>
 ]
 
 ---
 
-
-## Présentation des données à disposition - Métadonnées
-
-Les métadonnées apportent des éléments essentiels pour comprendre le contenu des ressources à votre disposition, leur origine et d'éventuelles informations sur leur utilisation. Leur consultation attentive est primordiale.
+## Données à disposition
+.left-column[
 
 .medium[
-Avec ces métadonnées, vous êtes en mesure de répondre aux questions suivantes : *Quelle est la signification du code "P18_POP0002" ? Quelle est son unité de mesure ? Qui a produit la donnée, quand ? Quelle est l'année de référence de l'indicateur ??*
+
+### Écoles élémentaires
+
+La localisation (points) des écoles élémentaires en 2018 (Source : <a href="https://www.insee.fr/fr/statistiques/3568638?sommaire=3568656
+" target="_blank">Dénombrement des équipements en 2021, INSEE</a>)
+
+*Fichier : [data/GEOM/LILLE_ECOLE.shp]*
+
+]
+]
+.right-column[
+<center>
+```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE, fig.height=7, fig.align='center'}
+mf_shadow(com)
+mf_map(com, col = "peachpuff", add = TRUE)
+mf_map(school, col = "blue", border = "blue", add = TRUE)
+mf_label(com[1:4,], var = "NOM_COM", halo = TRUE)
+mf_scale(size = 5)
+mf_credits("Ronan Ysebaert, Violaine Jurie, 2022\nSource : Base Permanente des Équipements (INSEE), 2022")
+mf_title("Localisation des écoles primaires")
+```
+</center>
 ]
 
-![](fig/metadatainsee.PNG)
+
+---
+
+## Données à disposition
+.left-column[
+
+.medium[
+
+### Revenu de la population
+
+Le revenu médian de la population en 2019 à l'échelle des IRIS / Communes. (Source : Source : <a href="https://www.insee.fr/fr/statistiques/6049648
+" target="_blank">Revenu, pauvreté et niveau de vie en 2019 (Iris), INSEE</a>)
+
+*Fichier : [data/STAT/data_INSEE.xlsx]*
+
+]
+]
+.right-column[
+
+<center>
+```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE, fig.height=7, fig.align='center'}
+df <- read_excel("data/STAT/data_INSEE.xlsx")
+iris <- merge(iris, df[,c("CODE_IRIS", "DEC_MED19")], by.x = "CODE_IRIS", by.y = "CODE_IRIS", all.x = TRUE)
+
+mf_shadow(com)
+mf_map(x = iris, var = "DEC_MED19", type = "choro", pal = "RdBu", breaks = "quantile",
+       nbreaks = 8, border = NA, leg_val_rnd = -2, leg_title = "Revenu médian 2019",
+       add = TRUE)
+mf_map(com, col = NA, add = TRUE)
+mf_label(com[1:4,], var = "NOM_COM", halo = TRUE)
+mf_title("Revenus")
+mf_scale(size = 5)
+mf_credits("Ronan Ysebaert, Violaine Jurie, 2022\nSource : INSEE, 2022")
+```
+</center>
+]
 
 
 
@@ -289,7 +335,7 @@ La force des données géographiques est de pouvoir les croiser entre elles lors
 
 ## Les composantes de l'information géographique
 
-```{r, echo = FALSE, out.width = "900px"}
+```{r, echo = FALSE, out.width = "900px", fig.align='center'}
 
 library(DiagrammeR)
 
