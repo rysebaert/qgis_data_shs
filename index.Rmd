@@ -316,7 +316,7 @@ Formats de fichiers
 ## Information Géographique ? 
 
 .pull-left[
-L'information géographique peut être définie comme «**l'ensemble de la description d'un objet et de sa position géographique à la surface de la Terre.**» (*Association Française pour l'Information Géographique*).
+L'information géographique peut être définie comme «**l'ensemble de la description d'un objet et de sa position géographique à la surface de la Terre.**» (*Association Française pour l'Information Géographique*). C'est une information **localisée dans l'espace**.
 
 Toute information contenant une référence à un localisation, qu’il s’agisse d’un **point** précis du territoire, d’**une ligne** (route, frontière, cours d'eau) ou encore d’**une surface** (aire protégée, zone d’emploi, commune...) **a une dimension géographique**.
 
@@ -324,9 +324,7 @@ Entre **60 et 80%** de l’information que nous traitons possède une dimension 
 ]
 
 .pull-right[
-Pour qu'une information soit considérée comme géographique, celle-ci doit précisément être **localisée dans l'espace**.    
-
-La force des données géographiques est de pouvoir les croiser entre elles lorsqu'elles partagent un même socle géographique. On crée ainsi de la donnée à valeur ajoutée préparant la prise de décision (*Ministère de la Transition écologique et de la Cohésion des Territoires, 2019*).
+La force des données géographiques est de **pouvoir les croiser** entre elles lorsqu'elles partagent un même socle géographique. On crée ainsi de la **donnée à valeur ajoutée** préparant la prise de décision (*Ministère de la Transition écologique et de la Cohésion des Territoires, 2019*).
 
 ]
 
@@ -479,110 +477,6 @@ knitr::include_graphics('fig/attribut.gif')
 knitr::include_graphics('fig/attribut.png')
 ```
 
----
-
-## Acquisition de l'IG : Relevés de terrain
-
-Le **levé topographique avec théodolite** permet de relever précisément l'étendue et la topographie d'un territoire.        
-Le **relevé de point GPS** permet de collecter la localisation précise d'objet dans l'espace.</p>
-
-```{r image_grobs, fig.show = "hold", out.width = "40%", fig.align = "default"}
-
-knitr::include_graphics('fig/triangualtion.png')
-knitr::include_graphics('fig/gps.jpg')
-```
-
----
-
-## Acquisition de l'IG : télédétection (image satellite)
-
-**La télédétection comprend l’ensemble des procédés et techniques qui permettent d'acquérir à distance des informations sur les objets terrestres**, en utilisant les propriétés des ondes électromagnétiques émises ou réfléchies par ces objets. La collecte de données de télédétection est réalisée par des avions ou par des satellites. 
-
-**Les informations géographiques collectées par télédétection sont stockées en format RASTER**. Le traitement de ce genre de données nécessite l'**utilisation de logiciels spécialisés (Envi, Erdas, Idrisi...).**.    
-
-
-```{r, echo = FALSE, out.width = "830px",fig.align='center'}
-knitr::include_graphics('fig/teledec.jpg')
-```
-
-
----
-
-## Acquisition de l'IG : Photogrammétrie et LiDAR
-
-**Ces deux technologies permettent de déterminer la forme, les dimensions, la position dans l'espace d'un objet**. Elles sont très utilisées pour les levés topographiques, mais aussi pour de nombreuses autres applications.
-
-
-```{r, echo = FALSE, out.width = "800px",fig.align='center'}
-knitr::include_graphics('fig/photogrametrie.jpg')
-```
-
-<p style="line-height:1.3;font-size:10pt;">La photogrammétrie est une technologie passive. Elle est basée sur des images transformées de la 2D en modèles cartométriques 3D. Elle utilise le même principe que les yeux humains pour établir une perception de profondeur. La limitation de la photogrammétrie est qu’elle ne peut générer que des points basés sur ce que le capteur de la caméra peut voir.</p>      
-
-<p style="line-height:1.3;font-size:10pt;">Lidar qui signifie Light Detection and Ranging est une technologie basée sur des faisceaux laser. Il tire au laser et mesure le temps qu’il faut pour que la lumière revienne. C’est ce qu’on appelle un capteur actif car il émet sa source d’énergie plutôt que de détecter l’énergie émise par les objets au sol.</p>
-
-
----
-
-## Acquisition de l'IG : Digitalisation
-
-**La digitalisation consiste à numériser des points à partir d'un support visuel**, c'est à dire à attribuer à chaque point des coordonnées X et Y dans un système quelconque. Cela revient le plus souvent à **créer des objets géographiques vectoriels à partir d'information géographique en mode RASTER (ex : photo aérienne)**. 
-
-```{r, echo = FALSE, out.width = "930px",fig.align='center'}
-knitr::include_graphics('fig/digitalisation2.PNG')
-```
-
-
----
-
-## Acquisition de l'IG : Recensements et enquêtes 
-
-**Les recensements de population et les enquêtes** contiennent la plupart du temps une dimension géographique. (ex : département de naissance, commune d'habitation, pays d'émigration...). Elles sont d'ailleurs **généralement diffusées par entités (objets) géographiques (IRIS, commune, département, région...)**.
-
-
-.pull-left[
-
-<div class="centered">
-<img src="fig/carte.png" width="450" />
-</div>
-
-<p style="line-height:1.3;font-size:13pt;">Les données issues de recensements et d'enquêtes sont le plus souvent des données attributaires d'objets géographiques !</p>
-
-]
-
-.pull-right[
-
-Cette carte représente des données issues du RGP 2006 et fournies à l'échelle des communes françaises. 
-
-Il suffit de les mettre en relation avec les polygones des limites communales françaises pour les transformer en données attributaires d'objets géographiques.
-
-]
-
----
-## Acquistion de l'IG : Géolocalisation / GPS
-
-Un exemple d'une application de suivi de bouquetins mis en oeuvre par le <a href="https://bouquetin.mercantour-parcnational.fr" target="_blank">Parc National du Mercantour</a>
-
-
-```{r, echo = FALSE, out.width = "900px",fig.align='center'}
-knitr::include_graphics('fig/bouquetins.PNG')
-```
-
----
-
-## Et... le Geoweb !
-
-Le mot **Geoweb désigne le mélange du Web 2.0 (ou web participatif) avec tout ce qui est lié à l'information géographique**.
-
-Les **SIG grand public** (ex : OpenStreetMap), les **bases de données participatives** ayant une dimension géographique (ex : Le boin coin) et les **applications** utilisant la géolocalisation (ex : Twitter) sont des outils du Geoweb.
-
-```{r image_grobs2, fig.show = "hold", out.width = "45%", fig.align = "default"}
-
-knitr::include_graphics('fig/cat-map.png')
-knitr::include_graphics('fig/gps2.jpg')
-
-```
-
 
 ---
 
@@ -619,7 +513,7 @@ knitr::include_graphics('fig/gps2.jpg')
 
 ---
 
-## OpenStreetMap
+## OpenStreetMap : La plateforme collaborative de l'IG libre
 
 OpenStreetMap (OSM) est un projet de cartographie lancé en 2004 qui a pour but de **constituer une base de données géographiques libre du monde** en utilisant le système GPS et d'autres données libres et ouvertes. **Tout le monde peut y contribuer et/ou utiliser les données**.
 
@@ -630,13 +524,42 @@ knitr::include_graphics('fig/osm.png')
 
 ---
 
-## OSM, la plateforme collaborative de l’IG libre
+## OpenStreetMap : La plateforme collaborative de l'IG libre
 
 ```{r, echo = FALSE, out.width = "800px",fig.align='center'}
 knitr::include_graphics('fig/barsOSM.png')
 ```
 
 <p style="line-height:1.3;font-size:11pt;font-style:italic;text-align:center;">Densité des bars à Paris avec des données OSM ([T.Giraud, R Geomatic](https://rgeomatic.hypotheses.org/1244) ) </p>
+
+---
+
+## OpenStreetMap : La plateforme collaborative de l'IG libre
+
+Il est au préalable important de définir la clé-valeur de l'objet OpenStreetMap désiré grâce au [wiki OpenSteetMap](https://wiki.openstreetmap.org/wiki/FR:Tag:leisure%3Dsports_centre). Ensuite d'effectuer la requête de l'objet désiré via l'[API overpass-turbo](https://overpass-turbo.eu/). 
+
+.pull-left[
+
+<img src="fig/osm_1.PNG" width="425" />
+]
+
+.pull-right[
+<img src="fig/osm_2.PNG" width="425" />
+]
+
+Les requêtes sont envoyées sur un serveur mis à disposition gratuitement. Les requêtes doivent être raisonnables, e.g. pas sur l'ensemble du Monde. 
+
+---
+
+## OpenStreetMap : La plateforme collaborative de l'IG libre
+
+On peut ensuite exporter les résultats qui répondent à cette requête. 
+
+```{r, echo = FALSE, out.width = "800px",fig.align='center'}
+knitr::include_graphics('fig/osm_3.PNG')
+```
+
+Les données OSM sont très hétérogènes par leur qualité (géométries, attributs, complétude des données). L'usage raisonné de ces données implique des enquêtes pour vérifier l'information, et compléter la base OSM le cas échéant. 
 
 ---
 
@@ -765,49 +688,6 @@ L'INSEE et l'IGN utilisent des identifiants identiques pour qualifier les objets
 ]
 
 <p style="font-size:10pt;line-height:1.3;font-style:italic;">Dans les fichiers de données INSEE (à gauche) l'attribut qui sert d'identifiant unique pour les communes est nommé CODGEO (code INSEE des communes). La couche géographique des communes fournies par l'IGN (à droite), comportent le même identifiant unique nommé INSEE_COM** </p>
-
-
----
-
-## Requêter des données sur OpenStreetMap
-
-.pull-left[
-
-[La dernière version "officielle" du découpage administratif du territoire français](https://geoservices.ign.fr/adminexpress) : Admin express est dédié à cela. Pour cela il faut passer un peu de temps dans l'outil d'accès aux géoservices de l'IGN pour s'y retrouver ! 
-
-Cette ressource permet d'accéder à tous les découpages géographiques officiels, depuis la commune à la région, et à différentes versions de découpage géographique.
-]
-
-.pull-right[
-```{r, echo = FALSE, out.width = "800px",fig.align='center'}
-knitr::include_graphics('fig/admin_express.PNG')
-```
-]
-
----
-
-## Requêter des données sur OpenStreetMap
-
-Il est au préalable important de définir la clé-valeur de l'objet OpenStreetMap désiré grâce au [wiki OpenSteetMap](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark). Ensuite d'effectuer la requête de l'objet désiré via l'API overpass-turbo. 
-
-.pull-left[
-
-<img src="fig/osm_1.PNG" width="425" />
-]
-
-.pull-right[
-<img src="fig/osm_2.PNG" width="425" />
-]
-
----
-
-## Requêter des données sur OpenStreetMap
-
-On peut ensuite exporter les résultats qui répondent à cette requête. 
-
-```{r, echo = FALSE, out.width = "800px",fig.align='center'}
-knitr::include_graphics('fig/osm_3.PNG')
-```
 
 
 ---
@@ -1111,10 +991,50 @@ Choisissez la couche *IRIS* (Couches Géo > 01_Découpages_territoriaux)
 ]
 
 .right-column[
-![](fig/importvecteur.PNG)
+![](fig/proj/intro_1_ajout_vecteur.PNG)
 
 .center[
-Importez la couche **IRIS** dans QGIS
+Importez la couche **COMMUNES_METRO_LILLE** et **IRIS_METRO_LILLE** dans QGIS
+]
+]
+
+---
+
+.left-column[
+## Importer une couche vectorielle
+
+**Pour importer des données facilement**, utilisez la barre d'outil latérale.
+
+Choisissez l'icône **en fonction du type de données à importer** (Vecteur, raster, csv...).
+
+Choisissez la couche *IRIS* (Couches Géo > 01_Découpages_territoriaux)
+]
+
+.right-column[
+![](fig/proj/intro_2.PNG)
+
+.center[
+Importez la couche **COMMUNES_METRO_LILLE** et **IRIS_METRO_LILLE** dans QGIS
+]
+]
+
+
+---
+
+.left-column[
+## Sélection par attributs
+
+Il est possible de sélectionner les objets géographiques à partir de leur **table attributaire**
+
+1. Clic droit sur la couche IRIS
+2. Ouvrir la table d'attribut
+
+]
+
+.right-column[
+![](fig/proj/intro_3.PNG)
+.center[
+Sélectionnez les IRIS de **Lille**
 ]
 ]
 
@@ -1127,36 +1047,14 @@ Il est possible de sélectionner les objets géographiques à partir de leur **t
 
 1. Clic droit sur la couche IRIS
 2. Ouvrir la table d'attribut
-3. Sélectionner les entités en utilisant une expression 
+3. Ordonner par nom de commune
 ]
 
 
 .right-column[
-![](fig/selection_par_attribut.PNG)
+![](fig/proj/intro_4_selec_attr.PNG)
 .center[
-Sélectionnez uniquement les IRIS de **votre espace d'étude**
-]
-]
-
----
-
-.left-column[
-## Sélection par attributs
-
-Il est possible de sélectionner les objets géographiques à partir de leur **table attributaire**
-
-
-1. Clic droit sur la couche IRIS
-2. Ouvrir la table d'attribut
-3. Sélectionner les entités en utilisant une expression 
-4. Choisir son espace d'étude (champ LIB_EPCI)
-]
-
-.right-column[
-![](fig/selection_par_attribut_2.PNG)
-
-.center[
-Sélectionnez uniquement les IRIS de **votre espace d'étude**
+Sélectionnez les IRIS de **Lille**
 ]
 ]
 
@@ -1166,17 +1064,17 @@ Sélectionnez uniquement les IRIS de **votre espace d'étude**
 ## Export d'une sélection
 
 
-1. Suite à la précédente sélection, clic droit sur la couche IRIS
-2. Sélectionner "Exporter, sauvegarder les entités sous...
-3. Sélectionner **l'emplacement de votre dossier de travail** et **nommer** la couche. Choisissez un format shapefile ou GEOJSON. 
-4. Sélectionner l'option **N'enregistrer que les entités sélectionnées**
+1. Clic droit sur la couche IRIS
+2. Ouvrir la table d'attribut
+3. Ordonner par nom de commune
+4. Sélectionner les IRIS de **Lille**.
 
 ]
 
 .right-column[
 ![](fig/export_sel.PNG)
 .center[
-**Exportez les IRIS** qui composent votre espace d'étude
+Clic droit sur IRIS > Exporter uniquement les données sélectionnées > déposer dans le dossier "tmp" au format geojson. 
 ]
 ]
 
