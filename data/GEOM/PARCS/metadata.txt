@@ -1,7 +1,0 @@
-### COUCHES COUVERTURE DU SOL ########
-
-1. parc_osm : Parcs et jardins
-Objets géographiques répondant aux requêtes leisure = park
-Extrait avec un script R en octobre 2022 depuis OpenStreetMap  (https://www.openstreetmap.org/)
-
-Objets géographiques situés dans l'emprise géographique (+ 5km autour) de la Métropole Européenne de Lille 

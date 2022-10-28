@@ -172,10 +172,10 @@ library(sf)
 library(mapsf)
 library(readxl)
 
-iris <- st_read("data/GEOM/TERRITOIRES/IRIS_METRO_LILLE.shp", quiet = TRUE)
-com <- st_read("data/GEOM/TERRITOIRES/COMMUNES_METRO_LILLE.shp", quiet = TRUE)
-gym <- st_read("data/GEOM/EQUIPEMENTS/gym_osm.shp", quiet = TRUE)
-school <- st_read("data/GEOM/EQUIPEMENTS/LILLE_ECOLE.shp", quiet = TRUE)
+iris <- st_read("data/GEOM/IRIS_METRO_LILLE.shp", quiet = TRUE)
+com <- st_read("data/GEOM/COMMUNES_METRO_LILLE.shp", quiet = TRUE)
+gym <- st_read("data/GEOM/gym_osm.shp", quiet = TRUE)
+school <- st_read("data/GEOM/LILLE_ECOLE.shp", quiet = TRUE)
 
 df <- read_excel("data/STAT/data_INSEE.xlsx")
 df <- aggregate(df[,"P18_POP"], by = list(df$INSEE_COM), FUN = sum)
@@ -929,30 +929,31 @@ knitr::include_graphics('fig/Magrit.png')
 
 ---
 
-## Organiser son travail
+## Organiser son projet
 
-L'utilisation d'un SIG nécessite de la **rigueur méthodologique**, car l'on se retrouve vite submergé de fichiers. Vous devez donc :
+L'utilisation d'un SIG nécessite de la **rigueur méthodologique**, car l'on se retrouve vite submergé de fichiers. Vous devez veiller à :
 
-- Travailler en **projet**.
+.left-column[
+<img src="fig/orgaprojet.png" height="200" />
+]
+
+.right-column[
+
+- Travailler en **projet** (projet / enregistrer), à la racine du dossier contenant les données : .qgz ou .qmd dans QGIS. Un projet préserve l'ordre d'apparition des couches géographiques chargées dans le projet et leur style graphique associé. 
 
 - Utiliser des **intitulés de fichiers** intelligibles.
 
-- Ranger vos données en utilisant des **sous-répertoires**.
+- Ordonner votre travail en utilisant des **sous-répertoires**.
+   * **GEOM** : les données géographiques d'entrée, à ne pas modifier.
+   * **STAT** : les données statistiques d'entrée, à ne pas modifier.
+   * **tmp** : les traitements intermédiaires.  
+   * **criteres** : les couches géographiques consolidées du projet. 
+   * **fig** : Un dossier dédié à l'export des images et figures issues de votre projet.   
+   
+- Ne pas modifier les noms des couches géographiques et des répertoires de travail en cours de projet pour ne pas altérer le fichier projet.
 
-- Stocker votre projet **sur une clef USB** (et faire une copie). 
-
-
-Commencez par **créer votre répertoire de travail** (sur une clé USB de préférence). Téléchargez les données du Moodle et décompressez-les dans votre répertoire de travail. **Ouvrez Qgis et créez un nouveau projet**. *(Projet/enregister/)*
-
----
-
-## Organiser son projet
-
-Dans votre répertoire de travail, créez une architecture de sous-répertoires qui vous paraît cohérente et dans laquelle vous vous y retrouverez facilement. Ne gardez que les fichiers qui vous seront utiles !</p>
-
-.center[
-<img src="fig/orgaprojet.png" height="450" />
 ]
+
 
 ---
 .left-column[
@@ -983,18 +984,18 @@ Dans votre répertoire de travail, créez une architecture de sous-répertoires 
 .left-column[
 ## Importer une couche vectorielle
 
-**Pour importer des données facilement**, utilisez la barre d'outil latérale.
+**Pour importer des données**, utilisez la barre d'outil latérale ou la barre d'outils supérieure.
 
-Choisissez l'icône **en fonction du type de données à importer** (Vecteur, raster, csv...).
+Choisissez l'icône **en fonction du type de données à importer** (vecteur, raster, csv...).
 
-Choisissez la couche *IRIS* (Couches Géo > 01_Découpages_territoriaux)
+Ces couches sont contenues dans le dossier **GEOM** 
 ]
 
 .right-column[
 ![](fig/proj/intro_1_ajout_vecteur.PNG)
 
 .center[
-Importez la couche **COMMUNES_METRO_LILLE** et **IRIS_METRO_LILLE** dans QGIS
+Importez la couche **COMMUNES_METRO_LILLE.shp** et **IRIS_METRO_LILLE.shp** 
 ]
 ]
 
@@ -1003,38 +1004,52 @@ Importez la couche **COMMUNES_METRO_LILLE** et **IRIS_METRO_LILLE** dans QGIS
 .left-column[
 ## Importer une couche vectorielle
 
-**Pour importer des données facilement**, utilisez la barre d'outil latérale.
+**Pour importer des données**, utilisez la barre d'outil latérale ou la barre d'outils supérieure.
 
-Choisissez l'icône **en fonction du type de données à importer** (Vecteur, raster, csv...).
+Choisissez l'icône **en fonction du type de données à importer** (vecteur, raster, csv...).
 
-Choisissez la couche *IRIS* (Couches Géo > 01_Découpages_territoriaux)
+Ces couches sont contenues dans le dossier **GEOM** 
 ]
 
 .right-column[
 ![](fig/proj/intro_2.PNG)
 
 .center[
-Importez la couche **COMMUNES_METRO_LILLE** et **IRIS_METRO_LILLE** dans QGIS
+Importez la couche **COMMUNES_METRO_LILLE.shp** et **IRIS_METRO_LILLE.shp** 
 ]
 ]
 
 
 ---
-
 .left-column[
-## Sélection par attributs
+## Sélection sur le canevas de la carte
 
-Il est possible de sélectionner les objets géographiques à partir de leur **table attributaire**
+Cette option permet de sélectionner directement sur la carte des objets géographiques
 
-1. Clic droit sur la couche IRIS
-2. Ouvrir la table d'attribut
+<img src="fig/proj/intro_3_selec.PNG" height="200" />
 
 ]
 
 .right-column[
-![](fig/proj/intro_3.PNG)
+![](fig/proj/intro_3_selec2.PNG)
+]
+
+---
+
+.left-column[
+## Sélection par attributs
+
+Il est possible de sélectionner les objets géographiques à partir de leur **table attributaire**
+
+1. Clic droit sur la couche IRIS
+2. Ouvrir la table d'attributs
+
+]
+
+.right-column[
+![](fig/proj/intro_4.PNG)
 .center[
-Sélectionnez les IRIS de **Lille**
+Clic droit sur la couche > Ouvrir la Table d'Attributs
 ]
 ]
 
@@ -1046,13 +1061,13 @@ Sélectionnez les IRIS de **Lille**
 Il est possible de sélectionner les objets géographiques à partir de leur **table attributaire**
 
 1. Clic droit sur la couche IRIS
-2. Ouvrir la table d'attribut
+2. Ouvrir la table d'attributs
 3. Ordonner par nom de commune
 ]
 
 
 .right-column[
-![](fig/proj/intro_4_selec_attr.PNG)
+![](fig/proj/intro_5_selec_attr.PNG)
 .center[
 Sélectionnez les IRIS de **Lille**
 ]
@@ -1060,64 +1075,22 @@ Sélectionnez les IRIS de **Lille**
 
 
 ---
-.left-column[
 ## Export d'une sélection
 
+.pull-left[
 
-1. Clic droit sur la couche IRIS
-2. Ouvrir la table d'attribut
-3. Ordonner par nom de commune
-4. Sélectionner les IRIS de **Lille**.
+Clic droit sur IRIS > Exporter > Sauvegarder les entités sélectionnées sous...  
 
-]
+Enregistrer la sélection que vous appelerez *lille_iris* dans le dossier "tmp" au format *geojson*. 
 
-.right-column[
-![](fig/export_sel.PNG)
-.center[
-Clic droit sur IRIS > Exporter uniquement les données sélectionnées > déposer dans le dossier "tmp" au format geojson. 
-]
-]
-
----
-.left-column[
-## Gestion de la projection
-
-**La projection** d'une couche géographique **est indiquée dans ses propriétés générales**.
-
-.medium[
-Les couches géographiques s'affichent automatiquement dans le système de projection de la première couche géographique importée.
-
-Pour modifier le système de projection, il suffit d'enregistrer une nouvelle version de la couche géographique concernée dans le système de projection souhaité (clic-droit sur la couche, enregistrez-sous...).
-]
-]
-
-.right-column[
-
-![](fig/projct_qgis.PNG)
-
-Importez la couche géographique contenant vos **équipements d'intérêt**, observez sa **projection** et enregistrez la dans la même projection que celle de vos **IRIS**.
+Supprimer ensuite cette couche de la liste des couches (clic droit sur la couche > supprimer la couche)
 
 ]
 
----
-
-.left-column[
-
-## Quelques options utiles
-
-**Pour sélectionner et zoomer**, utilisez les différentes fonctionnalité de la barre d'outils.
-
-.medium[
-Les icônes *loupe* permettent de **zoomer/dé-zoomer**. Il est également possible d'utiliser la roulette de votre souris. **L'outil de sélection offre plusieurs solutions** : sélection par clic, par polygone, à main levée...
-
-]
+.pull-right[
+![](fig/proj/intro_5_selec_attr2.PNG)
 ]
 
-.right-column[
-.center[
-![](fig/qgis_4.png)
-]
-]
 
 ---
 .left-column[
@@ -1125,16 +1098,38 @@ Les icônes *loupe* permettent de **zoomer/dé-zoomer**. Il est également possi
 
 Pour changer l'ordre d'affichage des couches, il suffit de les faire glisser à la position de son choix, comme des onglets dans un navigateur Web.
 
-Pour **visualiser l'ensemble d'une couche géographique**, **cliquez droit sur la couche** concernée dans le panneau légende, puis cliquez sur *Zoomer sur la couche*.
+Le **style graphique d'une couche** (couleur/transparence du fond et de la bordure, épaisseur de bordure, etc.), est paramétrable dans ses propriétés (symbologie) 
 
 ]
 
 .right-column[
 
-![](fig/qgis_2.png)
+![](fig/proj/intro_6_styles.PNG)
 
 .center[
-Importez la couche géographique des **communes**, placer les couches géographiques dans l'ordre suivant : **IRIS, communes, votre équipement** 
+clic droit sur une des couches géographiques chargées > Propriétés > Symbologie.
+
+]
+]
+
+---
+
+.left-column[
+## Gestion de l'affichage graphique
+
+Pour changer l'ordre d'affichage des couches, il suffit de les faire glisser à la position de son choix, comme des onglets dans un navigateur Web.
+
+Le **style graphique d'une couche** (couleur/transparence du fond et de la bordure, épaisseur de bordure, etc.), est paramétrable dans ses propriétés (symbologie) 
+
+]
+
+.right-column[
+
+![](fig/proj/intro_6_styles2.PNG)
+
+.center[
+Jouez sur le **style graphique** des couches IRIS et COMMUNES pour les visualiser correctement (jouer sur la transparence et la couleur du trait)
+
 ]
 ]
 
@@ -1142,38 +1137,31 @@ Importez la couche géographique des **communes**, placer les couches géographi
 .left-column[
 ## Gestion de l'affichage graphique
 
-Modifier le style graphique (**symbologie**) d'une couche géographique
-
-**Double-clic sur la couche géographique concernée**, puis onglet*symbologie*.
-
+Des **labels (étiquettes)** peuvent faciliter le repérage / la lecture de la carte.
 
 ]
 
 .right-column[
-
-![](fig/qgis_3.PNG)
-
-
 .center[
-Jouer sur le **style graphique** (couleur de fond, bordures) des couches IRIS, communes et équipement.
-]
-]
+![](fig/proj/intro_7_etiquette.PNG)
 
+Clic-droit sur la couche COMMUNES, puis propriétés. Cliquez ensuite sur "étiquettes".
+
+]
+]
 
 ---
+
 .left-column[
 ## Gestion de l'affichage graphique
 
-Rajouter des **labels (étiquettes)** à la couche peut faciliter le repérage / la lecture de la carte.
-
-
-Clic-droit sur la couche commune, puis propriétés. Cliquez ensuite sur "étiquettes".
+Des **labels (étiquettes)** peuvent faciliter le repérage / la lecture de la carte.
 
 ]
 
 .right-column[
 .center[
-![](fig/etiquettes.PNG)
+![](fig/proj/intro_8_etiquette.PNG)
 
 Faites apparaître sur l'espace d'affichage **le nom des communes** de votre espace d'étude.
 ]
@@ -1181,19 +1169,6 @@ Faites apparaître sur l'espace d'affichage **le nom des communes** de votre esp
 
 ---
 
-## Gestion de l'affichage graphique
-
-.center[
-
-<img src="fig/todostyles.PNG" width="600" />
-
-Familiarisez vous avec vos équipements et votre espace d'étude en **superposant intelligemment les couches IRIS, communes, départements** ainsi que celle contenant **votre équipement**. 
-
-Jouez sur les styles, et améliorez la **lisibilité**
-]
-
-
----
 ## Exportez une image, enregistrez votre projet
 
 .left-column[
@@ -1249,7 +1224,6 @@ Pour la France, il est calé sur un niveau zéro scellé dans le port de Marseil
 
 ##  Formalisation mathématique du géoïde
 
-
 .pull-left[
 
 <br><br><br>
@@ -1262,8 +1236,13 @@ Il s'agit d'un volume globalement sphérique présentant un aplatissement aux p�
 
 .pull-right[
 
-```{r, echo = FALSE, out.width = "200px", fig.align='center'}
+```{r, echo = FALSE, out.width = "300px", fig.align='center'}
 knitr::include_graphics('fig/globe.gif')
+```
+
+<br>
+
+```{r, echo = FALSE, out.width = "300px", fig.align='center'}
 knitr::include_graphics('fig/AnimationSphere2.GIF')
 ```
 ]
@@ -1311,11 +1290,7 @@ Il est important de noter que **l'altitude** d'un point est calculé par rapport
 ]
 ]
 
-
-
-
 ---
-
 
 ## Les systèmes géodésiques
 
@@ -1442,9 +1417,7 @@ Les projections planes peuvent être orientées de différentes manières : **po
 <img src="fig/australian.jpg" width="500" />
 ]
 
-
 ---
-
 
 ## Les types de projection (déformations)
 
@@ -1647,7 +1620,40 @@ Les **codes EPSG** sont des identifiants uniques pour qualifier de systèmes de 
 ]
 ---
 
-## Atelier : Harmoniser les Systèmes de Coordonnées de Référence des couches géographiques du projet 
+.left-column[
+## Consulter le Systèmes de Coordonnées de référence (SCR) d'une couche
+
+Si les couches géographiques de votre projet ne sont pas dans le même système de coordonnées de référence, vous exposez vos manipulations à de nombreux désagréments ! 
+
+**La projection** d'une couche géographique **est indiquée dans ses propriétés générales**.
+
+Importez les couches géographiques des gymnases et des écoles élémentaires de la MEL.
+
+]
+
+.right-column[
+![](fig/proj/projection_1.PNG)
+.center[
+Importez les couches géographiques *LILLE_ECOLE.shp* et *gym_osm.shp*. Consulter leur SCR (Clic droit sur la couche > Propriétés > Informations).
+]
+]
+
+---
+.left-column[
+## Modifier le SCR d'une couche géographique
+Les couches géographiques s'affichent automatiquement dans le système de projection de la première couche géographique importée.
+
+Pour modifier le système de projection, il suffit d'enregistrer une nouvelle version de la couche géographique concernée dans le système de projection souhaité (clic-droit sur la couche, enregistrez-sous...).
+
+]
+
+.right-column[
+
+![](fig/proj/projection_2.PNG)
+
+Exportez les couches géographiques des écoles et gymnases dans le même SCR que celui des IRIS et communes (Lambert 93). Enregistrez ces couches dans votre dossier *tmp*, puis nettoyer l'espace de travail (éviter de visualiser des couches géographiques dorénavant inutiles)
+
+]
 
 
 ---
@@ -1656,51 +1662,13 @@ class: inverse middle center
 
 #  Manipulations de base (vecteur)
 
+Sélections attributaires
+
 Import de données tabulaires
 
 Jointure attributaire
 
 Jointure spatiale
-
-Sélections attributaires
-
----
-## Jointure attributaire
-
-.pull-left[
-Une **jointure attributaire** permet de joindre **deux tables attributaires décrivant des entités communes et partageant un champ commun**. L'opération produit **une seule table** juxtaposant les champs de la table à joindre à ceux de la table d'origine.
-
-Dans un SIG la table d'origine est souvent celle associée aux entités localisées d'**une couche géographique**, ce qui permet par exemple de cartographier les **données d'un tableau statistique sans dimension spatiale**. 
-
-Les jointures attributaires sont utilisées lorsque l'on souhaite introduire des informations nouvelles dans une couche géographique, par exemple des données décrivant le nombre de commerces que l'on souhaite joindre à une couche de communes.
-]
-
-.pull-right[
-<br><br><br>
-<img src="fig/jointure_attributaire.png" width="450" />
-
-.leg-fig[Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.
-]
-]
----
-## Jointure spatiale
-
-.pull-left[
-<br><br>
-Une **jointure spatiale** permet de caractérister le **positionnement relatif d'entités issues de deux couches géographiques différentes**.
-
-Par exemple, une table des écoles pourra être jointe à une table des communes en fonction d'une **relation spatiale de type inclusion géométrique**. 
-
-Si le point de l'école se trouve dans le polygone correspondant à la commune, les attributs de la table commune deviendront des attributs de la table école. Par définition, une jointure ne peut donc être effectuée qu'entre des données géographiques et non des tables attributaires.
-]
-
-.pull-right[
-<img src="fig/jointure_spatiale_1.png" width="450" />
-
-.leg-fig[
-Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.
-]
-]
 
 ---
 
@@ -1737,141 +1705,263 @@ Le choix du **prédicat géométrique est important** (intersecte, contient, est
 ---
 class: middle
 
-## Atelier (1) : Extraire les bibliothèques inclues dans le territoire d'Est-Ensemble
-### Sélectionner par localisation et sélectionner par expression. 
+.pull-left[
+## Premier critère : Un lieu de pratique adapté
 
----
+### Nouvelles notions SIG : Sélection par localisation et sélection par expression. 
 
-## Sélection des bibliothèques d'Est Ensemble
+Objectifs d'atelier :
 
-### **Étape 1** - Importer des couches vecteur
+ - Extraire les gymnases où l'on pratique actuellement du roller.
+ - Ne sélectionner que les gymnases incclus dans la MEL
+ - Sélectionner les gymnase de type "multi-activité"
+ - Sélectionner les gymnases d'une surface au moins 2 fois supérieure à l'emprise d'une piste de roller-derby (750 m²)
 
-.medium[
-*Importez les couches bibliothèque et IRIS Est Ensemble. (ajouter une couche vecteur)*
+
 ]
-.center[
-<img src="fig/importvecteur.PNG" height="400" />
-]
----
 
-## Sélection des bibliothèques d'Est Ensemble
+.pull-right[
+![](fig/Roller_derby_track.svg.png)
 
-### **Étape 2** - Harmoniser les projections
-
-.medium[
-*Enregistrez la couche d'équipement dans la même projection que la couche IRIS. (clic droit sur la couche bibliothèque > enregistrez sous > choisir le même SCR que la couche IRIS)*
-]
-.center[
-<img src="fig/reproj.PNG" height="400" />
 ]
 
 ---
 
-## Sélection des bibliothèques d'Est Ensemble
-
-### **Étape 3** - Sélection par localisation
-
-.medium[Ne sélectionnez que les bibliothèques contenues dans le territoire d'Est Ensemble *(vecteur > outil de recherche > sélection par localisation)*.]
-
-.center[
-<img src="fig/selection_localisation.png" height="400" />
-]
-
----
-
-## Sélection des bibliothèques d'Est Ensemble
-
-### **Étape 3** - Sélection par localisation
-
-.medium[
-Observer le résultat de la sélection et l'enregistrer. *(clic droit sur la couche bibliothèques > n'enregistrer que les entités sélectionnées)*.
-**NB**: pour connaître les bibliothèques qui ne sont pas comprises dans cet espace, on peut inverser la sélection.
-]
-
-.center[
-<img src="fig/save_selection.PNG" height="400" />
- ]
-
----
-
-## Sélection des bibliothèques d'Est Ensemble
-
-### **Étape 4** - Filtrer les résultats 
+## Quelle pratique actuelle ? 
 
 .left-column[
+
+### Sélectionner les gymnases où une pratique du roller est recensée
+
 .medium[
-*Pour notre projet, nous décidons de moderniser une bibliothèque existante. Nous souhaitons donc retirer toutes les médiathèques déjà existantes de cette sélection.*
+Clic droit sur la couche *gymnase* > ouvrir la table attributaire > sélection par expression
 
-*Ouvrez la table attributaire, triez les résultats, et ne sélectionnez que les bibliothèques. Enregistrez la sélection sous le nom "bibli_est_ensemble"*.
-
-*On note ainsi que 16 bibliothèques et sont incluses dans le territoire d'Est Ensemble. Ce territoire compte aussi déjà 2 médiathèques, situées dans les communes de Bagnolet et Noisy-le-Sec.*
-]]
-
-.right-column[
-.center[
-<img src="fig/select_table_attrib.PNG" height="400" />
-]]
-
----
-
-## Sélection des bibliothèques d'Est Ensemble
-
-### **Étape 5** - Enregistrer le résultat
-
-.left-column[
-.medium[
- <br><br><br>
- S'il s'agissait de votre projet, nous vous conseillerions d'améliorer le style de cette couche importante, de lui trouver un nom clair du type *critere1_bibli_est_ensemble.shp* et de l'enregistrer dans un dossier que vous maîtrisez.
-
-Ne jamais oublier d'enregistrer votre projet à la fin de votre travail pour conserver l'ordre des couches et le style que vous leur avez affecté.
 ]
 ]
 
 .right-column[
 .center[
-<img src="fig/sauvegarde_projet.PNG"  height="400" />
-]]
+<img src="fig/proj/crit_0_selec_expression.PNG" width="500" />
+<img src="fig/proj/crit3_1_roller_gym.PNG" width="700" />
+]
+]
 
 ---
 
-<br><br><br><br><br><br><br>
-## 3. Atelier (2) : Sélectionner les IRIS caractérisés par une population jeune
-### Import de données attributaires, jointures attributaires, statistiques basiques, sélections par expression. 
+## Quelle pratique actuelle ? 
 
-
----
-## Sélection des IRIS caractérisés par une population jeune
 .left-column[
 
-### **Étape 1** - Consulter données et métadonnées
+### Sélectionner les gymnases où une pratique du roller est recensée
 
 .medium[
-*Quelles sont les champs dont je vais avoir besoin* ?
+Sur les 324 gymnases de la couches géographiques initiale, 6 ont une pratique identifiée du roller. 
 
-*Quel est leur code associé* ?
-
-> Se reporter aux métadonnées !
-
-**Enregistrer le fichier Excel au format .csv**
-
+Enregistrer cette sélection sous le nom ***roller*** dans votre dossier ***tmp***.
 ]
 ]
 
 .right-column[
-![](fig/consult_excel.PNG)
+.center[
+<img src="fig/proj/crit3_2_selec.png" width="700" />
+
+]
+]
+---
+
+## Un lieu de pratique adapté
+
+.left-column[
+
+### ***Étape 1*** - Sélectionner les gymnases inclus dans la MEL
+
+On ne recherche pas à pratiquer l'activité en Belgique ! 
+
+.medium[
+Vecteur > Outil de recherche > Sélection par localisation. 
+
+Sur les 324 gymnases de la couches géographiques initiale, seuls 265 sont inclus dans la MEL. 
+
+Enregistrer cette sélection sous le nom ***gymnase_MEL*** dans votre dossier ***tmp***.
+
+Nettoyez votre espace de travail, ne conserver que la couche *gymnase_MEL* et la couche *communes*. 
+]
+
+]
+
+.right-column[
+.center[
+<img src="fig/proj/crit1_0_selec_localisation.PNG" width="700" />
+]
+]
+
+---
+
+## Un lieu de pratique adapté
+
+.left-column[
+
+### ***Étape 2*** - Sélectionner les gymnases permettant des multi-activités
+
+Tous les gymnases ne se prêtent pas au roller-derby (tennis, terrains de boule, etc). 
+On ne conserve que les gymnase qui accueillent des multi-activités (multi). 
+
+.medium[
+
+Clic droit sur la couche ***gymnase_MEL*** > ouvrir la table attributaire > sélection par expression
+]
+]
+
+.right-column[
+.center[
+<img src="fig/proj/crit_0_selec_expression.PNG" width="500" />
+<img src="fig/proj/crit1_1_gymnase_multi_1.PNG" width="700" />
+]
+]
+---
+
+## Un lieu de pratique adapté
+
+.left-column[
+
+### ***Étape 2*** - Sélectionner les gymnases permettant des multi-activités
+
+Tous les gymnases ne se prêtent pas au roller-derby (tennis, terrains de boule, etc). 
+On ne conserve que les gymnase qui accueillent des multi-activités (multi). 
+
+.medium[
+Sur les 265 gymnases de la MEL, 52 sont connus par accueillir plusieurs activités.  
+
+Enregistrez cette sélection sous le nom *gymnase_MEL_MULTI* dans votre dossier tmp et nettoyez votre espace de travail. 
+]
+
+]
+
+.right-column[
+.center[
+<img src="fig/proj/crit1_2_gymnase_multi_2.PNG" width="700" />
+]
+]
+
+---
+
+## Un lieu de pratique adapté
+
+.left-column[
+
+### **Étape 3** - Sélectionner les gymnases d'une surface suffisante
+
+On estime qu'au moins 1500m² (2 fois l'emprise d'une piste de roller derby) est nécessaire pour la pratique de l'activité
+
+.medium[
+Clic droit sur la couche *gymnase_MEL_MULTI* > ouvrir la table attributaire > sélection par expression
+]
+]
+
+.right-column[
+.center[
+<img src="fig/proj/crit1_3_gymnase_area_1500m_sq.PNG" width="700" />
+]
+]
+
+---
+
+## Un lieu de pratique adapté
+
+.left-column[
+
+### **Étape 3** - Sélectionner les gymnases d'une surface suffisante
+
+On estime qu'au moins 1500m² (2 fois l'emprise d'une piste de roller derby) est nécessaire pour la pratique de l'activité
+
+.medium[
+**BRAVO ! VOUS AVEZ IDENTIFIÉ UN PREMIER CRITERE D'IMPLANTATION !!** Sur les 52 gymnases restant , 24 présentent une surface favorable ! 
+
+Enregistrez cette sélection sous le nom ***CRITERE_1_MULTI_1500M_SQ*** dans votre dossier ***criteres*** et nettoyez votre espace de travail. 
+]
+]
+
+.right-column[
+.center[
+<img src="fig/proj/crit1_4_gymnase_area_1500m_sq_2.png" width="700" />
+
+]
 ]
 
 
 ---
-## Sélection des IRIS caractérisés par une population jeune
+## Jointure attributaire
+
+.pull-left[
+Une **jointure attributaire** permet de joindre **deux tables attributaires décrivant des entités communes et partageant un champ commun**. L'opération produit **une seule table** juxtaposant les champs de la table à joindre à ceux de la table d'origine.
+
+Dans un SIG la table d'origine est souvent celle associée aux entités localisées d'**une couche géographique**, ce qui permet par exemple de cartographier les **données d'un tableau statistique sans dimension spatiale**. 
+
+Les jointures attributaires sont utilisées lorsque l'on souhaite introduire des informations nouvelles dans une couche géographique.
+]
+
+.pull-right[
+<br><br><br>
+<img src="fig/jointure_attributaire.png" width="450" />
+
+.leg-fig[Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.
+]
+]
+---
+
+## Jointure spatiale
+
+.pull-left[
+<br><br>
+Une **jointure spatiale** permet de caractérister le **positionnement relatif d'entités issues de deux couches géographiques différentes**.
+
+Par exemple, une table des écoles pourra être jointe à une table des communes en fonction d'une **relation spatiale de type inclusion géométrique**. 
+
+Si le point de l'école se trouve dans le polygone correspondant à la commune, les attributs de la table commune deviendront des attributs de la table école. Par définition, une jointure ne peut donc être effectuée qu'entre des données géographiques et non des tables attributaires.
+]
+
+.pull-right[
+<img src="fig/jointure_spatiale_1.png" width="450" />
+
+.leg-fig[
+Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.
+]
+]
+
+---
+
+class: middle
+
+.pull-left[
+## Deuxième critère : Pour une pratique accessible aux moins favorisés
+
+### Nouvelles notions SIG : Import de données tabulaires, jointures attributaires. 
+
+Objectifs d'atelier :
+
+ - Extraire les gymnases où l'on pratique actuellement du roller.
+ - Ne sélectionner que les gymnases incclus dans la MEL
+ - Sélectionner les gymnase de type "multi-activité"
+ - Sélectionner les gymnases d'une surface au moins 2 fois supérieure à l'emprise d'une piste de roller-derby (750 m²)
+
+
+]
+
+---
+
+## Pour une pratique accessible aux moins favorisés
 
 .left-column[
 
-### **Étape 2** - Importer un fichier tabulaire
+### **Étape 1** - Transformer le fichier Excel contenant les données en .csv, puis l'importer dans QGIS 
 
 .medium[
-*Importez le fichier contenant les structures par âge des IRIS d'Ile-de-France.*
 
+Ouvrez le fichier STAT > data_INSEE.xls
+
+L'enregistrer au format .csv
+
+Couche > Ajouter une couche > Ajouter une couche de texte délimité
 - Virgule en séparateur décimal
 - Pas de géométrie
 
@@ -1881,37 +1971,37 @@ Ne jamais oublier d'enregistrer votre projet à la fin de votre travail pour con
 
 .right-column[
 .center[
-![](fig/import_table.PNG)
+![](fig/proj/crit2_1_import_insee.PNG)
 ]
 ]
+
 ---
-## Sélection des IRIS caractérisés par une population jeune
+
+## Pour une pratique accessible aux moins favorisés
 .left-column[
 
-
-### **Étape 3** - Jointure attributaire
+### **Étape 2** - Jointure attributaire
 
 .medium[
 Jointure de ce fichier de données non spatiales à la couche géographique des IRIS.
 
 Au préalable, il faut s'assurer de la concordance des données statistiques avec les géométries et identifier le nom de la colonne (identifiant unique) sur laquelle portera la jointure.
 
-*Clic droit sur la couche IRIS, propriétés, jointure, cliquez sur "+"*
+Clic droit sur la couche ***IRIS_METRO_LILLE***, propriétés, jointure, cliquez sur "+"*
 ]
 ]
 
 .right-column[
 .center[
-![](fig/jointure_1.PNG)
+![](fig/proj/crit2_2_jointure1.PNG)
 ]]
 
 ---
-## Sélection des IRIS caractérisés par une population jeune
+
+## Pour une pratique accessible aux moins favorisés
 .left-column[
 
-
-### **Étape 3** - Jointure attributaire
-
+### **Étape 2** - Jointure attributaire
 
 .medium[
 Jointure de ce fichier de données non spatiales à la couche géographique des IRIS.
@@ -1923,197 +2013,121 @@ Au préalable, il faut s'assurer de la concordance des données statistiques ave
 ]
 
 .right-column[
+.center[
+![](fig/proj/crit2_3_jointure2.PNG)
+]]
+
+---
+
+## Pour une pratique accessible aux moins favorisés
+.left-column[
+
+### **Étape 2** - Jointure attributaire
+
+.medium[
+Jointure de ce fichier de données non spatiales à la couche géographique des IRIS.
+
+Au préalable, il faut s'assurer de la concordance des données statistiques avec les géométries et identifier le nom de la colonne (identifiant unique) sur laquelle portera la jointure.
+
+*Choisir les deux champs à mettre en lien N'hésitez pas à jeter un oeil aux tables attributaires et aux métadonnées pour vous aider à cibler les bons identifiants.*
+]
+]
+
+.right-column[
+.center[
 **BRAVO !!! Vous venez de joindre les données démographiques de l'INSEE dans la table attributaire de la couche IGN IRIS !** 
-.center[
-![](fig/jointure_2.PNG)
-]]
-
----
-## Sélection des IRIS caractérisés par une population jeune
-.left-column[
-
-
-### **Étape 4** - Calcul de la part des 0-24 ans
-
-*Appuyez sur le stylo pour finir (l'édition) et enregistrez les résultats (OK)* 
-]
-
-.right-column[
-
-![](fig/calcul_champ.PNG)
-]
-
-
----
-## Sélection des IRIS caractérisés par une population jeune
-
-### **Étape 5** - Sélection par expression
-
-.left-column[
-.medium[
-<br><br><br>
-Sélectionnez les IRIS caractérisés par une part de la population supérieure à 33 %.
-*Clic droit sur la couche IRIS > ouvrir la table d'attributs > sélectionner des entités en utilisant une expression.*
-
-NB : On pourrait aussi envisager la sélection autrement: 25 % des IRIS les plus jeunes, créer des indices de vieillissement, prendre des classes d'âge plus fines. Il vous faudra justifier vos choix. 
-]
-]
-
-.right-column[
-.center[
-<img src="fig/selection_expression2.PNG" height="400" />
+![](fig/proj/crit2_4_verif_jointure.PNG)
 ]]
 
 ---
 
-## Sélection des IRIS caractérisés par une population jeune
-
-### **Étape 6** - Enregistrer les résultats 
-
+## Pour une pratique accessible aux moins favorisés
 .left-column[
-<br><br><br>
+
+### **Étape 3** - Statistiques basiques
+
+QGIS propose plusieurs outils permettant de retourner des statistiques basiques sur les données attributaires d'une couche géographique.
+
 .medium[
-85 IRIS à Est-Ensemble sont caractérisés par une part de la population âgée de 0 à 24 ans supérieure à un tiers de la population totale !
-
-*Clic droit sur la couche IRIS > enregistrer la couche vectorielle sous...> n'enregistrer que les entités sélectionnés*
-
-Toujours choisir un nom de fichier qui vous parle (et assez court). Ex : "CRITERE_POP024.shp"<
+Ouvrez le module de statistiques basiques et effectuez l'opération pour le champ ***DEC_MED_19***
 ]
 ]
 
 .right-column[
-<img src="fig/selection_expression_save.PNG" height="400" />
-]
-
----
-
-## Jointures, sélections par expression...
-
-**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble.
-
-**Proposition d'un 3e critère** : Sélectionner les 25% d'IRIS les plus pauvres d'Est ensemble.
-
-→ Comment procéder ?
-
---
-
-1. Importer le fichier `socio_eco.xlsx` après avoir repéré le champ pertinent (`DEC_MED19`)
-2. Faire la **jointure attributaire** avec la couche IRIS
-3. Repérer le niveau de revenu des 25% des IRIS les plus pauvres, c'est-à-dire le *premier quartile*
-4. Sélectionner (**sélection par attribut**) les IRIS qui correspondent à cette tranche de revenu médian
-5. Enregistrer le résultat (3e critère)
-
----
-
-## Le 1er quartile des IRIS, par revenu
-
-.pull-left[
-Importer le fichier `socio_eco.xlsx` après avoir repéré le champ pertinent (`DEC_MED19`)
-]
-
-.pull-right[
 .center[
-![Exercice, étape 1](fig/exo_irisrevenu_tableau.png)
-]
-]
+![](fig/proj/crit2_5_stat_basique.PNG)
+![](fig/proj/crit2_6_stat_basique_2.PNG)
+]]
 
 ---
 
-## Le 1er quartile des IRIS, par revenu
+## Pour une pratique accessible aux moins favorisés
+.left-column[
 
-.pull-left[
-Faire la **jointure attributaire** avec la couche IRIS
+### **Étape 3** - Statistiques basiques
+
+QGIS propose plusieurs outils permettant de retourner des statistiques basiques sur les données attributaires d'une couche géographique.
+
+.medium[
+La moyenne du revenu médian des IRIS qui composent la MEL s'élève à 20 625 euros. Nous retenons cette valeur en tête... 
+]
 ]
 
-.pull-right[
+.right-column[
 .center[
-![Exercice, étape 2](fig/exo_irisrevenu_jointure.png)
-]
-]
+![](fig/proj/crit2_7_stat_basique_3.PNG)
+]]
+
+
 
 ---
 
-## Le 1er quartile des IRIS, par revenu
 
-.pull-left[
-Repérer le niveau de revenu des 25% des IRIS les plus pauvres, c'est-à-dire le *premier quartile*
+## Pour une pratique accessible aux moins favorisés
+.left-column[
+
+### **Étape 4** - Sélection par attributs
+
+
+.medium[
+Sélectionner les IRIS sous la moyenne de la MEL au moyen d'une sélection par expression...
+]
 ]
 
-.pull-right[
+.right-column[
 .center[
-![Exercice, étape 3](fig/exo_irisrevenu_stats_montrer.png)
-]
-]
+![](fig/proj/crit2_8_selec_rev_mean.PNG)
+]]
+
+
 
 ---
 
-## Le 1er quartile des IRIS, par revenu
 
-.pull-left[
-Repérer le niveau de revenu des 25% des IRIS les plus pauvres, c'est-à-dire le *premier quartile*
+## Pour une pratique accessible aux moins favorisés
+.left-column[
+
+### **Étape 4** - Sélection par attributs
+
+
+.medium[
+Sélectionner les IRIS sous la moyenne de la MEL au moyen d'une sélection par expression...
+
+... puis enregistrer la sélection sous le nom ***CRITERE_2_REVENU*** de votre dossier ***criteres***. 
+]
 ]
 
-.pull-right[
+.right-column[
 .center[
-![Exercice, étape 3](fig/exo_irisrevenu_stats_champ.png)
-]
-]
-
----
-
-## Le 1er quartile des IRIS, par revenu
-
-.pull-left[
-Repérer le niveau de revenu des 25% des IRIS les plus pauvres, c'est-à-dire le *premier quartile*
-]
-
-.pull-right[
-.center[
-![Exercice, étape 3](fig/exo_irisrevenu_stats_q1.png)
-]
-]
-
----
-
-## Le 1er quartile des IRIS, par revenu
-
-.pull-left[
-Sélectionner (**sélection par attribut**) les IRIS qui correspondent à cette tranche de revenu médian
-]
-
-.pull-right[
-.center[
-![Exercice, étape 3](fig/exo_irisrevenu_selec.png)
-]
-]
-
----
-
-## Le 1er quartile des IRIS, par revenu
-
-.pull-left[
-Enregistrer le résultat (3e critère)
-]
-
-.pull-right[
-.center[
-![Exercice, étape 3](fig/exo_irisrevenu_export.png)
-]
-]
-
----
-
-.center[
-![Résultat](fig/exo_irisrevenu_fin.png)
-]
-
+![](fig/proj/crit2_9_result_selec.PNG)
+]]
 
 
 ---
 
 class: inverse middle center
 
-#  Géotraitements
+#  Géotraitements et introductions aux statistiques spatiales
 
 ---
 
@@ -2170,38 +2184,34 @@ Périmètre de 500 m autour des monuments historiques avec interdiction relative
 ---
 .pull-left[
 
-## Zone tampon (buffer, distances tampon)
+### Zone tampon (buffer, distances tampon)
 
 .center[
-<img src="fig/tampon.PNG" width="800" />
+<img src="fig/tampon.PNG" width="400" />
+]
+
+--
+### Intersection
+
+.center[
+<img src="fig/intersection.PNG" width="400" />
 ]
 ]
 
 --
 .pull-right[
-## Intersection
+### Différenciation symétrique (ou différence)
 
 .center[
-<img src="fig/intersection.PNG" width="800" />
-]
-]
----
-
-## Différenciation symétrique (ou différence)
-
-.pull-left[
-.center[
-<img src="fig/differenciation.PNG" width="800" />
-]
+<img src="fig/differenciation.PNG" width="400" />
 ]
 
 --
 
-.pull-right[
 ## Union
 
 .center[
-<img src="fig/union.PNG" width="800" />
+<img src="fig/union.PNG" width="400" />
 ]
 ]
 
@@ -2217,69 +2227,60 @@ Périmètre de 500 m autour des monuments historiques avec interdiction relative
 
 class: middle
 
-## Atelier / Géotraitements
+.pull-left[
+## Troisième critère : Diversifier l'offre géographique
 
-- **Diversifier l'offre géographique** : Extraire l'espace situé à plus de 1500m d'une médiathèque sur le territoire d'Est Ensemble : **géotraitements *espace tampon* et *différence* **.  
+### Nouvelles notions SIG : Mise en oeuvre de géotraitements
 
-- **Une médiathèque accessible** : Extraire l'espace situé à moins de 1000m d'une station de RER : **géotraitements *union*, *espace tampon* et *intersection* **.  
+Objectifs d'atelier :
+
+ - Extraire l'espace à plus de 2000 mètre d'un lieu de pratique de roller connu.
+
+
+]
 
 
 ---
 
-
 ## Diversifier l'offre géographique
 
 .left-column[
+
+### **Étape 1** - Espace tampon de 2000m autour de la couche roller
+
+
 .medium[
-Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
+Importez la couche ***roller*** précédemment créée et stockée dans le dossier ***tmp*** puis réalisez un **espace tampon** de **2000 m** autour des polygones qu'elle contient. 
 
-### **Étape 1** 
-Ouvrir la couche *bibliotheque_Est_Ensemble.shp* (correctement projetée), extraire uniquement les médiathèques (depuis la table attributaire ou par une sélection par expression). 
-
-### **Étape 2** 
-Réaliser un **espace tampon** de 1500 mètres autour de celles-ci et nommer cette couche *mediatheques_1500m*.]]
+Sélectionnez l'option *regrouper les résultats*. 
+]
+]
 
 .right-column[
 .center[
-![](fig/tampon_exo_1.png)
-
-.leg-fig[Création d'un **espace tampon de 1500m autour des médiathèques**]]]
-
-
----
-
-## Diversifier l'offre géographique
-
-.left-column[
-.medium[
-Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
-
-### **Étape 1** 
-Ouvrir la couche *bibliotheque_Est_Ensemble.shp* (correctement projetée), extraire uniquement les médiathèques (depuis la table attributaire ou par une sélection par expression). 
-
-### **Étape 2** 
-Réaliser un **espace tampon** de 1500 mètres autour de celles-ci et nommer cette couche *mediatheques_1500m*.]]
-
-.right-column[
-.center[
-![](fig/tampon_exo_2.png)
-.leg-fig[Création d'un **espace tampon de 1500m autour des médiathèques**]]]
-
----
-
-## Diversifier l'offre géographique
-
-.left-column[
-.medium[
-Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
-
-### **Étape 3** 
-Réaliser la **différence** entre la couche *mediatheques_1500m* et la couche *EPT_Est_Ensemble*, la nommer *mediatheques_1500diff*.
+![](fig/proj/crit3_3_tampon.PNG)
 ]]
 
+
+---
+
+## Diversifier l'offre géographique
+
+.left-column[
+
+### **Étape 2** - Différence entre le territoire de la MEL et l'espace tampon précédemment créé
+
+
+.medium[
+Importez la couche ***MEL*** (dossier ***GEOM***), puis réaliser la **différence** entre cette couche et l'**espace mis en tampon** stocké virtuellement sur votre ordinateur. 
+
+
+]
+]
+
 .right-column[
 .center[
-![](fig/tampon_exo_3.png)
+![](fig/proj/crit3_4_difference.PNG)
 ]]
 
 ---
@@ -2288,98 +2289,191 @@ Réaliser la **différence** entre la couche *mediatheques_1500m* et la couche *
 
 .left-column[
 
+### **Étape 3** - Export du résultat
+
+Nous avons sous les yeux l'espace situé à plus de 2000 mètres d'un gymnase où une pratique connue du roller est inventoriée ! 
+
 .medium[
 
-Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
+Exportez la couche ***différence*** (clic droit sur la couche difference, puis exporter) dans le dossier ***criteres***, et nommer la couche ***CRITERE_3_DISTANCE_2000_ROLLER***. 
 
-### **Étape 4** 
-Supprimer les couches intermédiaires affichées dans le SIG, enregistrer la couche finale dans le répertoire adéquat et jouer sur le style de cette couche finale qui nous intéresse directement pour notre projet.]]
+
+]
+]
 
 .right-column[
 .center[
-![](fig/tampon_exo_4.png)
-.leg-fig[L'espace à plus de 1500 mètres d'une médiathèque est dorénavant sélectionné !]]]
+![](fig/proj/crit3_5_result.PNG)
+]]
 
 ---
 
-## Une médiathèque accessible
+## Statistiques spatiales
+
+QGIS offre plusieurs [fonctionnalités](https://docs.qgis.org/2.8/fr/docs/training_manual/vector_analysis/spatial_statistics.html#:~:text=Les%20statistiques%20spatiales%20vous%20permettent,av%C3%A8rent%20utiles%20%C3%A0%20cet%20%C3%A9gard.) qui permettent d'analyser et de comprendre ce qu'il se passe dans un jeu de données vectorielles. 
+
+- **Calculer une matrice de distance** : Calculer des distances entre les points d'une couche géographique et indicateurs dérivés (distance minimale, moyenne, maximale, etc.)
+
+- **Coordonnées moyennes** : Obtenir le centre géométrique d'une couche de polygones.
+
+- **Dénombrement de points dans des polygones** : Le nombre de points inclus dans un polygone. 
+
+... Et beaucoup d'autres !
+
+
+---
+
+
+class: middle
+
+.pull-left[
+## Quatrième critère : Pour une pratique scolaire
+
+### Nouvelles notions SIG : Compter des points dans un polygone
+
+Objectifs d'atelier :
+
+ - Ne sélectionnez que les gymnases qui ont moins 3 écoles à moins de 1000 mètres
+
+]
+
+
+---
+
+## Pour une pratique scolaire
 
 .left-column[
+
+### **Étape 1** - Import des couches utiles
+
 .medium[
 
-Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de tramway ou de métro**.
+Nettoyez votre espace de travail (supprimer les couches géographiques inutiles).
 
-### **Étape 1**
-Ouvrir les couches *arrets_metro* et *arrets_tram*, les enregistrer dans la projection du projet (EPSG:2154).
+Importez la couche ***CRITERE_1_MULTI_1500M_SQ*** précédemment créée (dossier ***criteres***), la couche ***écoles*** correctement projetée (EPSG 2154, dossier ***tmp***)  
 
-### **Étape 2**
-Créer **l'union** de ces deux couches. Nommer le résultat *Metro_Tram*
-]]
+Importez la couche de la MEL pour visualiser l'emprise de la métropole également. 
+
+]
+]
 
 .right-column[
 .center[
-![](fig/exo_union_1.png)
+![](fig/proj/crit4_1_layers.PNG)
 ]]
+
 
 ---
 
-## Une médiathèque accessible
+## Pour une pratique scolaire
 
 .left-column[
+
+### **Étape 2** - Espace tampon de 1000 mètres autour des gymnases
+
 .medium[
 
-Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de tramway ou de métro**.
+Réaliser un espace tampon de 1000 mètres autour des gymnases **sans regrouper les résultats** 
 
-### **Étape 1**
-Ouvrir les couches *arrets_metro* et *arrets_tram*, les enregistrer dans la projection du projet (EPSG:2154).
+![](fig/proj/crit4_2_tampon.PNG)
 
-### **Étape 2**
-Créer **l'union** de ces deux couches. Nommer le résultat *Metro_Tram*
-]]
+]
+]
 
 .right-column[
 .center[
-![](fig/exo_union_2.png)
-.leg-fig[Les deux couches géographiques de transport sont désormais réunies en une seule !]
+![](fig/proj/crit4_3_result.png)
 ]]
-
 
 ---
 
-## Une médiathèque accessible
+## Pour une pratique scolaire
 
 .left-column[
+
+### **Étape 3** - Compter le nombre d'école dans l'espace tampon de 1000 m
+
 .medium[
 
-Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de RER ou de métro**.
+Vecteur > Outil d'analyse > Compter les points dans les polygones
 
-### **Étape 3**
-Réaliser un **espace tampon** de 1000 mètres autour de celle-ci et nommer cette couche *Metro Tram 1000m*.]]  
+]
+]
 
 .right-column[
 .center[
-![](fig/tampon_exo_5.png)
+![](fig/proj/crit4_5_count_points.PNG)
 ]]
 
 ---
 
-## Une médiathèque accessible
+## Pour une pratique scolaire
 
 .left-column[
-.medium[
-### **Étape 4**
-Réaliser l'**intersection** entre la couche `Metro Tram 1000M` et la couche **EPT_Est_Ensemble**, la nommer *Accessibilite*.
 
-### **Étape 5**
-Supprimer les couches intermédiaires affichées dans le SIG, enregistrer la couche finale dans le répertoire adéquat et jouer sur le style de cette couche finale qui nous intéresse directement pour notre projet.]]
+### **Étape 4** - Joindre le résultas à la couche des gymnases
+
+.medium[
+
+Clic droit sur la couche ***CRITERE_1_MULTI_1500M_SQ*** > Propriétés > Jointure
+
+Joindre la couche temporaire ***Compte*** par l'identifiant commune (champ ***osm_id***)
+
+]
+]
 
 .right-column[
 .center[
-![](fig/exo_intersection.png)
+![](fig/proj/crit4_6_join_result.PNG)
 ]]
 
 ---
 
+## Pour une pratique scolaire
+
+.left-column[
+
+### **Étape 5** - Sélectionner les gymnases avec plus de 3 écoles
+
+.medium[
+
+Clic droit sur la couche ***CRITERE_1_MULTI_1500M_SQ*** > Ouvrir la table d'attributs. 
+
+Ordonner le champ ***NUM_ECOLE*** de façon croissante. 
+
+Sélectionner les gymnases avec plus de 3 écoles. 
+]
+]
+
+.right-column[
+.center[
+![](fig/proj/crit4_7_select.PNG)
+]]
+
+
+---
+
+## Pour une pratique scolaire
+
+.left-column[
+
+### **Étape 6** - Exportez les résultats
+
+.medium[
+
+Clic droit sur la couche ***CRITERE_1_MULTI_1500M_SQ*** > N'enregistrer que les entités sélectionnées. 
+
+Enregistrer la sélection dans le dossier ***criteres*** et la nommer ***CRITERE_1_4_3ECOLES_1000M***
+]
+]
+
+.right-column[
+.center[
+![](fig/proj/crit4_8_export.PNG)
+]]
+
+
+---
 class: inverse middle center
 
 # Mise en cohérence des critères
@@ -2410,92 +2504,56 @@ Insérer maj chemin décisionnel
 
 ## Quelle implantation ? Une possible procédure... 
 
-Nous avons créé 4 couches géographiques qui constituent nos critères pour l'implantation d'une nouvelle médiathèque :
+Nous avons créé 4 couches géographiques qui constituent nos critères pour l'implantation d'une nouvelle piste de roller derby:
 
-- **POP024** : IRIS dont la part de la population de 0 à 24 ans est supérieure à 33 %. 
-- **REV_Q1** : les 25 % plus pauvres IRIS sur le territoire d'Est Ensemble.
-- **ACCESS** : l'espace situé à moins de 1000 m d'une station de métro ou de RER sur le territoire d'Est Ensemble.  
-- **1500DIFF** : l'espace situé à plus de 1500 m d'une médiathèque existante.
+- **CRITERE_1_MULTI_1500M_SQ** : Gymnases de plus de 1500 m², multi-activité, localisé dans la MEL.
+- **CRITERE_2_REVENU** : Les IRIS dont le revenu médian est inférieur à la moyenne de la MEL.
+- **CRITERE_3_DISTANCE_2000_ROLLER** : l'espace à plus de 2000m d'un gymnase avev une activité de roller existante  
+- **CRITERE_1_4_3ECOLES_1000M** : A partir du critère 1, les gymnases qui comprennent au moins 3 écoles à moins de 1000 mètres
 
 <br>
 
-Dans notre cas, nous allons explorer **deux situations** :
-
-- **Nouvelle implantation** : Définir les IRIS qui présentent des caractéristiques favorables à l'implantation d'un nouvel équipement.
-- **Modernisation d'une bibliothèque** : Identifier les bibliothèques dans ces secteurs favorables. 
+Dans notre cas, nous cherchons à identifier les gymnases qui recoupent l'ensemble de ces critères...
 
 ---
 ## Une possible procédure... 
 
-On peut procéder de bien des manières dans QGIS pour aboutir au résultat escompté, en voici par exemple une : 
+Sélectionnez les gymnases issus du critère 4 qui recoupent les IRIS à plus faible revenu. 
 
-1. Afficher les couches **IRIS**, **POP024** et **REV_Q1**.  
-2. Par une **sélection par localisation**, sélectionner les IRIS de POP024 qui sont **égaux** à REV_Q1. Enregistrer la sélection sous le nom **IRIS_POP_REV**.
-3. Sélectionner les IRIS de la couche **IRIS_POP_REV** qui sont à l'intérieur de **1500_DIFF**. Enregistrer la sélection sous le nom **IRIS_POP_REV_DISTMED**.
-4. Sélectionner les IRIS de la couche **IRIS_POP_REV_MED** qui sont à l'intérieur de **ACCESS**. On enregistre la sélection sous le nom **IMPLANTATION_IRIS**.   
-
-Pour maîtriser votre traitement, travaillez avec soin et méthode :
-- N'affichez que les couches sur lesquelles vous effectuez vos sélections. Observez si les résultats sont conformes à votre intention avant de les enregistrer. 
-- Maîtrisez l'endroit où vous enregistrez ces différents traitements intermédiaires, et nommez clairement les couches géographiques issues de ces sélections. 
-
----
-
-## IRIS jeunes et à faible revenu... 
-
-.center[
-<img src="fig/est_ensemble_selec1b.PNG" width="375" /><img src="fig/est_ensemble_selec1.PNG" width="575" />
+.medium[
+Outil de recherche > selection par localisation
 ]
 
-
-
----
-
-## IRIS jeunes et à faible revenu...  
-
-.center[
-<img src="fig/est_ensemble_selec2b.PNG" width="375" /><img src="fig/est_ensemble_selec2.PNG" width="575" />
+.pull-left[
+![](fig/proj/selec_2.PNG)
 ]
 
-
----
-
-## ... A plus de 1500 m à vol d'oiseau d'une médiathèque existante...
-
-.center[
-<img src="fig/est_ensemble_selec3b.PNG" width="375" /><img src="fig/est_ensemble_selec3.PNG" width="575" />
+.pull-right[
+![](fig/proj/selec_2.PNG)
 ]
 
 ---
+## Une possible procédure... 
 
-## ... A plus de 1500 m à vol d'oiseau d'une médiathèque existante...
+Parmi la sélection courante de ces gymnases, sélectionnez les gymnases à plus de 2000 mètres d'un gymnase avec pratique de roller.
+Exportez ensuite le résultat de la sélection dans le dossier **criteres** et nommez la couche **IMPLANTATION**
 
-.center[
-<img src="fig/est_ensemble_selec4b.PNG" width="375" /><img src="fig/est_ensemble_selec4.PNG" width="575" />
+
+.pull-left[
+![](fig/proj/selec_5.PNG)
 ]
 
----
-
-## ... Et à moins de 1000 m d'une station de métro ou de RER ! 
-
-.center[
-<img src="fig/est_ensemble_selec5b.PNG" width="375" /><img src="fig/est_ensemble_selec5.PNG" width="575" />
+.pull-right[
+![](fig/proj/selec_6.PNG)
 ]
 
----
-
-## ... Et à moins de 1000 m d'une station de métro ou de RER ! 
-
-.center[
-<img src="fig/est_ensemble_selec6b.PNG" width="375" /><img src="fig/est_ensemble_selec6.PNG" width="575" />
-]
 
 ---
-class:center
 
 ## <img src="fig/eureka.PNG" width="60" />        Eureka ! Vous avez trouvé !!        <img src="fig/eureka.PNG" width="60" />
 
 .center[
-<img src="fig/est_ensemble_implantation_table.PNG" width="375" /><img src="fig/est_ensemble_implantation_map.PNG" width="575" />
+<img src="fig/proj/selec_9" width="375" /><img src="fig/est_ensemble_implantation_map.PNG" width="575" />
 ]
 
 
