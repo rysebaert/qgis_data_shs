@@ -2529,7 +2529,7 @@ Outil de recherche > selection par localisation
 ]
 
 .pull-right[
-![](fig/proj/selec_2.PNG)
+![](fig/proj/selec_3.PNG)
 ]
 
 ---
@@ -2553,80 +2553,8 @@ Exportez ensuite le résultat de la sélection dans le dossier **criteres** et n
 ## <img src="fig/eureka.PNG" width="60" />        Eureka ! Vous avez trouvé !!        <img src="fig/eureka.PNG" width="60" />
 
 .center[
-<img src="fig/proj/selec_9" width="375" /><img src="fig/est_ensemble_implantation_map.PNG" width="575" />
+<img src="fig/proj/selec_9.PNG" width="375" /><img src="fig/est_ensemble_implantation_map.PNG" width="575" />
 ]
-
-
----
-class: inverse middle center
-
-#  Mettre en page une carte
-
-Synthèse graphique des critères mis en oeuvre dans l'atelier
-
-Éléments fondamentaux sur l'habillage cartographique
-
-Créer une mise en page avec QGIS
-
----
-
-## Comment arriver à cette carte de synthèse ?
-
-.center[
-<img src="proj/fig/est_ensemble_carte_synthese.PNG" width="700" />
-]
-
----
-.pull-left[
-
-## Codes et conventions cartographiques : Aider à la mise en contexte
-### Des éléments obligatoires
-
-.medium[
-- Un **titre** 
-- Une **date**
-- Une **légende**  
-- Une **source** (un **auteur**)
-- Une **échelle** 
-- Une **orientation** (optionnel).  
- ]
-
-### A avoir en tête...
-
-.medium[
-- Le choix des couleurs n'est pas anodin (considérations thématiques, statistiques, culturelles, etc.)
-- Les éléments graphiques doivent être hiérarchisés. 
-- La **légende** résume les éléments présentés sur la carte. Celle-ci peut être organisée par sous-titres de légende pour mieux contextualiser l'information que vous présentez (*par ex : équipements existants, caractéristiques socio-économiques, distances aux équipements*).
-- Ne pas trop surcharger la carte : ne pas hésiter à produire des cartes plutôt qu'une. 
-- N'hésitez pas à jouer sur la transparence, les hachures, ajouter des labels, des encadrés etc. pour améliorer la lisibilité de votre carte
-]
-]
- 
-.pull-right[
-<img src="fig/carte_lambert.png" width="570" />
- .leg-fig[
- Des morts par milliers aux portes de l'Europe (Source : [Lambert, 2015](https://neocarto.hypotheses.org/1370))
- ]
- ]
-
----
-
-## Mise en page dans QGIS
-
-.center[
-<img src="fig/mise_en_page.png" width="900" />
-]
-
----
-
-## Mise en page dans QGIS
-
-.center[
-<iframe width="840" height="472.5" src="https://www.youtube.com/embed/zuYOBoMVfrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-.leg-fig[Une vidéo (source : La Minute QGIS) qui explique les fondements de la mise en page avec QGIS]
-]
-
 
 ---
 
@@ -2639,7 +2567,6 @@ class: inverse middle center
 Typologies (catégories)
 
 Cartes choroplèthes (valeurs graduées, discrétisations)
-
 
 
 ---
@@ -2810,6 +2737,182 @@ On a coutume de dire que 10 classes est un maximum.
 .pull-right[
 ![](fig/discretisation_italie.png)
 ]
+
+
+---
+
+
+class: middle
+
+.pull-left[
+## Réaliser une carte choroplèthe avec QGIS
+
+### Nouvelles notions SIG : Compter des points dans un polygone
+
+Objectifs d'atelier :
+
+ - Réaliser une carte du revenu par IRIS
+
+]
+
+---
+
+.pull-left[
+## Préalable
+
+- Nettoyer son espace de travail (supprimer les couches géographiques inutiles)
+- N'importer que les couches géographiques utiles : communes, IRIS
+- Importer le fichier de données data_INSEE
+- Réaliser une jointure entre la couche IRIS et les données INSEE pour récupérer les revenus.
+- Éventuellement, rajouter des labels pour faciliter la localisation
+
+-> Astuce, créez un nouveau projet QGIS pour éviter de supprimer vos précédentes analyses.
+]
+
+.pull-right[
+
+![](fig/proj/choro_1_prepa.PNG)
+]
+
+---
+
+## Paramétrer la visualisation
+
+.left-column[
+Une fois la jointure attributaire réalisée...
+
+.medium[
+clic droit sur la couche > IRIS > Propriétés > Symbologie
+
+- Sélectionnez "Gradué"
+- Sélectionnez le nom du champ d'intérêt (variable quantitative relative)
+- Sélectionnez le nombre de classes désirées
+- Paramétrez la palette de couleur (en cohérence avec la méthode de discrétisation)
+- Sélectionnez la méthode de discrétisation désirée
+
+**IL FAUT ETRE EN MESURE DE JUSTIFIER SES CHOIX**
+]
+]
+
+.right-column[
+
+Dans ce cas, nous souhaitons que la méthode de discrétisation permette d'identifier les 20 % des IRIS aux valeurs de revenus les plus faibles et les plus fortes. Une méthode basée sur les quantiles en 8 classes permet d'y répondre. 
+La rupture de couleur n'est pas forcément une bonne chose, mais ici elle permet visuellement de séparer les unités géographiques en dessous et au-dessus de la médiane
+
+![](fig/proj/choro_2_param.PNG)
+
+]
+
+---
+
+## Des ressources utiles
+
+.pull-left[
+
+### Histogramme QGIS
+
+Permet d'évaluer les effets de la discrétisation sur la distribution des valeurs. 
+Le choix d'une discrétisation doit toujours être justifiée par des objectifs statistiques et communicationnels. 
+
+![](fig/proj/choro_3_histo.PNG)
+]
+
+.pull-right[
+
+### Palettes de couleur
+
+Les palettes de couleur QGIS ne sont pas optimales. Préférez utiliser des palettes de couleur dédiées à la cartographie, comme celles proposées par <a href="https://colorbrewer2.org/#type=diverging&scheme=RdBu&n=8" target="_blank">ColorBrewer</a>).
+
+![](fig/proj/choro_4_colorbrewer.PNG)
+
+]
+
+---
+
+## Résultat
+
+.left-column[
+
+### Choix 
+
+- **Discrétisation (stat)** : gaussienne à tendance dissymétrique à droite, les quantiles sont adaptés
+- **Discrétisation (message véhiculé par la carte**) : permettre d'identifier visuellement les 20 % des territoires au plus haut/faible revenu. 
+- **Nombre de classes** : 8 (indice d'Huntsberger indique 1+3.3(log()))
+
+]
+
+
+
+---
+class: inverse middle center
+
+#  Mettre en page une carte
+
+Synthèse graphique des critères mis en oeuvre dans l'atelier
+
+Éléments fondamentaux sur l'habillage cartographique
+
+Créer une mise en page avec QGIS
+
+---
+
+## Comment arriver à cette carte de synthèse ?
+
+.center[
+<img src="proj/fig/est_ensemble_carte_synthese.PNG" width="700" />
+]
+
+---
+.pull-left[
+
+## Codes et conventions cartographiques : Aider à la mise en contexte
+### Des éléments obligatoires
+
+.medium[
+- Un **titre** 
+- Une **date**
+- Une **légende**  
+- Une **source** (un **auteur**)
+- Une **échelle** 
+- Une **orientation** (optionnel).  
+ ]
+
+### A avoir en tête...
+
+.medium[
+- Le choix des couleurs n'est pas anodin (considérations thématiques, statistiques, culturelles, etc.)
+- Les éléments graphiques doivent être hiérarchisés. 
+- La **légende** résume les éléments présentés sur la carte. Celle-ci peut être organisée par sous-titres de légende pour mieux contextualiser l'information que vous présentez (*par ex : équipements existants, caractéristiques socio-économiques, distances aux équipements*).
+- Ne pas trop surcharger la carte : ne pas hésiter à produire des cartes plutôt qu'une. 
+- N'hésitez pas à jouer sur la transparence, les hachures, ajouter des labels, des encadrés etc. pour améliorer la lisibilité de votre carte
+]
+]
+ 
+.pull-right[
+<img src="fig/carte_lambert.png" width="570" />
+ .leg-fig[
+ Des morts par milliers aux portes de l'Europe (Source : [Lambert, 2015](https://neocarto.hypotheses.org/1370))
+ ]
+ ]
+
+---
+
+## Mise en page dans QGIS
+
+.center[
+<img src="fig/mise_en_page.png" width="900" />
+]
+
+---
+
+## Mise en page dans QGIS
+
+.center[
+<iframe width="840" height="472.5" src="https://www.youtube.com/embed/zuYOBoMVfrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+.leg-fig[Une vidéo (source : La Minute QGIS) qui explique les fondements de la mise en page avec QGIS]
+]
+
 
 
 ---
