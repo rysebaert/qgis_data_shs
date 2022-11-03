@@ -43,38 +43,38 @@ class: middle
 
 .pull-left[
 
-### Information géographique ?  (*9h - 9h45*)
+### Information géographique ?  (*9h - 9h30*)
 
 - Les composantes de l'information géographique
 - Où en trouver ?
 - Formats de fichiers
 
 
-### Systèmes d'Information Géographiques ? (*9h45 - 10h30*)
+### Systèmes d'Information Géographiques ? (*9h30 - 10h45*)
 
 - Bref historique du développement des SIG
 - Principes et fonctionnalités
 - Principaux SIG
 - Présentation de QGIS
 
-#### Pause 10h30-10h45
+#### Pause 10h45-11h
 
 
 ]
 
 .pull-right[.center-right[
-###  Systèmes de coordonnées de référence, projections *(10h45 - 11h15)*
+###  Systèmes de coordonnées de référence, projections *(11h - 11h30)*
 
 - Qu'est-ce qu'une projection ?
 - Gérer les projections de ses couches géographiques dans QGIS 
 
-### Manipulations de base (données vectorielles) *(11h15 - 12h30)*
+### Manipulations de base (données vectorielles) *(11h30 - 12h45)*
 - Import de données tabulaires
 - Jointure attributaire
 - Jointure spatiale
 - Sélections attributaires
 
-#### Déjeuner 12h30 - 13h30
+#### Déjeuner 12h45 - 13h45
 
 ]
 ]
@@ -82,17 +82,12 @@ class: middle
 class: middle
 
 .pull-left[.center-left[
-### Géotraitements *13h30 - 14h30*
-- Présentation des géotraitements 
-- Cas d'usage de géotraitements
+### Géotraitements et statistiques spatiales *13h45 - 15h15*
+- Présentation et mise en pratique
 
-### Mise en cohérence des critères *14h30-14h45*
+### Mise en cohérence des critères *15h15-15h30*
 - Modéliser sa chaîne de traitement
 - Identifier une localisation optimale
-
-### Mettre en page une carte *14h45 - 15h30*
-- Eléments fondamentaux sur l'habillage cartographique
-- Créer une mise en page avec QGIS
 
 
 #### Pause 15h30-15h45
@@ -102,17 +97,18 @@ class: middle
 
 .pull-right[.center-right[
 
-### Cartographie thématique dans QGIS 15h45 - 16h30
-- Typologies (symboles catégorisés)
-- Cartes choroplèthes (symboles gradués)
+### Cartographie thématique dans QGIS *15h45 - 16h30*
+- Éléments fondamentaux de sémiologie graphique
+- Typologies (variables qualitatives)
+- Cartes choroplèthes (variables quantitatives de taux)
 
-### Prolongements (non abordé dans le détail) 16h30 - 16h40
 
-- Digitalisation
-- Statistiques spatiales
-- Quelques mots sur les outils dédiés à la cartographie thématique (Magrit)
+### Mettre en page une carte *16h30 - 17h15*
+- Eléments fondamentaux sur l'habillage cartographique
+- Créer une mise en page avec QGIS
 
-### Moment d'échange
+
+### Moment d'échange *17h15-17h30*
 
 ]]
 
@@ -128,10 +124,10 @@ class: middle
 .medium[
 
 4 critères proposés :
-- **Minimser les frais** : Un gymnase préexistant qui présente de bonnes prédispositions (taille, type d'activité).
+- **Minimiser les frais** : Un gymnase préexistant qui présente de bonnes prédispositions (taille, type d'activité).
 - **Favoriser l'inclusion sociale** : un territoire dont le revenu médian se situe sous la moyenne de la Métropole Européenne de Lille.  
 - **Optimisation de localisation** : Plus de 2000 m à vol d'oiseau d'un équipement existant.
-- **Ouvrir aux jeunes populations** : au moins 5 écoles dans un voisinage géographique de 1000m.
+- **Ouvrir aux jeunes populations**: au moins 5 écoles dans un voisinage géographique de 1000m.
 ]
 ]
 
@@ -167,7 +163,7 @@ Le découpage géographique 2019 des IRIS et des communes (polygones) de la Mét
 ]
 .right-column[
 <center>
-```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE, fig.height=7}
+```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE, fig.height=5, dpi=150}
 library(sf)
 library(mapsf)
 library(readxl)
@@ -205,7 +201,7 @@ mf_title("Contour des IRIS et des communes")
 
 ### Gymnases  
 
-L'emprise géographique des gymnases (polygones) et quelques attributs associés : surface, nom, type de sport pratiqués dans le gymnase (Source : <a href="https://www.openstreetmap.org/#map=11/50.6273/3.0563" target="_blank">OpenStreetMap</a>, librairie R<a href="https://cran.r-project.org/web/packages/osmdata/index.html" target="_blank">`osmdata`</a>)
+L'emprise géographique des gymnases (polygones) et quelques attributs associés : surface, nom, type de sport pratiqués dans le gymnase (Source : <a href="https://www.openstreetmap.org/#map=11/50.6273/3.0563" target="_blank">OpenStreetMap</a>, librairie R <a href="https://cran.r-project.org/web/packages/osmdata/index.html" target="_blank">`osmdata`</a>)
 
 *Fichier : [data/GEOM/gym_osm.shp]*
 
@@ -213,7 +209,7 @@ L'emprise géographique des gymnases (polygones) et quelques attributs associés
 ]
 .right-column[
 <center>
-```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE, fig.height=7, fig.align='center'}
+```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE, fig.height=5, fig.align='center', dpi=150}
 
 mf_shadow(com)
 mf_map(com, col = "peachpuff", add = TRUE)
@@ -247,7 +243,7 @@ La localisation (points) des écoles élémentaires en 2018 (Source : <a href="h
 ]
 .right-column[
 <center>
-```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE, fig.height=7, fig.align='center'}
+```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE, fig.height=5, fig.align='center', dpi=150}
 mf_shadow(com)
 mf_map(com, col = "peachpuff", add = TRUE)
 mf_map(school, col = "blue", border = "blue", add = TRUE)
@@ -269,7 +265,7 @@ mf_title("Localisation des écoles primaires")
 
 ### Revenu de la population
 
-Le revenu médian de la population en 2019 à l'échelle des IRIS / Communes. (Source : Source : <a href="https://www.insee.fr/fr/statistiques/6049648
+Le revenu médian de la population en 2019 à l'échelle des IRIS / Communes. (Source :  <a href="https://www.insee.fr/fr/statistiques/6049648
 " target="_blank">Revenu, pauvreté et niveau de vie en 2019 (Iris), INSEE</a>)
 
 *Fichier : [data/STAT/data_INSEE.xlsx]*
@@ -279,7 +275,7 @@ Le revenu médian de la population en 2019 à l'échelle des IRIS / Communes. (S
 .right-column[
 
 <center>
-```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE, fig.height=7, fig.align='center'}
+```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE, fig.height=5, dpi=150, fig.align='center'}
 df <- read_excel("data/STAT/data_INSEE.xlsx")
 iris <- merge(iris, df[,c("CODE_IRIS", "DEC_MED19")], by.x = "CODE_IRIS", by.y = "CODE_IRIS", all.x = TRUE)
 
@@ -486,29 +482,29 @@ knitr::include_graphics('fig/attribut.png')
 
 ### Un incontournable : l'Institut Géographique National
 
-- [Géoservices de l'IGN](https://geoservices.ign.fr/telechargement)  
-- [Géoportail (portail nationnal d’accès à l’information géographique de référence)](https://www.geoportail.gouv.fr/)    
+- <a href="https://geoservices.ign.fr/telechargement" target="_blank">Géoservices de l'IGN</a>
+- <a href="https://www.geoportail.gouv.fr/" target="_blank">Géoportail (portail nationnal d’accès à l’information géographique de référence)</a>
 
 
 ### Les organismes publics et les collectivités territoriales
 
-- [Bureau de Recherches Géologiques et Minières (BRGM)](http://infoterre.brgm.fr)          
-- [Agence de l'Environnement et de la Maîtrise de l'Energie (ADEME)](https://data.ademe.fr/)          
-- [Office national des forêts](https://www.onf.fr/onf/connaitre-lonf/+/35::open-data-pour-mieux-partager-les-donnees-forestieres.html)
-- Portail Open Data des régions : [Ile-de-France](https://data.iledefrance.fr/pages/home/), [Hauts-de-France](https://opendata.hautsdefrance.fr/), [Bretagne](https://data.bretagne.bzh/pages/home-page/), etc.    
-- Portail Open Data des Métropoles : [Métropole du Grand Paris](https://metropole-grand-paris.opendata.arcgis.com/), [Métropole Européenne de Lille](https://opendata.lillemetropole.fr/page/home/), [Rennes Métropole](https://data.rennesmetropole.fr/explore/?sort=modified), etc.
-- ...
+- <a href="http://infoterre.brgm.fr" target="_blank">Bureau de Recherches Géologiques et Minières (BRGM)</a>
+- <a href="https://data.ademe.fr/" target="_blank">Agence de l'Environnement et de la Maîtrise de l'Energie (ADEME)</a>
+- <a href="https://www.onf.fr/onf/connaitre-lonf/+/35::open-data-pour-mieux-partager-les-donnees-forestieres.html" target="_blank">Office national des forêts</a>
+- Portail Open Data des régions : <a href="https://data.iledefrance.fr/pages/home/" target="_blank">Ile-de-France</a>,  <a href="https://opendata.hautsdefrance.fr/" target="_blank">Hauts-de-France</a>, <a href="https://data.bretagne.bzh/pages/home-page/" target="_blank">Bretagne</a>, etc. 
+- Portail Open Data des métropoles : <a href="https://metropole-grand-paris.opendata.arcgis.com/" target="_blank">Métropole du Grand Paris</a>, <a href="https://opendata.lillemetropole.fr/page/home/" target="_blank">Métropole Européenne de Lille</a>, <a href="https://data.rennesmetropole.fr/explore/?sort=modified" target="_blank">Rennes Métropole</a>, etc.
 ]
 
 .pull-right[
 ## Au niveau international
 
-- [Eurostat - GISCO](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data)
-- [Copernicus](https://land.copernicus.eu/)
-- [Natural Earth](https://www.naturalearthdata.com/)
-- [World Pop](https://www.worldpop.org/)
-- [OpenStreetMap (OSM)](https://www.openstreetmap.fr/), données accessibles via des API comme [Overpass-turbo](http://overpass-turbo.eu/)
-- [Global Administrative Boundaries (GADM)](https://gadm.org/)
+- <a href="https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data" target="_blank">Eurostat - GISCO</a>
+- <a href="https://land.copernicus.eu/" target="_blank">Copernicus</a>
+- <a href="https://www.naturalearthdata.com/" target="_blank">Natural Earth</a>
+- <a href="https://www.worldpop.org/" target="_blank">World Pop</a>
+- <a href="https://gadm.org/" target="_blank">Global Administrative Boundaries (GADM)</a>
+- <a href="https://www.openstreetmap.fr/" target="_blank">OpenSreetMap (OSM)</a>, données exportables via des API comme <a href="http://overpass-turbo.eu/" target="_blank">Overpass-turbo</a>
+
 ]
 
 ---
@@ -530,13 +526,17 @@ knitr::include_graphics('fig/osm.png')
 knitr::include_graphics('fig/barsOSM.png')
 ```
 
-<p style="line-height:1.3;font-size:11pt;font-style:italic;text-align:center;">Densité des bars à Paris avec des données OSM ([T.Giraud, R Geomatic](https://rgeomatic.hypotheses.org/1244) ) </p>
+
+<p style="line-height:1.3;font-size:11pt;font-style:italic;text-align:center;">Densité des bars à Paris avec des données OSM (<a href="https://rgeomatic.hypotheses.org/1244" target="_blank">T.Giraud, R Geomatic</a>)</p>
+
 
 ---
 
 ## OpenStreetMap : La plateforme collaborative de l'IG libre
 
-Il est au préalable important de définir la clé-valeur de l'objet OpenStreetMap désiré grâce au [wiki OpenSteetMap](https://wiki.openstreetmap.org/wiki/FR:Tag:leisure%3Dsports_centre). Ensuite d'effectuer la requête de l'objet désiré via l'[API overpass-turbo](https://overpass-turbo.eu/). 
+
+Cela nécessite de définir la clé-valeur de l'objet OpenStreetMap désiré grâce au <a href="https://wiki.openstreetmap.org/wiki/FR:Tag:leisure%3Dsports_centre" target="_blank">wiki OpenStreetMap</a>. Ensuite d'effectuer la requête de l'objet désiré via l'<a href="https://overpass-turbo.eu/" target="_blank">API overpass-turbo</a>.
+
 
 .pull-left[
 
@@ -562,6 +562,8 @@ knitr::include_graphics('fig/osm_3.PNG')
 Les données OSM sont très hétérogènes par leur qualité (géométries, attributs, complétude des données). L'usage raisonné de ces données implique des enquêtes pour vérifier l'information, et compléter la base OSM le cas échéant. 
 
 ---
+
+class: middle
 
 ## Questions centrales pour rechercher de l'IG
 
@@ -687,7 +689,7 @@ L'INSEE et l'IGN utilisent des identifiants identiques pour qualifier les objets
 <img src="fig/qgis_IG.PNG" width="460" />
 ]
 
-<p style="font-size:10pt;line-height:1.3;font-style:italic;">Dans les fichiers de données INSEE (à gauche) l'attribut qui sert d'identifiant unique pour les communes est nommé CODGEO (code INSEE des communes). La couche géographique des communes fournies par l'IGN (à droite), comportent le même identifiant unique nommé INSEE_COM** </p>
+<p style="font-size:10pt;line-height:1.3;font-style:italic;">Dans les fichiers de données INSEE (à gauche) l'attribut qui sert d'identifiant unique pour les communes est nommé CODGEO (code INSEE des communes). La couche géographique des communes fournies par l'IGN (à droite), comportent le même identifiant unique nommé INSEE_COM. </p>
 
 
 ---
@@ -724,7 +726,7 @@ Il va identifier la **cause de l'épidémie** en utilisant un procédé simple, 
 - **Les pompes à eau** du quartier.]]  
 
 .medium[
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le foyer de contamination** : la pompe de Brewer Street.]
 ]
 
@@ -753,7 +755,7 @@ Il va identifier la **cause de l'épidémie** en utilisant un procédé simple, 
 - **Les pompes à eau** du quartier.]]  
 
 .medium[
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le foyer de contamination** : la pompe de Brewer Street.]
 ]
 
@@ -797,7 +799,7 @@ Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le
 
 ---
 
-## Définition
+## L'univers des SIG
 
 **Système informatique de matériels, de logiciels, et de processus conçus pour permettre la collecte, la gestion, la manipulation, l'analyse, la modélisation et l'affichage de données à référence spatiale** afin de résoudre des problèmes complexes d'aménagement et de gestion. (*Comité fédéral de coordination inter-agences pour la cartographie numérique, 1988*)</p> 
 
@@ -898,8 +900,6 @@ knitr::include_graphics('fig/rstudio.png')
 
 ## Les outils :  Systèmes d'Informations Géographiques (SIG)
 
-Les SIG sont l'ensemble des outils informatiques permettant de **collecter, stocker, gérer, manipuler, analyser, modéliser et représenter de l’information géographique**. 
-
 .center[
 <img src="fig/logiciels.PNG" height="500" />
 
@@ -909,10 +909,10 @@ Les SIG sont l'ensemble des outils informatiques permettant de **collecter, stoc
 
 ## Les outils :  Logiciels de cartographie thématique
 
-Bien que les SIG permettent la réalisation de représentations cartographiques, il ne s'agit pas de leur principale fonctionnalité et réaliser une carte peut s'avérer fastidieux... Si l'on souhaite rapidement réaliser une carte qui respecte l'ensemble des règles de la cartographie, **il est plus simple d'utiliser un logiciel spécialisé**.
+Des logiciels spécialement dédiés à la cartographie thématique et à la mise en page. 
 
 
-```{r, echo = FALSE, out.width = "500px",fig.align='center'}
+```{r, echo = FALSE, out.width = "700px",fig.align='center'}
 knitr::include_graphics('fig/Magrit.png')
 ```
 
@@ -920,7 +920,7 @@ knitr::include_graphics('fig/Magrit.png')
 
 ## Ouvrir QGIS
 
-**Lancez l'application QGIS Desktop**, comme vous le feriez avec n'importe quel logiciel :
+Une fois <a href="https://www.qgis.org/fr/site/forusers/download.html" target="_blank">installé</a>, **Lancez l'application QGIS Desktop**, comme vous le feriez avec n'importe quel logiciel :
 
 <br><br>
 .center[
@@ -939,7 +939,7 @@ L'utilisation d'un SIG nécessite de la **rigueur méthodologique**, car l'on se
 
 .right-column[
 
-- Travailler en **projet** (projet / enregistrer), à la racine du dossier contenant les données : .qgz ou .qmd dans QGIS. Un projet préserve l'ordre d'apparition des couches géographiques chargées dans le projet et leur style graphique associé. 
+- Travailler en **projet** (projet / enregistrer), à la racine du dossier contenant les données : .qgz ou .qmd dans QGIS. Un projet préserve l'ordre d'apparition des couches géographiques chargées dans l'application et leur style graphique associé. 
 
 - Utiliser des **intitulés de fichiers** intelligibles.
 
@@ -950,7 +950,7 @@ L'utilisation d'un SIG nécessite de la **rigueur méthodologique**, car l'on se
    * **criteres** : les couches géographiques consolidées du projet. 
    * **fig** : Un dossier dédié à l'export des images et figures issues de votre projet.   
    
-- Ne pas modifier les noms des couches géographiques et des répertoires de travail en cours de projet pour ne pas altérer le fichier projet.
+- Ne pas modifier les noms des couches géographiques et des répertoires de travail en cours de projet.
 
 ]
 
@@ -1047,8 +1047,8 @@ Il est possible de sélectionner les objets géographiques à partir de leur **t
 ]
 
 .right-column[
-![](fig/proj/intro_4.PNG)
 .center[
+![](fig/proj/intro_4.PNG)
 Clic droit sur la couche > Ouvrir la Table d'Attributs
 ]
 ]
@@ -1067,17 +1067,16 @@ Il est possible de sélectionner les objets géographiques à partir de leur **t
 
 
 .right-column[
-![](fig/proj/intro_5_selec_attr.PNG)
 .center[
+![](fig/proj/intro_5_selec_attr.PNG)
 Sélectionnez les IRIS de **Lille**
 ]
 ]
 
-
 ---
-## Export d'une sélection
 
 .pull-left[
+## Export d'une sélection
 
 Clic droit sur IRIS > Exporter > Sauvegarder les entités sélectionnées sous...  
 
@@ -1090,7 +1089,6 @@ Supprimer ensuite cette couche de la liste des couches (clic droit sur la couche
 .pull-right[
 ![](fig/proj/intro_5_selec_attr2.PNG)
 ]
-
 
 ---
 .left-column[
@@ -1117,7 +1115,7 @@ clic droit sur une des couches géographiques chargées > Propriétés > Symbolo
 .left-column[
 ## Gestion de l'affichage graphique
 
-Pour changer l'ordre d'affichage des couches, il suffit de les faire glisser à la position de son choix, comme des onglets dans un navigateur Web.
+Pour changer l'ordre d'affichage des couches, il suffit de les faire glisser dans les panneaux des couches à la position de son choix, comme des onglets dans un navigateur Web.
 
 Le **style graphique d'une couche** (couleur/transparence du fond et de la bordure, épaisseur de bordure, etc.), est paramétrable dans ses propriétés (symbologie) 
 
@@ -1177,7 +1175,7 @@ Faites apparaître sur l'espace d'affichage **le nom des communes** de votre esp
 
 .right-column[
 **Vous pouvez exporter le visuel créé au format .png**. 
-Attention néanmoins, il **manque beaucoup d'éléments** (titre, légende, sources...) etc. pour que cette carte soit valable ! Nous verrons cela dans les prochaines séances. Cela peut néanmoins constituer une base de travail et de réflexion. 
+Attention néanmoins, il **manque beaucoup d'éléments** (titre, légende, sources...) etc. pour que cette carte soit valable ! Cela peut néanmoins constituer une base de travail et de réflexion. 
 
 **Enregistrez votre projet à la racine de votre dossier de travail**. Les couches que vous avec chargé et leur style associé seront ainsi enregistrées pour la prochaine utilisation 
 ]
@@ -1188,7 +1186,7 @@ class: inverse middle center
 
 #  Systèmes de coordonnées de référence, projections
 
-Qu'est-ce qu'une projection
+Qu'est-ce qu'une projection ?
 
 Gérer la projection de ses couches géographiques dans QGIS
 
@@ -1222,11 +1220,12 @@ Pour la France, il est calé sur un niveau zéro scellé dans le port de Marseil
 
 ---
 
-##  Formalisation mathématique du géoïde
+class: middle
 
 .pull-left[
 
-<br><br><br>
+##  Formalisation mathématique du géoïde
+
 Le géoïde est une **surface difforme** à laquelle on ne saurait appliquer des **relations mathématiques**.
 
 Pour modéliser cette surface, on utilise une **figure géométrique régulière**: **l'ellipsoïde**.      
@@ -1236,13 +1235,13 @@ Il s'agit d'un volume globalement sphérique présentant un aplatissement aux p�
 
 .pull-right[
 
-```{r, echo = FALSE, out.width = "300px", fig.align='center'}
+```{r, echo = FALSE, out.width = "280px", fig.align='center'}
 knitr::include_graphics('fig/globe.gif')
 ```
 
 <br>
 
-```{r, echo = FALSE, out.width = "300px", fig.align='center'}
+```{r, echo = FALSE, out.width = "280px", fig.align='center'}
 knitr::include_graphics('fig/AnimationSphere2.GIF')
 ```
 ]
@@ -1267,28 +1266,11 @@ knitr::include_graphics('fig/ellipsoid.jpg')
 ```
 ]
 
----
-
-## Ecart ellipsoïde-géoïde
-
-.pull-left[
-```{r, echo = FALSE, out.width = "500px", fig.align='center'}
-knitr::include_graphics('fig/geoide.png')
-```
-
-]
-
-.pull-right[
 .medium[
-<br><br>
+**L'écart entre le géoïde et l'ellipsoïde de référence** (nommée 'hauteur') **ne dépasse pas 110 mètres** !  Si la forme de la terre n'est pas régulière, elle se rapproche donc fortement d'un ellipsoïde.
 
-**Les couleurs traduisent l'écart entre le géoïde et l'ellipsoïde**. Cela se nomme la 'hauteur', et **ne dépasse pas 110 mètres** ! 
-
-Si la forme de la terre n'est pas régulière, elle se rapproche donc fortement d'un ellipsoïde
-
-Il est important de noter que **l'altitude** d'un point est calculé par rapport à son l'**éloignement vertical à la surface du géoïde** et **pas à celle de l’ellipsoïde de référence**.
 ]
-]
+
 
 ---
 
@@ -1408,13 +1390,15 @@ Les projections planes peuvent être orientées de différentes manières : **po
 ## Le choix du centrage : pas de règle, mais le résultat n'est pas anodin !
 
 .pull-left[
-<img src="fig/US.jpg" width="500" />
-<img src="fig/ONU.png" width="500" />
+<img src="fig/US.jpg" width="350" />
+<br>
+<img src="fig/ONU.png" width="350" />
 ]
 
 .pull-right[
-<img src="fig/chinese_world.jpeg" width="500" />
-<img src="fig/australian.jpg" width="500" />
+<img src="fig/chinese_world.jpeg" width="350" />
+<br>
+<img src="fig/australian.jpg" width="350" />
 ]
 
 ---
@@ -1499,7 +1483,7 @@ La **distance et la direction**, mesurées à partir du point central, sont tout
 knitr::include_graphics('fig/postel.png')
 ```
 .medium[Exemple : **Projection Postel**]
-.small[*Al-Biruni (1000 envir.)*]
+.small[*1578*]
 ]
 
 
@@ -1577,7 +1561,8 @@ Une forme géométrique (un cercle ou une ellipse) est répétée de manière r�
 * Pour les régions polaires, plutôt des projections azimutales.
 ]
 
-D'un point de vue général, ne pas oublier que plus la surface à représenter est importante, plus les distorsions le seront également
+D'un point de vue général, les distorsions sont d'autant plus importantes que la surface à représenter l'est aussi.
+
 ---
 
 ## En France : La projection Lambert93
@@ -1605,7 +1590,7 @@ Les cartes officielles représentant l'ensemble de la France métropolitaine doi
 
 ## Chaque pays a son popre système de projection de référence ! 
 
-L'EPSG (European Petroleum Survey Group) a construit en place une base de données qui recense et identifie les systèmes de **coordonnées géographiques de projection les plus utilisés**.
+L'EPSG (European Petroleum Survey Group) a construit en place une base de données qui recense et identifie les systèmes de **projection les plus utilisés**.
 
 .center[
 [**epsg.io**](https://epsg.io/) est aujourd'hui une ressource Open-Source de référence internationale.
@@ -1634,16 +1619,17 @@ Importez les couches géographiques des gymnases et des écoles élémentaires d
 .right-column[
 ![](fig/proj/projection_1.PNG)
 .center[
+.medium[
 Importez les couches géographiques *LILLE_ECOLE.shp* et *gym_osm.shp*. Consulter leur SCR (Clic droit sur la couche > Propriétés > Informations).
 ]
 ]
-
+]
 ---
 .left-column[
 ## Modifier le SCR d'une couche géographique
 Les couches géographiques s'affichent automatiquement dans le système de projection de la première couche géographique importée.
 
-Pour modifier le système de projection, il suffit d'enregistrer une nouvelle version de la couche géographique concernée dans le système de projection souhaité (clic-droit sur la couche, enregistrez-sous...).
+Pour modifier le système de projection, il suffit d'enregistrer une nouvelle version de la couche géographique concernée dans le système de projection souhaité (clic-droit sur la couche, enregistrer sous...).
 
 ]
 
@@ -1651,7 +1637,11 @@ Pour modifier le système de projection, il suffit d'enregistrer une nouvelle ve
 
 ![](fig/proj/projection_2.PNG)
 
-Exportez les couches géographiques des écoles et gymnases dans le même SCR que celui des IRIS et communes (Lambert 93). Enregistrez ces couches dans votre dossier *tmp*, puis nettoyer l'espace de travail (éviter de visualiser des couches géographiques dorénavant inutiles)
+.medium[
+Exportez les couches géographiques des écoles et gymnases dans le même SCR que celui des IRIS et communes (Lambert 93). 
+
+Enregistrez ces couches dans votre dossier *tmp*, puis nettoyer l'espace de travail (éviter de visualiser des couches géographiques dorénavant inutiles)
+]
 
 ]
 
@@ -1677,9 +1667,9 @@ Jointure spatiale
 .pull-left[
 Il s'agit d'une sélection portant sur les **caractéristiques non spatiales des entités**. Dans un SIG, elles sont prises en charge dans la table attributaire des couches géographiques.
 
-On peut effectuer une sélection par expression sur des **variables catégorielles/qualitatives** *(ex : IRIS de de la commune "Bagnolet")* ou sur des **variables quantitatives** *(ex: IRIS dont le nombre de foyers fiscaux est supérieur à "10000")*
+On peut effectuer une sélection par expression sur des **variables catégorielles/qualitatives** *(ex : IRIS de de la commune "X")* ou sur des **variables quantitatives** *(ex: IRIS dont le nombre de foyers fiscaux est supérieur à Y)*.
 
-Le SIG renverra alors une sélection des entités dont les valeurs répondent à la requête
+Le SIG renverra alors une sélection des entités dont les valeurs répondent à la requête.
 ]
 
 .pull-right[
@@ -1713,7 +1703,7 @@ class: middle
 Objectifs d'atelier :
 
  - Extraire les gymnases où l'on pratique actuellement du roller.
- - Ne sélectionner que les gymnases incclus dans la MEL
+ - Ne sélectionner que les gymnases inclus dans la MEL
  - Sélectionner les gymnase de type "multi-activité"
  - Sélectionner les gymnases d'une surface au moins 2 fois supérieure à l'emprise d'une piste de roller-derby (750 m²)
 
@@ -1741,8 +1731,8 @@ Clic droit sur la couche *gymnase* > ouvrir la table attributaire > sélection p
 
 .right-column[
 .center[
-<img src="fig/proj/crit_0_selec_expression.PNG" width="500" />
-<img src="fig/proj/crit3_1_roller_gym.PNG" width="700" />
+<img src="fig/proj/crit_0_selec_expression.PNG" width="300" />
+<img src="fig/proj/crit3_1_roller_gym.PNG" width="600" />
 ]
 ]
 
@@ -1814,7 +1804,7 @@ Clic droit sur la couche ***gymnase_MEL*** > ouvrir la table attributaire > sél
 
 .right-column[
 .center[
-<img src="fig/proj/crit_0_selec_expression.PNG" width="500" />
+<img src="fig/proj/crit_0_selec_expression.PNG" width="300" />
 <img src="fig/proj/crit1_1_gymnase_multi_1.PNG" width="700" />
 ]
 ]
@@ -1839,7 +1829,7 @@ Enregistrez cette sélection sous le nom *gymnase_MEL_MULTI* dans votre dossier 
 
 .right-column[
 .center[
-<img src="fig/proj/crit1_2_gymnase_multi_2.PNG" width="700" />
+<img src="fig/proj/crit1_2_gymnase_multi_2.PNG" width="800" />
 ]
 ]
 
@@ -1939,11 +1929,9 @@ class: middle
 
 Objectifs d'atelier :
 
- - Extraire les gymnases où l'on pratique actuellement du roller.
- - Ne sélectionner que les gymnases incclus dans la MEL
- - Sélectionner les gymnase de type "multi-activité"
- - Sélectionner les gymnases d'une surface au moins 2 fois supérieure à l'emprise d'une piste de roller-derby (750 m²)
-
+- Importer des données issues d'un fichier Excel (Revenu médian à l'échelle des IRIS)
+- Les joindre à une couche géographique
+- Réaliser une sélection par expression sur ces données.
 
 ]
 
@@ -1971,7 +1959,8 @@ Couche > Ajouter une couche > Ajouter une couche de texte délimité
 
 .right-column[
 .center[
-![](fig/proj/crit2_1_import_insee.PNG)
+
+<img src="fig/proj/crit2_1_import_insee.PNG" width="600" />
 ]
 ]
 
@@ -1987,7 +1976,7 @@ Jointure de ce fichier de données non spatiales à la couche géographique des 
 
 Au préalable, il faut s'assurer de la concordance des données statistiques avec les géométries et identifier le nom de la colonne (identifiant unique) sur laquelle portera la jointure.
 
-Clic droit sur la couche ***IRIS_METRO_LILLE***, propriétés, jointure, cliquez sur "+"*
+Clic droit sur la couche ***IRIS_METRO_LILLE***, propriétés, jointure, cliquez sur "+"
 ]
 ]
 
@@ -2008,13 +1997,13 @@ Jointure de ce fichier de données non spatiales à la couche géographique des 
 
 Au préalable, il faut s'assurer de la concordance des données statistiques avec les géométries et identifier le nom de la colonne (identifiant unique) sur laquelle portera la jointure.
 
-*Choisir les deux champs à mettre en lien N'hésitez pas à jeter un oeil aux tables attributaires et aux métadonnées pour vous aider à cibler les bons identifiants.*
+*Choisir les deux champs à mettre en lien. Consulter attentivement la table attributaire pour choisir les bons noms de colonne.*
 ]
 ]
 
 .right-column[
 .center[
-![](fig/proj/crit2_3_jointure2.PNG)
+<img src="fig/proj/crit2_3_jointure2.PNG" width="450" />
 ]]
 
 ---
@@ -2029,14 +2018,17 @@ Jointure de ce fichier de données non spatiales à la couche géographique des 
 
 Au préalable, il faut s'assurer de la concordance des données statistiques avec les géométries et identifier le nom de la colonne (identifiant unique) sur laquelle portera la jointure.
 
-*Choisir les deux champs à mettre en lien N'hésitez pas à jeter un oeil aux tables attributaires et aux métadonnées pour vous aider à cibler les bons identifiants.*
+*Choisir les deux champs à mettre en lien. Consulter attentivement la table attributaire pour choisir les bons noms de colonne.*
 ]
 ]
 
 .right-column[
 .center[
 **BRAVO !!! Vous venez de joindre les données démographiques de l'INSEE dans la table attributaire de la couche IGN IRIS !** 
-![](fig/proj/crit2_4_verif_jointure.PNG)
+<br>
+
+<img src="fig/proj/crit2_4_verif_jointure.PNG" width="450" />
+
 ]]
 
 ---
@@ -2055,8 +2047,11 @@ Ouvrez le module de statistiques basiques et effectuez l'opération pour le cham
 
 .right-column[
 .center[
-![](fig/proj/crit2_5_stat_basique.PNG)
-![](fig/proj/crit2_6_stat_basique_2.PNG)
+
+<img src="fig/proj/crit2_5_stat_basique.PNG" width="450" />
+<br>
+<img src="fig/proj/crit2_6_stat_basique_2.PNG" width="450" />
+
 ]]
 
 ---
@@ -2069,7 +2064,7 @@ Ouvrez le module de statistiques basiques et effectuez l'opération pour le cham
 QGIS propose plusieurs outils permettant de retourner des statistiques basiques sur les données attributaires d'une couche géographique.
 
 .medium[
-La moyenne du revenu médian des IRIS qui composent la MEL s'élève à 20 625 euros. Nous retenons cette valeur en tête... 
+La moyenne du revenu médian des IRIS qui composent la MEL s'élève à 20 625 euros. Retenons cette valeur... 
 ]
 ]
 
@@ -2119,7 +2114,8 @@ Sélectionner les IRIS sous la moyenne de la MEL au moyen d'une sélection par e
 
 .right-column[
 .center[
-![](fig/proj/crit2_9_result_selec.PNG)
+
+<img src="fig/proj/crit2_9_result_selec.PNG" width="600" />
 ]]
 
 
@@ -2550,10 +2546,12 @@ Exportez ensuite le résultat de la sélection dans le dossier **criteres** et n
 
 ---
 
+class: center
+
 ## <img src="fig/eureka.PNG" width="60" />        Eureka ! Vous avez trouvé !!        <img src="fig/eureka.PNG" width="60" />
 
 .center[
-<img src="fig/proj/selec_9.PNG" width="375" /><img src="fig/est_ensemble_implantation_map.PNG" width="575" />
+<img src="fig/proj/selec_9.PNG" width="650" />
 ]
 
 ---
@@ -2657,13 +2655,13 @@ class: middle center
 ## Pour s'en convaincre...
 
 .pull-left[
-<img src="fig/map_failed_3.jpg" width="400" />
+<img src="fig/map_failed_3.jpg" width="350" />
 ]
 
 --
 
 .pull-right[
-<img src="fig/map_failed_4.jpg" width="400" />
+<img src="fig/map_failed_4.jpg" width="350" />
 ]
 
 ---
@@ -2747,7 +2745,7 @@ class: middle
 .pull-left[
 ## Réaliser une carte choroplèthe avec QGIS
 
-### Nouvelles notions SIG : Compter des points dans un polygone
+### Nouvelles notions SIG : Discrétisation, palettes de couleur
 
 Objectifs d'atelier :
 
@@ -2756,6 +2754,8 @@ Objectifs d'atelier :
 ]
 
 ---
+
+class: middle
 
 .pull-left[
 ## Préalable
@@ -2796,9 +2796,6 @@ clic droit sur la couche > IRIS > Propriétés > Symbologie
 
 .right-column[
 
-Dans ce cas, nous souhaitons que la méthode de discrétisation permette d'identifier les 20 % des IRIS aux valeurs de revenus les plus faibles et les plus fortes. Une méthode basée sur les quantiles en 8 classes permet d'y répondre. 
-La rupture de couleur n'est pas forcément une bonne chose, mais ici elle permet visuellement de séparer les unités géographiques en dessous et au-dessus de la médiane
-
 ![](fig/proj/choro_2_param.PNG)
 
 ]
@@ -2829,26 +2826,140 @@ Les palettes de couleur QGIS ne sont pas optimales. Préférez utiliser des pale
 
 ---
 
+.left-column[
+
+### Des choix justifiés... 
+
+.medium[
+- **Discrétisation (stat)** : gaussienne à tendance dissymétrique à droite, les quantiles sont adaptés
+
+- **Discrétisation (message véhiculé par la carte**) : permettre d'identifier visuellement les 20 % des territoires au plus haut/faible revenu. 
+
+- **Nombre de classes** : 8 (indice d'Huntsberger indique 1+3.3(log10(502)) = 9.9
+
+- **Palette** : Opposition rouge/bleu autour de la médiane. Usage d'une convention européennes de couleurs (rouge = valeur négatives, "mal", inverse en France).
+]
+]
+
+.right-column[
+
+<img src="fig/proj/choro_5_map.png" width="650" />
+
+]
+
+---
+
+
+class: middle
+
+.pull-left[
+## Réaliser une carte qualitative avec QGIS
+
+### Nouvelles notions SIG : Symboles catégorisés 
+
+Objectifs d'atelier :
+
+ - Réaliser une carte des types d'IRIS (activité, habitation, espaces naturels)
+
+]
+
+---
+
+## Paramétrer la visualisation
+
+.left-column[
+
+.medium[
+clic droit sur la couche > IRIS > Propriétés > Symbologie
+
+- Sélectionnez "Catégorisé"
+- Sélectionnez le nom du champ d'intérêt (variable qualitative non ordonnée)
+- Classes les valeurs du champ (toutes valeurs uniques)
+- Paramétrez la palette de couleur. Choisissez des couleurs qui font "sens"
+
+]
+]
+
+.right-column[
+
+
+![](fig/proj/typo_1_param.PNG)
+
+]
+---
+
 ## Résultat
 
 .left-column[
 
-### Choix 
+.medium[
+clic droit sur la couche > IRIS > Propriétés > Symbologie
 
-- **Discrétisation (stat)** : gaussienne à tendance dissymétrique à droite, les quantiles sont adaptés
-- **Discrétisation (message véhiculé par la carte**) : permettre d'identifier visuellement les 20 % des territoires au plus haut/faible revenu. 
-- **Nombre de classes** : 8 (indice d'Huntsberger indique 1+3.3(log()))
+- Sélectionnez "Catégorisé"
+- Sélectionnez le nom du champ d'intérêt (variable qualitative non ordonnée)
+- Classes les valeurs du champ (toutes valeurs uniques)
+- Paramétrez la palette de couleur. Choisissez des couleurs qui font "sens"
+
+]
+]
+
+.right-column[
+<img src="fig/proj/typo_2_map.PNG" width="650" />
+
+]
+
+---
+
+## Et pour une carte en figurés proportionnels (données quantitatives de stock) ? 
+
+.pull-left[
+
+C'est possible avec QGIS, mais cela nécessite quelques
+ <a href="https://ouvrir.passages.cnrs.fr/tutoqgis/10_01_representation.php#:~:text=Dans%20QGIS%2C%20la%20visualisation%20de,d'une%20couche%20de%20points" target="_blank">manipulations</a>...
+
+![](fig/qgis_cercles_proportionnels.PNG)
+
+]
+
+--
+
+.pull-right[
+
+Nous conseillons l'usage de logiciels de cartographie dédiés, comme  <a href="http://magrit.cnrs.fr/" target="_blank">Magrit</a>
+
+<img src="fig/Magrit.PNG" width="500"/>
 
 ]
 
 
+---
+
+## Et pour une carte en figurés proportionnels (données quantitatives de stock) ? 
+
+.pull-left[
+
+C'est possible avec QGIS, mais cela nécessite quelques
+ <a href="https://ouvrir.passages.cnrs.fr/tutoqgis/10_01_representation.php#:~:text=Dans%20QGIS%2C%20la%20visualisation%20de,d'une%20couche%20de%20points" target="_blank">manipulations</a>)...
+
+![](fig/qgis_cercles_proportionnels.PNG)
+
+]
+
+
+.pull-right[
+
+Exemple de carte réalisée avec Magrit
+
+<img src="fig/magrit_project.png" width="500"/>
+
+]
 
 ---
+
 class: inverse middle center
 
 #  Mettre en page une carte
 
-Synthèse graphique des critères mis en oeuvre dans l'atelier
 
 Éléments fondamentaux sur l'habillage cartographique
 
@@ -2856,26 +2967,56 @@ Créer une mise en page avec QGIS
 
 ---
 
-## Comment arriver à cette carte de synthèse ?
-
-.center[
-<img src="proj/fig/est_ensemble_carte_synthese.PNG" width="700" />
+.left-column[
+## Que manque t-il sur cette carte ?
 ]
 
----
-.pull-left[
+.right-column[
+<img src="fig/proj/choro_5_map.png" width="700"/>
+]
 
-## Codes et conventions cartographiques : Aider à la mise en contexte
+
+---
+
+.left-column[
+
+## Que manque t-il sur cette carte ?
+
 ### Des éléments obligatoires
 
-.medium[
 - Un **titre** 
 - Une **date**
 - Une **légende**  
 - Une **source** (un **auteur**)
 - Une **échelle** 
 - Une **orientation** (optionnel).  
- ]
+
+]
+
+.right-column[
+<img src="fig/proj/choro_5_map.png" width="700"/>
+]
+
+
+---
+
+.left-column[
+
+## Que manque t-il sur cette carte ?
+
+### Des éléments obligatoires
+
+- Un **titre** 
+- Une **date**
+- Une **légende**  
+- Une **source** (un **auteur**)
+- Une **échelle** 
+- Une **orientation** (optionnel).  
+]
+
+.right-column[
+<img src="fig/proj/choro_5_map.png" width="350"/>
+]
 
 ### A avoir en tête...
 
@@ -2886,31 +3027,46 @@ Créer une mise en page avec QGIS
 - Ne pas trop surcharger la carte : ne pas hésiter à produire des cartes plutôt qu'une. 
 - N'hésitez pas à jouer sur la transparence, les hachures, ajouter des labels, des encadrés etc. pour améliorer la lisibilité de votre carte
 ]
-]
- 
-.pull-right[
-<img src="fig/carte_lambert.png" width="570" />
- .leg-fig[
- Des morts par milliers aux portes de l'Europe (Source : [Lambert, 2015](https://neocarto.hypotheses.org/1370))
- ]
- ]
+
 
 ---
 
-## Mise en page dans QGIS
+class: middle center
+
+## Mettre en page une carte avec QGIS
+
+Projet > Nouvelle mise en page. Ne pas oublier d'enregistrer la mise en page !
 
 .center[
-<img src="fig/mise_en_page.png" width="900" />
+<img src="fig/proj/mise_en_page_QGIS-01.png" width="850" />
 ]
+
 
 ---
 
-## Mise en page dans QGIS
+class: middle center
+
+## Un exemple appliqué à notre proposition d'implantation
 
 .center[
-<iframe width="840" height="472.5" src="https://www.youtube.com/embed/zuYOBoMVfrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<img src="fig/proj/implantation_roller.png" width="800" />
+]
 
-.leg-fig[Une vidéo (source : La Minute QGIS) qui explique les fondements de la mise en page avec QGIS]
+
+---
+
+
+class: middle
+
+.pull-left[
+## Mettre en page une carte avec QGIS
+
+### Nouvelles notions SIG : Modèle de mise en page 
+
+Objectifs d'atelier :
+
+ - Mettre en page la carte des revenus d'IRIS ou des types d'IRIS avec QGIS
+
 ]
 
 
@@ -2918,115 +3074,7 @@ Créer une mise en page avec QGIS
 ---
 class: inverse middle center
 
-#  Pour aller plus loin...
-
-Digitalisation
-
-Statistiques spatiales
-
-Cartes avec Magrit
-
-
-
-
----
-## Digitalisation
-
-.pull-left[
-La digitalisation consiste à **numériser des points à partir d'un support visuel**, en attribuant à chaque point des coordonnées X et Y dans un système de projection quelconque.
-
-Elle peut être réalisée avec deux méthodes : la digitalisation sur table à digitaliser ou directement sur un écran à partir d'une source numérisée. 
-
-L'une des bases de départ des SIG est le plan cadastre digitalisé.
-
-La digitalisation nécessite beaucoup de méthode, de pratique et de précaution (éviter les erreurs topologiques, chevauchement des polygones, etc.). Sa pratique ne sera pas abordée dans ce cours.]
-
-.pull-right[
-<img src="fig/digitalisation5.PNG" width="390" />
-
-.leg-fig[
-Pour en savoir plus, se reporter à [ce document](https://hal.inrae.fr/hal-02791101/document) sur la digitalisation et le géoréférencement de cartes d'État Major ou à [celui-ci]((https://oatao.univ-toulouse.fr/16382/1/Grel_16382.pdf)) pour une application à l'analyse du couvert forestier (source : INRA).
-]
-]
-
----
-
-## Digitalisation
-
-.center[
-<img src="fig/digitalisation3.PNG" width="800" />
-]
-
----
-
-## Digitalisation
-
-.center[
-<iframe width="840" height="472.5" src="https://www.youtube.com/embed/uFaN-uDv90s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-.leg-fig[Une vidéo (source : CADGIS network) qui explique comment digitaliser une image géoréfrencée avec QGIS)]
-]
-
-
----
-
-## Quels logiciels pour quelle cartographie ?
-.pull-left[
-.center[**Logiciels de cartographie**
-
-<img src="fig/carto_logicielscarto.PNG" width="200"/>]
-
-.medium[
-* Environnement logiciel complètement **dédié à la création cartographique*</u>**.
-
-* **Cartographie de base** (réflexion poussée sur les choix statistiques)
-
-* Variété des méthodes de représentation
-
-* **Partage et diffusion** (« une belle carte »).
-
-* Interface épurée.]
-
-.center[*Des logiciels dédiés pour la création cartographique*]
-]
-
-.pull-right[
-.center[**Systèmes d'information géographique**
-
-
-<img src="fig/carto_logicielssig.PNG" width="200"/>]
-
-.medium[
-* Gestion de **bases de données** géographiques.
-
-* Visualisation et superposition des **couches** géographiques.
-
-* **Géotraitements**.
-
-* Cartographie de base (cartes choroplèthes, typologies, figurés proportionnels).]
-
-.center[*Réaliser une carte thématique de qualité est possible dans un environnement SIG, mais ce n’est pas l’objet premier de ce type de logiciels*]
-]
-
----
-
-## Magrit
-
-.center[.big[en ligne : [http://magrit.cnrs.fr](magrit.cnrs.fr)]]
-
-![](fig/magrit_page.png)
-
----
-
-## L'interface Magrit
-
-
-<img src="fig/magrit_project.PNG" width="700" />
-
----
-class: middle center inverse
-
-# Ressources
+# Ressources bibliographiques
 
 ---
 
@@ -3034,9 +3082,13 @@ class: center
 
 ## Systèmes d'information géographique
 
+.pull-left[
 <img src="fig/ref_4.png" height="450"  />
-<img src="fig/ref_5.jpeg" height="450" />
+]
 
+.pull-right[
+<img src="fig/ref_5.jpeg" height="450" />
+]
 
 ---
 
@@ -3044,9 +3096,10 @@ class: center
 
 ## Cartographie thématique
 
-<img src="fig/ref_1.jpg" height="450" />
-<img src="fig/ref_2.jpg" height="450" />
-<img src="fig/ref_3.jpg" height="450" />
+<img src="fig/ref_1.jpg" width="290" style="border:1px solid grey"  />
+<img src="fig/ref_2.jpg" width="280" style="border:1px solid grey" />
+<img src="fig/ref_3.jpg" width="280" style="border:1px solid grey"  />
+
 
 ---
 class: middle center
@@ -3055,9 +3108,7 @@ class: middle center
 
 <center>
 
-
-Présentation accessible et diffusable à l'adresse
-[rysebaert.github.io/qgis_data_shs](https://rysebaert.github.io/qgis_data_shs) 
+Présentation accessible et diffusable à l'adresse [rysebaert.github.io/qgis_data_shs](https://rysebaert.github.io/qgis_data_shs) 
 
 </center>
 
