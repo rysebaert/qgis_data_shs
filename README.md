@@ -17,6 +17,12 @@ import de données, gestion des systèmes de coordonnées de référence, jointu
 visualisation de données et mise en page. Cette formation inclut un atelier pour permettre aux participants de mettre en pratique
 les éléments théoriques et méthodologiques abordés.
 
+## Organisation du dépôt
+
+- La présentation est accessible [ici](https://rysebaert.github.io/qgis_data_shs)
+- Elle est construite à partir d'un document RMarkdown, accessible [ici](https://github.com/rysebaert/qgis_data_shs/blob/master/index.Rmd)
+- Les données utiles à l'atelier sont disponibles dans ce [dossier du dépôt](https://github.com/rysebaert/qgis_data_shs/tree/master/data). Elles sont structurées en deux sous dossier : `GEOM` inclut les données géométriques vectorielles ; `STAT` un fichier de données tabulaires (Excel), qui seront utilisées dans l'atelier associé à la formation. 
+
 ## Durée de la formation
 Une journée
 
