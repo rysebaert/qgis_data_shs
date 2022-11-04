@@ -2,16 +2,11 @@
 
 **Ronan Ysebaert (UAR RIATE, Université Paris Cité) et Violaine Jurie (Géotéca, Université Paris Cité)**
 
-<div class="row">
-  <div class="column">
+<p float="left">
 <img src="fig/riate.png" width="290">
-  </div>
-  <div class="column">
 <img src="fig/geoteca.png" width="200"">
-  </div>
-  <div class="column">
 <img src="fig/uparis.jpeg" width="200">
-</div>
+</p>
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
