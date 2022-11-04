@@ -141,7 +141,7 @@ class: middle
 ---
 ## Télécharger les données de l'atelier : <a href="https://github.com/rysebaert/qgis_data_shs" target="_blank">https://github.com/rysebaert/qgis_data_shs</a>
 
-Puis cliquez sur *data > data.zip > download*
+Puis cliquez sur *data > data.zip > download*. Décompresser ensuite l'archive. 
 
 ![](fig/git.PNG)
 
@@ -327,6 +327,8 @@ La force des données géographiques est de **pouvoir les croiser** entre elles 
 
 ---
 
+class: middle center
+
 ## Les composantes de l'information géographique
 
 ```{r, echo = FALSE, out.width = "900px", fig.align='center'}
@@ -373,7 +375,7 @@ knitr::include_graphics('fig/geom.png')
 
 ## Niveau géométrique
 
-Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le raster et le vecteur. 
+2 types de données sont à différencier : le raster et le vecteur. 
 
 .pull-left[
 
@@ -400,7 +402,7 @@ La manipulation des rasters nécessite des méthodes et des outils spécialisés
 
 ## Niveau géométrique
 
-Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le raster et le vecteur. 
+2 types de données sont à différencier : le raster et le vecteur. 
 
 
 ### Le vecteur
@@ -430,7 +432,7 @@ Leur manipulation est simple et permet de puissants traitements.
 
 ## Niveau géométrique
 
-Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le raster et le vecteur. 
+2 types de données sont à différencier : le raster et le vecteur. 
 
 ```{r, echo = FALSE, out.width = "700px", fig.align='center', message=FALSE}
 knitr::include_graphics('fig/raster_vecteur_2.png')
@@ -441,13 +443,21 @@ knitr::include_graphics('fig/raster_vecteur_2.png')
 
 ## Niveau topologique
 
-Le niveau topologique  **d'un objet géographique se déduit du niveau géométrique**. Il correspond aux relations éventuelles avec d'autres objets ou phénomènes (ex : contiguïté entre deux bâtiments).
+Le niveau topologique  **d'un objet géographique se déduit du niveau géométrique**. Il correspond aux relations éventuelles avec d'autres objets ou phénomènes.
 
 
 ```{r, echo = FALSE, fig.align='center', out.width = "500px"}
 knitr::include_graphics('fig/topologie.gif')
 ```
 
+.medium[
+Exemples d'application :
+
+- Multipoint / Linestring : Quel bâtiment touche le tracé d'une route en construction ?
+- Multipoint / Polygon : Quelle équipement est inclu / en dehors de tel espace d'étude ?
+- Linestring / Linesting : Quelle route traverse une rivière ?
+- Linestring / Polygon : Quelle rivière recoupe un espace d'étude donnée ?
+]
 
 ---
 
@@ -496,7 +506,7 @@ knitr::include_graphics('fig/attribut.png')
 ]
 
 .pull-right[
-## Au niveau international
+### Au niveau international
 
 - <a href="https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data" target="_blank">Eurostat - GISCO</a>
 - <a href="https://land.copernicus.eu/" target="_blank">Copernicus</a>
@@ -535,7 +545,7 @@ knitr::include_graphics('fig/barsOSM.png')
 ## OpenStreetMap : La plateforme collaborative de l'IG libre
 
 
-Cela nécessite de définir la clé-valeur de l'objet OpenStreetMap désiré grâce au <a href="https://wiki.openstreetmap.org/wiki/FR:Tag:leisure%3Dsports_centre" target="_blank">wiki OpenStreetMap</a>. Ensuite d'effectuer la requête de l'objet désiré via l'<a href="https://overpass-turbo.eu/" target="_blank">API overpass-turbo</a>.
+Le <a href="https://wiki.openstreetmap.org/wiki/FR:Tag:leisure%3Dsports_centre" target="_blank">wiki OpenStreetMap</a> permet d'identifier la clé-valeur OSM associée à l'objet géographique désiré. Plusieurs outils existent pour requêter ces données, comme l'<a href="https://overpass-turbo.eu/" target="_blank">API overpass-turbo</a>.
 
 
 .pull-left[
@@ -547,7 +557,7 @@ Cela nécessite de définir la clé-valeur de l'objet OpenStreetMap désiré gr�
 <img src="fig/osm_2.PNG" width="425" />
 ]
 
-Les requêtes sont envoyées sur un serveur mis à disposition gratuitement. Les requêtes doivent être raisonnables, e.g. pas sur l'ensemble du Monde. 
+Les requêtes sont envoyées sur un serveur mis à disposition gratuitement. Les requêtes doivent être raisonnables (pas sur l'ensemble du Monde).  
 
 ---
 
@@ -888,7 +898,7 @@ Ex : *Sélection d'objets géographiques ponctuels situés à une certaine dista
 
 ## Les outils : Logiciels d'analyse de données
 
-Les logiciels d'analyse de données (R, SAS, SPSS, etc.) permettent de traiter, explorer et analyser les données disposant d'une dimension géographique, grâce à du code et des fonctions.
+Les logiciels d'analyse de données (R, SAS, SPSS, etc.) permettent de traiter, explorer et analyser les données disposant d'une dimension géographique, grâce à du code, des fonctions et des librairies dédiées.
 
 
 ```{r, echo = FALSE, out.width = "590px", fig.align='center'}
@@ -2888,16 +2898,18 @@ clic droit sur la couche > IRIS > Propriétés > Symbologie
 ]
 ---
 
-## Résultat
-
 .left-column[
+## Résultat
 
 .medium[
 clic droit sur la couche > IRIS > Propriétés > Symbologie
 
 - Sélectionnez "Catégorisé"
+
 - Sélectionnez le nom du champ d'intérêt (variable qualitative non ordonnée)
+
 - Classes les valeurs du champ (toutes valeurs uniques)
+
 - Paramétrez la palette de couleur. Choisissez des couleurs qui font "sens"
 
 ]
@@ -3015,6 +3027,7 @@ Créer une mise en page avec QGIS
 ]
 
 .right-column[
+.center[
 <img src="fig/proj/choro_5_map.png" width="350"/>
 ]
 
@@ -3027,7 +3040,7 @@ Créer une mise en page avec QGIS
 - Ne pas trop surcharger la carte : ne pas hésiter à produire des cartes plutôt qu'une. 
 - N'hésitez pas à jouer sur la transparence, les hachures, ajouter des labels, des encadrés etc. pour améliorer la lisibilité de votre carte
 ]
-
+]
 
 ---
 
