@@ -4,8 +4,8 @@
 
 
 <img src="fig/riate.png" width="290">
-<img src="fig/geoteca.png" width="290"">
-<img src="fig/uparis.jpeg" width="290">
+<img src="fig/geoteca.png" width="200"">
+<img src="fig/uparis.jpeg" width="200">
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
