@@ -1945,6 +1945,10 @@ Objectifs d'atelier :
 
 ]
 
+.pull-right[
+![](fig/politique_de_la_ville.png)
+]
+
 ---
 
 ## Pour une pratique accessible aux moins favorisés
@@ -2246,6 +2250,12 @@ Objectifs d'atelier :
 ]
 
 
+.pull-right[
+
+![](fig/zone-vol-doiseau.png)
+
+]
+
 ---
 
 ## Diversifier l'offre géographique
@@ -2343,6 +2353,12 @@ Objectifs d'atelier :
 
 ]
 
+
+.pull-right[
+
+![](fig/roller_kids.PNG)
+
+]
 
 ---
 
