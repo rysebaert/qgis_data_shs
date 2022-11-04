@@ -1,16 +1,11 @@
 # Initiation au traitement de l'information géographique dans un environnement SIG (QGIS)
 
-<style>
-.logos {
-   width: 180px;
-   display: inline-block;
-   left: 0px;
-   margin-left: 80px;
-}
-</style>
-<img src="fig/riate.png" alt="" class="logos">
-<img src="fig/geoteca.png" alt="" class="logos">
-<img src="fig/logos/uparis.jpeg" alt="" class="logos">
+**Ronan Ysebaert (UAR RIATE, Université Paris Cité) et Violaine Jurie (Géotéca, Université Paris Cité)**
+
+
+<img src="fig/riate.png" width="290">
+<img src="fig/geoteca.png" width="290"">
+<img src="fig/uparis.jpeg" width="290">
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
