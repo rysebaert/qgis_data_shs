@@ -2,7 +2,7 @@
 title: "Initiation au traitement de l'information géographique dans un environnement SIG (QGIS)"
 subtitle: "Journées Data SHS - PUD Lille - Décembre 2022"
 author:  
-- "Ronan Ysebaert - UAR RIATE, Université Paris Cité / Violaine Jurie (Géoteca, Université Paris Cité)"
+- "Ronan Ysebaert (UAR RIATE, Université Paris Cité) / Violaine Jurie (Géoteca, Université Paris Cité)"
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -82,10 +82,10 @@ class: middle
 class: middle
 
 .pull-left[.center-left[
-### Géotraitements et statistiques spatiales *13h45 - 15h15*
+### Géotraitements et statistiques spatiales *(13h45 - 15h15)*
 - Présentation et mise en pratique
 
-### Mise en cohérence des critères *15h15-15h30*
+### Mise en cohérence des critères *(15h15-15h30)*
 - Modéliser sa chaîne de traitement
 - Identifier une localisation optimale
 
@@ -97,18 +97,18 @@ class: middle
 
 .pull-right[.center-right[
 
-### Cartographie thématique dans QGIS *15h45 - 16h30*
+### Cartographie thématique dans QGIS *(15h45 - 16h30)*
 - Éléments fondamentaux de sémiologie graphique
 - Typologies (variables qualitatives)
 - Cartes choroplèthes (variables quantitatives de taux)
 
 
-### Mettre en page une carte *16h30 - 17h15*
+### Mettre en page une carte *(16h30 - 17h15)*
 - Eléments fondamentaux sur l'habillage cartographique
 - Créer une mise en page avec QGIS
 
 
-### Moment d'échange *17h15-17h30*
+### Moment d'échange *(17h15-17h30)*
 
 ]]
 
@@ -408,7 +408,7 @@ Pour stocker, manipuler, analyser et représenter de l'information géographique
 .pull-left[
 **Le format vectoriel** utilise le concept d'**objets géométriques (points, lignes, polygones) pour représenter (et stocker) des objets géographiques**. 
 
-Les objets vectoriels ne ne pixellisent pas. On parlera néanmoins de **niveaux de généralisation** pour qualifier leur niveau de précision (parfois aussi appelée résolution).
+Les objets vectoriels ne ne pixelisent pas. On parlera néanmoins de **niveaux de généralisation** pour qualifier leur niveau de précision (parfois aussi appelée résolution).
 
 Leur manipulation est simple et permet de puissants traitements.    
 
@@ -483,7 +483,7 @@ knitr::include_graphics('fig/attribut.png')
 ### Un incontournable : l'Institut Géographique National
 
 - <a href="https://geoservices.ign.fr/telechargement" target="_blank">Géoservices de l'IGN</a>
-- <a href="https://www.geoportail.gouv.fr/" target="_blank">Géoportail (portail nationnal d’accès à l’information géographique de référence)</a>
+- <a href="https://www.geoportail.gouv.fr/" target="_blank">Géoportail (portail national d’accès à l’information géographique de référence)</a>
 
 
 ### Les organismes publics et les collectivités territoriales
@@ -947,7 +947,7 @@ L'utilisation d'un SIG nécessite de la **rigueur méthodologique**, car l'on se
    * **GEOM** : les données géographiques d'entrée, à ne pas modifier.
    * **STAT** : les données statistiques d'entrée, à ne pas modifier.
    * **tmp** : les traitements intermédiaires.  
-   * **criteres** : les couches géographiques consolidées du projet. 
+   * **critères** : les couches géographiques consolidées du projet. 
    * **fig** : Un dossier dédié à l'export des images et figures issues de votre projet.   
    
 - Ne pas modifier les noms des couches géographiques et des répertoires de travail en cours de projet.
@@ -1080,7 +1080,7 @@ Sélectionnez les IRIS de **Lille**
 
 Clic droit sur IRIS > Exporter > Sauvegarder les entités sélectionnées sous...  
 
-Enregistrer la sélection que vous appelerez *lille_iris* dans le dossier "tmp" au format *geojson*. 
+Enregistrer la sélection que vous appellerez *lille_iris* dans le dossier "tmp" au format *geojson*. 
 
 Supprimer ensuite cette couche de la liste des couches (clic droit sur la couche > supprimer la couche)
 
@@ -1903,7 +1903,7 @@ Les jointures attributaires sont utilisées lorsque l'on souhaite introduire des
 
 .pull-left[
 <br><br>
-Une **jointure spatiale** permet de caractérister le **positionnement relatif d'entités issues de deux couches géographiques différentes**.
+Une **jointure spatiale** permet de caractériser le **positionnement relatif d'entités issues de deux couches géographiques différentes**.
 
 Par exemple, une table des écoles pourra être jointe à une table des communes en fonction d'une **relation spatiale de type inclusion géométrique**. 
 
@@ -2504,7 +2504,7 @@ Nous avons créé 4 couches géographiques qui constituent nos critères pour l'
 
 - **CRITERE_1_MULTI_1500M_SQ** : Gymnases de plus de 1500 m², multi-activité, localisé dans la MEL.
 - **CRITERE_2_REVENU** : Les IRIS dont le revenu médian est inférieur à la moyenne de la MEL.
-- **CRITERE_3_DISTANCE_2000_ROLLER** : l'espace à plus de 2000m d'un gymnase avev une activité de roller existante  
+- **CRITERE_3_DISTANCE_2000_ROLLER** : l'espace à plus de 2000m d'un gymnase avec une activité de roller existante  
 - **CRITERE_1_4_3ECOLES_1000M** : A partir du critère 1, les gymnases qui comprennent au moins 3 écoles à moins de 1000 mètres
 
 <br>
