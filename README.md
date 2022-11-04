@@ -3,7 +3,7 @@
 **Ronan Ysebaert (UAR RIATE, Université Paris Cité) et Violaine Jurie (Géotéca, Université Paris Cité)**
 
 <p float="left">
-<img src="fig/riate.png" width="290" align="middle" hspace="20" vspace="20">
+<img src="fig/riate.png" width="250" align="middle" hspace="20" vspace="20">
 <img src="fig/geoteca.png" width="200" align="middle" hspace="20" vspace="20">
 <img src="fig/uparis.jpeg" width="200" align="middle" hspace="20" vspace="20">
 </p>
