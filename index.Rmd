@@ -43,21 +43,20 @@ class: middle
 
 .pull-left[
 
-### Information géographique ?  (*9h - 9h30*)
+### Information géographique ?  (*9h30- 10h*)
 
 - Les composantes de l'information géographique
 - Où en trouver ?
 - Formats de fichiers
 
 
-### Systèmes d'Information Géographiques ? (*9h30 - 10h45*)
+### Systèmes d'Information Géographiques ? (*10h - 11h*)
 
 - Bref historique du développement des SIG
 - Principes et fonctionnalités
 - Principaux SIG
 - Présentation de QGIS
 
-#### Pause 10h45-11h
 
 
 ]
@@ -68,13 +67,13 @@ class: middle
 - Qu'est-ce qu'une projection ?
 - Gérer les projections de ses couches géographiques dans QGIS 
 
-### Manipulations de base (données vectorielles) *(11h30 - 12h45)*
+### Manipulations de base (données vectorielles) *(11h30 - 12h30)*
 - Import de données tabulaires
 - Jointure attributaire
 - Jointure spatiale
 - Sélections attributaires
 
-#### Déjeuner 12h45 - 13h45
+#### Déjeuner 12h30 - 13h30
 
 ]
 ]
@@ -82,33 +81,27 @@ class: middle
 class: middle
 
 .pull-left[.center-left[
-### Géotraitements et statistiques spatiales *(13h45 - 15h15)*
+### Géotraitements et statistiques spatiales *(13h30 - 15h)*
 - Présentation et mise en pratique
 
-### Mise en cohérence des critères *(15h15-15h30)*
+### Mise en cohérence des critères *(15h - 15h30)*
 - Modéliser sa chaîne de traitement
 - Identifier une localisation optimale
-
-
-#### Pause 15h30-15h45
 
 
 ]]
 
 .pull-right[.center-right[
 
-### Cartographie thématique dans QGIS *(15h45 - 16h30)*
+### Cartographie thématique dans QGIS *(15h30 - 16h15)*
 - Éléments fondamentaux de sémiologie graphique
 - Typologies (variables qualitatives)
 - Cartes choroplèthes (variables quantitatives de taux)
 
 
-### Mettre en page une carte *(16h30 - 17h15)*
+### Mettre en page une carte *(16h15 - 17h)*
 - Eléments fondamentaux sur l'habillage cartographique
 - Créer une mise en page avec QGIS
-
-
-### Moment d'échange *(17h15-17h30)*
 
 ]]
 
@@ -519,61 +512,6 @@ knitr::include_graphics('fig/attribut.png')
 
 ---
 
-## OpenStreetMap : la plateforme collaborative de l'IG libre
-
-OpenStreetMap (OSM) est un projet de cartographie lancé en 2004 qui a pour but de **constituer une base de données géographiques libre du monde** en utilisant le système GPS et d'autres données libres et ouvertes. **Tout le monde peut y contribuer et/ou utiliser les données**.
-
-```{r, echo = FALSE, out.width = "960px",fig.align='center'}
-knitr::include_graphics('fig/osm.png')
-```
-
-<p style="line-height:1.3;font-size:11pt;font-style:italic;text-align:center;"><a href="https://openstreetmap.org/" target="_blank">openstreetmap.org</a></p>
-
----
-
-## OpenStreetMap : la plateforme collaborative de l'IG libre
-
-```{r, echo = FALSE, out.width = "800px",fig.align='center'}
-knitr::include_graphics('fig/barsOSM.png')
-```
-
-
-<p style="line-height:1.3;font-size:11pt;font-style:italic;text-align:center;">Densité des bars à Paris avec des données OSM (<a href="https://rgeomatic.hypotheses.org/1244" target="_blank">T.Giraud, R Geomatic</a>)</p>
-
-
----
-
-## OpenStreetMap : la plateforme collaborative de l'IG libre
-
-
-Le <a href="https://wiki.openstreetmap.org/wiki/FR:Tag:leisure%3Dsports_centre" target="_blank">wiki OpenStreetMap</a> permet d'identifier la clé-valeur OSM associée à l'objet géographique désiré. Plusieurs outils existent pour requêter ces données, comme l'<a href="https://overpass-turbo.eu/" target="_blank">API overpass-turbo</a>.
-
-
-.pull-left[
-
-<img src="fig/osm_1.PNG" width="425" />
-]
-
-.pull-right[
-<img src="fig/osm_2.PNG" width="425" />
-]
-
-Les requêtes sont envoyées sur un serveur mis à disposition gratuitement. Les requêtes doivent être raisonnables (pas sur l'ensemble du Monde).  
-
----
-
-## OpenStreetMap : la plateforme collaborative de l'IG libre
-
-On peut ensuite exporter les résultats qui répondent à cette requête. 
-
-```{r, echo = FALSE, out.width = "800px",fig.align='center'}
-knitr::include_graphics('fig/osm_3.PNG')
-```
-
-Les données OSM sont très hétérogènes par leur qualité (géométries, attributs, complétude des données). L'usage raisonné de ces données implique des enquêtes pour vérifier l'information et compléter la base OSM le cas échéant. 
-
----
-
 class: middle
 
 ## Questions centrales pour rechercher de l'IG
@@ -591,29 +529,6 @@ class: middle
 </br>
 
 D'un point de vue général, privilégiez l'usage de ressources gérées et maintenues par des **institutions**. 
-
----
-
-## L'importance des métadonnées
-
-.pull-left[
-
-Avec la massification des données mises à disposition, **la documentation structurée** des données est essentielle. Elle facilite l'accès au contenu informationnel d'une ressource informatique. 
-
-**Une métadonnée est littéralement une donnée sur une donnée. C'est un ensemble structuré d'informations décrivant une ressource** (pas spécifique à l'information géographique).
-
-Les métadonnées synthétisent des informations élémentaires et facilitent la compréhension et l'utilisation des données : **auteur·rice, date de création/modification, technique de collecte, qualité, taille du fichier, unité de mesure, droits d'utilisation...**.
-
-]
-
-.pull-right[
-```{r, echo = FALSE, out.width = "700px",fig.align='center'}
-knitr::include_graphics('fig/meta.png')
-```
-
-Consulter attentivement les métadonnées associées aux données géographiques est primordial.
-]
-
 
 ---
 
@@ -809,63 +724,36 @@ Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le
 **Les SIG sont aujourd’hui utilisés dans de nombreux domaines** : 
 *agriculture, aménagement du territoire, architecture, assurances & banque, automobile, BTP, cadastre, découpage électoral, défense, démographie, eau et assainissement, électricité, enseignement, environnement, épidémiologie, équipement, géologie, géomarketing, gestion de flotte, gestion de patrimoine, gestion de réseaux, gestion des sols, Internet, immobilier, implantation de commerces, ingénierie logistique, optimisation de parcours, pétrole et gaz, publicité, recherche, ressources naturelles, santé, services d'urgence, télécommunications, tourisme...* ]
 
----
-
-## L'univers des SIG
-
-**Système informatique de matériels, de logiciels, et de processus conçus pour permettre la collecte, la gestion, la manipulation, l'analyse, la modélisation et l'affichage de données à référence spatiale** afin de résoudre des problèmes complexes d'aménagement et de gestion. (*Comité fédéral de coordination inter-agences pour la cartographie numérique, 1988*)</p> 
-
-.pull-left[
-La pratique des logiciels de SIG est un métier : **sigiste**
-
-Le SIG est également **l'outil de référence de la géomatique**
-
-La géomatique est une discipline issue de la géographie et des développements de l'informatique (**GEO**graphie + infor**MATIQUE**)
-
-La géomatique regroupe l'ensemble des outils et méthodes permettant d'acquérir, de représenter, d'analyser et d'intégrer des données géographiques
-]
-
-.pull-right[
-![](fig/georezo.PNG)
-]
 
 ---
 
 ## Principes et fonctionnalités
 
-Les logiciels SIG permettent de **superposer des couches géographiques de différentes natures, dans un même système de projection**. Cela permet de réaliser de puissantes **analyses croisées**.
-
-.pull-left[
-<br><br><br>
-Ces logiciels permettent d'opérer sur l'intégralité de la chaîne de traitement des données géographiques :
+Les logiciels SIG permettent d'opérer sur l'intégralité de la chaîne de traitement des données géographiques :
 
 - **Digitalisation** - saisir et abstraire
 - **Stockage** et **gestion** - base de données
 - **Analyse** - géotraitements, analyse spatiale   
 - **Représentation** - cartographie
-]
 
-.pull-right[
-<img src="fig/multi_couche.jpg" height="450" />
-]
-
----
-
-## Principes et fonctionnalités
+--
 
 .pull-left[
-<br><br><br>
-Pour **modéliser la réalité**, on superpose plusieurs couches d'information géographique **vecteur et/ou raster**
+
+Pour **modéliser la réalité**, on superpose plusieurs couches d'information géographique,  **vecteur et/ou raster**, de différente nature, dans un même système de projection
 
 Chaque **couche géographique contient des objets de même type** (adresses, parcelles, routes, bâtiments, cours d'eau, limites administratives...)
 
 **Une couche géographique = un type d'objet géographique** : point, ligne, polygone ou image géoréférencée (raster)
+
+Il est ensuite possible de réaliser de puissantes **analyses croisées**.
+
 ]
 
-.center[
 .pull-right[
-<img src="fig/GIS_SPAIN.jpg" height="450" />
-]]
+<img src="fig/GIS_SPAIN.jpg" height="350" />
+]
+
 
 ---
 
@@ -898,33 +786,14 @@ Ex : *Sélection d'objets géographiques ponctuels situés à une certaine dista
 
 ---
 
-## Les outils : logiciels d'analyse de données
 
-Les logiciels d'analyse de données (R, SAS, SPSS, etc.) permettent de traiter, explorer et analyser les données disposant d'une dimension géographique, grâce à du code, des fonctions et des librairies dédiées.
-
-.center[
-<img src="fig/rstudio.png" height="500" />
-]
----
-
-
-## Les outils :  Systèmes d'Informations Géographiques (SIG)
+## QGIS : Un outil parmi d'autres
 
 .center[
 <img src="fig/logiciels.PNG" height="500" />
 
 ]
 
----
-
-## Les outils : logiciels de cartographie thématique
-
-Des logiciels spécialement dédiés à la cartographie thématique et à la mise en page. 
-
-
-```{r, echo = FALSE, out.width = "700px",fig.align='center'}
-knitr::include_graphics('fig/Magrit.png')
-```
 
 ---
 
@@ -1216,7 +1085,7 @@ class: middle
 
 ## Le géoïde terrestre
 
-**La Terre n'est pas une sphère** qui est une forme géométrie dite parfaite. **Elle est légèrement aplatie aux pôles et bosselée selon les continents**. Son apparence sphérique lorsqu'on l'observe depuis l'espace masque les nombreuses petites irrégularités de sa surface.
+**La Terre n'est pas une sphère** qui est une forme géométrie dite parfaite. **Elle est légèrement aplatie aux pôles et bosselée selon les continents**. Son apparence sphérique lorsqu'on l'observe depuis l'espace masque les nombreuses petites irrégularités de sa surface. On ne peut lui appliquer des **relations mathématiques**.
 
 Toute mesure ayant besoin d'une référence, on modélise la forme de la Terre selon le modèle théorique du **géoïde**.
 
@@ -1246,89 +1115,28 @@ class: middle
 
 ##  Formalisation mathématique du géoïde
 
-Le géoïde est une **surface difforme** à laquelle on ne saurait appliquer des **relations mathématiques**.
 
-Pour modéliser cette surface, on utilise une **figure géométrique régulière**: **l'ellipsoïde**.      
+**L'ellipsoïde** permet de modéliser mathématiquement la surface irrégulière du géoïde.  Il s'agit d'un volume globalement sphérique et aplati aux pôles.
 
-Il s'agit d'un volume globalement sphérique présentant un aplatissement aux pôles.
+Positionner l'ellipsoïde en fonction du géoïde permet de construire un **système géodésique**. Le plus connu étant le **WGS84**, notamment utilisé pour le GPS. 
+
+Il sert à déterminer les coordonnées géographiques d'un on objet sur la surface de la Terre > une mesure d'**angles** au regard d'un parallèle (équateur) et un méridien (Greenwich) de référence. Ces coordonnées traduisent au minumum deux dimensions : la latitude et la longitude.
+
+Nombreuses sont les couches géographiques référencées en WGS84 (EPSG:4326)
 ]
 
 .pull-right[
 
-```{r, echo = FALSE, out.width = "280px", fig.align='center'}
+```{r, echo=FALSE,out.width="48%", out.height="20%",fig.show='hold',fig.align='center'}
 knitr::include_graphics('fig/globe.gif')
-```
-
-<br>
-
-```{r, echo = FALSE, out.width = "280px", fig.align='center'}
 knitr::include_graphics('fig/AnimationSphere2.GIF')
 ```
-]
-
----
-
-## L'ellipsoïde terrestre
-
-**L'ellipsoïde est la surface mathématique qui se rapproche le plus du géoïde**. 
-
-Il sert de **référence pour la construction des projections cartographiques**. Positionner l'ellipsoïde en fonction du géoïde permet de construire **un système géodésique**.
-
-.pull-left[
-```{r, echo = FALSE, out.width = "500px", fig.align='center'}
-knitr::include_graphics('fig/geoide_ellips.png')
-```
-]
-
-.pull-right[
-```{r, echo = FALSE, out.width = "400px", fig.align='center'}
-knitr::include_graphics('fig/ellipsoid.jpg')
-```
-]
-
-.medium[
-**L'écart entre le géoïde et l'ellipsoïde de référence** (nommée 'hauteur') **ne dépasse pas 110 mètres** !  Si la forme de la terre n'est pas régulière, elle se rapproche donc fortement d'un ellipsoïde.
-
-]
-
-
----
-
-## Les systèmes géodésiques
-
-**Un système géodésique** sert de repère pour déterminer les coordonnées géographiques (ou géodésiques) d'un objet à la surface de la Terre. 
-
-.pull-left[
-```{r, echo = FALSE, out.width = "300px", fig.align='center'}
-knitr::include_graphics('fig/meridien_paral.gif')
-```
-]
-
-.pull-right[
+<br>
 ```{r, echo = FALSE, out.width = "300px", fig.align='center'}
 knitr::include_graphics('fig/sphere_lat_long.png')
 ```
+
 ]
-
-**Ces coordonnées sont des valeurs angulaires, calculées par rapport à un parallèle (équateur) et un méridien de référence (Greenwich)**. Les coordonnées d'un objet traduit (au minimum) deux dimensions : **la latitude et la longitude = des angles**.
-
----
-
-## Les systèmes géodésiques à connaître
-
-Un même **ellipsoïde peut être positionné différemment par rapport au géoïde**, et ainsi constituer des systèmes de référence géodésiques **différents**. Le même objet n'aura pas les mêmes coordonnées géographiques dans différents systèmes géodésiques.
-
-- **WSG84 (World Geodesic System 1984)**  
-*Le plus utilisé au monde. C'est ce système géodésique qui est utilisé pour le GPS (système de positionnement par satellites).*
-
-- **ITRS (International Terrestrial Reference System)**  
-*Le plus précis à l'échelle mondiale (précision centimétrique).* 
-
-- **RGF93 (Réseau Géodésique Français 1993)**.  
-*Système géodésique officiel en France métropolitaine.*
-
-- **NTF (Nouvelle Triangulation de la France)**
-*Ancien système géodésique français de référence, couvrant le territoire métropolitain.*
 
 ---
 
@@ -1377,31 +1185,6 @@ Une **projection cylindrique** est la projection de la Terre sur un cylindre tan
 
 Une **projection azimutale** est une manière de projeter une sphère sur un plan, et en particulier, une façon de représenter entièrement la surface de la Terre sous la forme d'un disque.
 
-]
-]
-
----
-
-## Surfaces de projection
-
-Un ellipsoïde **peut être projeté sur différentes surfaces**, facilement **représentable en deux dimensions**.
-
-.pull-left[
-<img src="fig/surface_proj_2.png" height="350" />
-]
-
-
-.pull-right[
-.medium[
-<br><br><br>
-
-Pour un plan **tangent**, le cône, le cylindre ou le plan ne touchent la Terre que le long d'une seule droite ou qu'à un point. 
-
-Dans le cas d'un **plan sécant**, le cône ou le cylindre coupent au travers de la Terre au moyen de deux cercles. 
-
-Le lieu du point de contact définit l'endroit où les distorsions sont les moins importantes. Il est appelé **parallèle de référence**
-
-Les projections planes peuvent être orientées de différentes manières : **polaire (directe)**, **équatoriale (transverse)** et **oblique**.
 ]
 ]
 
@@ -1525,19 +1308,6 @@ knitr::include_graphics('fig/russie_afrique.png')
 knitr::include_graphics('fig/SA_groenland.png')
 ```
 .medium[... Et l'Amérique du Sud 8 fois plus étendue que le Groenland !]
-]
-
-
----
-
-## Quelles déformations ? 
-
-```{r, echo = FALSE, out.width = "800px", fig.align='center'}
-knitr::include_graphics('fig/truesize.PNG')
-```
-
-.center[
-.medium[*https://thetruesize.com*]
 ]
 
 
@@ -1677,7 +1447,6 @@ Import de données tabulaires
 
 Jointure attributaire
 
-Jointure spatiale
 
 ---
 
@@ -1711,6 +1480,7 @@ Le choix du **prédicat géométrique est important** (intersecte, contient, est
 ]
 
 ---
+
 class: middle
 
 .pull-left[
@@ -1896,47 +1666,6 @@ Enregistrez cette sélection sous le nom ***CRITERE_1_MULTI_1500M_SQ*** dans vot
 ]
 ]
 
-
----
-## Jointure attributaire
-
-.pull-left[
-<br>
-Une **jointure attributaire** permet de joindre **deux tables attributaires décrivant des entités communes et partageant un champ commun**. L'opération produit **une seule table** juxtaposant les champs de la table à joindre à ceux de la table d'origine.
-
-Dans un SIG la table d'origine est souvent celle associée aux entités localisées d'**une couche géographique**, ce qui permet par exemple de cartographier les **données d'un tableau statistique sans dimension spatiale**. 
-
-Les jointures attributaires sont utilisées pour introduire des informations nouvelles dans une couche géographique.
-]
-
-.pull-right[
-<br><br><br>
-<img src="fig/jointure_attributaire.png" width="450" />
-
-.leg-fig[Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG
-]
-]
----
-
-## Jointure spatiale
-
-.pull-left[
-<br>
-Une **jointure spatiale** permet de caractériser le **positionnement relatif d'entités issues de deux couches géographiques différentes**.
-
-Par exemple, une table des écoles pourra être jointe à une table des communes en fonction d'une **relation spatiale de type inclusion géométrique**.
-
-Si le point de l'école se trouve dans le polygone correspondant à la commune, les attributs de la table commune deviendront des attributs de la table école. Par définition, une jointure ne peut donc être effectuée qu'entre des données géographiques et non des tables attributaires.
-]
-
-.pull-right[
-<img src="fig/jointure_spatiale_1.png" width="450" />
-
-.leg-fig[
-Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG
-]
-]
-
 ---
 
 class: middle
@@ -1960,6 +1689,26 @@ Objectifs d'atelier :
 
 ---
 
+## Jointure attributaire
+
+.pull-left[
+<br>
+Une **jointure attributaire** permet de joindre **deux tables attributaires décrivant des entités communes et partageant un champ commun**. L'opération produit **une seule table** juxtaposant les champs de la table à joindre à ceux de la table d'origine.
+
+Dans un SIG la table d'origine est souvent celle associée aux entités localisées d'**une couche géographique**, ce qui permet par exemple de cartographier les **données d'un tableau statistique sans dimension spatiale**. 
+
+Les jointures attributaires sont utilisées pour introduire des informations nouvelles dans une couche géographique.
+]
+
+.pull-right[
+<br><br><br>
+<img src="fig/jointure_attributaire.png" width="450" />
+
+.leg-fig[Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG
+]
+]
+
+---
 ## La proximité des foyers aux revenus les plus modestes
 
 .left-column[
@@ -2284,7 +2033,7 @@ Sélectionnez l'option *regrouper le résultat*
 
 .right-column[
 .center[
-<img src="fig/merge.PNG" width="500" />
+<img src="fig/proj/crit3_3_tampon.PNG" width="500" />
 ]]
 
 
@@ -2331,20 +2080,6 @@ Exportez la couche ***difference*** (clic droit sur la couche difference, puis e
 ![](fig/proj/crit3_5_result.png)
 ]
 
----
-
-## Statistiques spatiales
-
-QGIS offre plusieurs [fonctionnalités](https://docs.qgis.org/2.8/fr/docs/training_manual/vector_analysis/spatial_statistics.html#:~:text=Les%20statistiques%20spatiales%20vous%20permettent,av%C3%A8rent%20utiles%20%C3%A0%20cet%20%C3%A9gard.) qui permettent d'analyser et de comprendre ce qu'il se passe dans un jeu de données vectorielles. 
-
-- **Calculer une matrice de distance** : calculer des distances entre les points d'une couche géographique et indicateurs dérivés (distance minimale, moyenne, maximale, etc.)
-
-- **Coordonnées moyennes** : obtenir le centre géométrique d'une couche de polygones
-
-- **Dénombrement de points dans des polygones** : le nombre de points inclus dans un polygone  
-
-... et beaucoup d'autres !
-
 
 ---
 
@@ -2371,6 +2106,21 @@ Objectifs d'atelier :
 
 ---
 
+## Statistiques spatiales
+
+QGIS offre plusieurs [fonctionnalités](https://docs.qgis.org/2.8/fr/docs/training_manual/vector_analysis/spatial_statistics.html#:~:text=Les%20statistiques%20spatiales%20vous%20permettent,av%C3%A8rent%20utiles%20%C3%A0%20cet%20%C3%A9gard.) qui permettent d'analyser et de comprendre ce qu'il se passe dans un jeu de données vectorielles. 
+
+- **Calculer une matrice de distance** : calculer des distances entre les points d'une couche géographique et indicateurs dérivés (distance minimale, moyenne, maximale, etc.)
+
+- **Coordonnées moyennes** : obtenir le centre géométrique d'une couche de polygones
+
+- **Dénombrement de points dans des polygones** : le nombre de points inclus dans un polygone  
+
+... et beaucoup d'autres !
+
+
+
+---
 ## Pour une pratique scolaire
 
 .left-column[
@@ -2616,39 +2366,9 @@ Le **langage cartographique** a été théorisé par **Jacques Bertin** (1967)
 <img src="fig/bertin_2.jpg" width="250" />
 ]
 
-« ***La graphique*** *utilise les propriétés de l'image visuelle pour faire apparaître les* ***relations*** *de* ***différence***, ***d'ordre*** et de ***proportionnalité*** entre les données »
+« ***La graphique*** *utilise les propriétés de l'image visuelle pour faire apparaître les* ***relations*** *de* ***différence***, ***d'ordre*** et de ***proportionnalité*** entre les données » : rendu possible grâce des variables visuelles (ou rétiniennes).
 ]
 
----
-
-## Les variables visuelles (6 + 1)
-
-.pull-left[
-<img src="fig/VV_valeur.png" width="450" />
-<img src="fig/VV_couleur.png" width="450" />
-<img src="fig/VV_taille_ordre.png" width="450" />
-<img src="fig/VV_forme.png" width="450" />
-]
-
-.pull-right[
-<img src="fig/VV_grain.png" width="450" />
-<img src="fig/VV_orientation.png" width="450" />
-<img src="fig/VV_texture_diff.png" width="450" />
-]
-<br>
-.center[Source : *Manuel de cartographie : principes, méthodes, applications* (Lambert, Zanin, 2016)]
-
-
-
----
-
-## Les 3 propriétes des variables visuelles
-
-.center[
-<img src="fig/VV_et_categories.png" width="700" />
-
-.leg-fig[Source : *Manuel de cartographie : principes, méthodes, applications* (Lambert, Zanin, 2016)]
-]
 
 ---
 
@@ -2669,19 +2389,6 @@ Le **langage cartographique** a été théorisé par **Jacques Bertin** (1967)
 <img src="fig/arbre_type_data.png" width="720" />
 ]
 
----
-
-class: middle center
-
-## Pour s'en convaincre...
-
-.pull-left[
-<img src="fig/map_failed_1.jpg" width="450" />
-]
-
-.pull-right[
-<img src="fig/map_failed_2.jpg" width="450" />
-]
 
 ---
 
