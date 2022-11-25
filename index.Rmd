@@ -301,18 +301,19 @@ Formats de fichiers
 
 ---
 
-## Information Géographique ? 
+## Information géographique ? 
 
 .pull-left[
+Entre **60 et 80%** de l’information que nous traitons possède une dimension géographique. (*Hahmann S. et Burghardt D., 2012, « How much information is geospatially referenced? Networks and cognition »*).
+
 L'information géographique peut être définie comme «**l'ensemble de la description d'un objet et de sa position géographique à la surface de la Terre**» (*Association Française pour l'Information Géographique*). C'est une information **localisée dans l'espace**.
 
-Toute information contenant une référence à une localisation, qu’il s’agisse d’un **point** précis du territoire, d’**une ligne** (route, frontière, cours d'eau) ou encore d’**une surface** (aire protégée, zone d’emploi, commune...) **a une dimension géographique**.
+Il peut s'agire d'un **point** précis du territoire, d’**une ligne** (route, frontière, cours d'eau) ou encore d’**une surface** (aire protégée, zone d’emploi, commune...) **a une dimension géographique**.
 
-Entre **60 et 80%** de l’information que nous traitons possède une dimension géographique. (*Hahmann S. et Burghardt D., 2012, « How much information is geospatially referenced? Networks and cognition »*).
 ]
 
 .pull-right[
-La force des données géographiques est de **pouvoir les croiser** entre elles lorsqu'elles partagent un même socle géographique. On crée ainsi de la **donnée à valeur ajoutée** préparant la prise de décision (*Ministère de la Transition écologique et de la Cohésion des Territoires, 2019*).
+« La force des données géographiques est de **pouvoir les croiser** lorsqu'elles partagent un même socle géographique. On crée ainsi de la **donnée à valeur ajoutée** préparant la prise de décision » (*Ministère de la Transition écologique et de la Cohésion des Territoires, 2019*).
 
 ]
 
@@ -323,7 +324,7 @@ class: middle center
 
 ## Les composantes de l'information géographique
 
-```{r, echo = FALSE, out.width = "900px", fig.align='right'}
+```{r, echo = FALSE, out.width = "1000px", fig.align='center'}
 
 library(DiagrammeR)
 
@@ -356,7 +357,7 @@ grViz("digraph dot {
 
 ## Niveau géométrique
 
-Le **niveau géométrique** d'un objet géographique correspond à **sa forme et sa localisation** sur la surface terrestre, exprimés dans un **système de coordonnées** explicite
+Le **niveau géométrique** d'un objet géographique correspond à **sa forme et sa localisation** sur la surface terrestre, exprimés dans un **système de coordonnées** explicite.
    
 
 ```{r, echo = FALSE, out.width = "900px"}
@@ -367,20 +368,20 @@ knitr::include_graphics('fig/geom.png')
 
 ## Niveau géométrique
 
-2 types de données sont à différencier : le raster et le vecteur
+2 types de données sont à différencier : le raster et le vecteur.
 
 .pull-left[
 
 
 ### Le raster  
 
-**c'est une image** (plan scanné, photographie aérienne, image satellitaire...) **localisée dans l'espace**
+**C'est une image** (plan scanné, photographie aérienne, image satellitaire...) **localisée dans l'espace**.
 
-L’information géographique est alors stockée dans des cellules (pixel) contiguës généralement carrées
+L’information géographique est alors stockée dans des cellules (pixel) contiguës généralement carrées.
 
-Chaque pixel **défini par une résolution** possède des valeurs qui peuvent être traitées et cartographiées
+Chaque pixel **défini par une résolution** possède des valeurs qui peuvent être traitées et cartographiées.
 
-La manipulation des rasters nécessite des méthodes et des outils spécialisés  
+Leur manipulation et analyse relève de champs méthodologiques particuliers (télédétection).  
 ]
 
 .pull-right[
@@ -394,18 +395,16 @@ La manipulation des rasters nécessite des méthodes et des outils spécialisés
 
 ## Niveau géométrique
 
-2 types de données sont à différencier : le raster et le vecteur
+2 types de données sont à différencier : le raster et le vecteur.
 
 .pull-left[
 
 
 ### Le vecteur
 
-**Le format vectoriel** utilise le concept d'**objets géométriques (points, lignes, polygones) pour représenter (et stocker) des objets géographiques**
+**Le format vectoriel** utilise le concept d'**objets géométriques (points, lignes, polygones) pour représenter (et stocker) des objets géographiques**.
 
-Les objets vectoriels ne ne pixelisent pas. On parlera néanmoins de **niveaux de généralisation** pour qualifier leur niveau de précision (parfois aussi appelée résolution)
-
-Leur manipulation est simple et permet de puissants traitements   
+Les objets vectoriels ne ne pixelisent pas. On parlera néanmoins de **niveaux de généralisation** pour qualifier leur niveau de précision (parfois aussi appelée résolution).
 
 ]
 
@@ -424,7 +423,7 @@ Leur manipulation est simple et permet de puissants traitements
 
 ## Niveau géométrique
 
-2 types de données sont à différencier : le raster et le vecteur
+2 types de données sont à différencier : le raster et le vecteur.
 
 ```{r, echo = FALSE, out.width = "700px", fig.align='center', message=FALSE}
 knitr::include_graphics('fig/raster_vecteur_2.png')
@@ -435,7 +434,7 @@ knitr::include_graphics('fig/raster_vecteur_2.png')
 
 ## Niveau topologique
 
-Le niveau topologique  **d'un objet géographique se déduit du niveau géométrique**. Il correspond aux relations éventuelles avec d'autres objets ou phénomènes.
+Le niveau topologique  **se déduit du niveau géométrique**. Il correspond aux relations géométriques éventuelles avec plusieurs objets géographiques.
 
 
 ```{r, echo = FALSE, fig.align='center', out.width = "500px"}
@@ -443,7 +442,7 @@ knitr::include_graphics('fig/topologie.gif')
 ```
 
 .medium[
-Exemples d'application :
+Exemples :
 
 - Multipoint / Linestring : Quel bâtiment touche le tracé d'une route en construction ?
 - Multipoint / Polygon : Quelle équipement est inclu / en dehors de tel espace d'étude ?
@@ -488,17 +487,22 @@ knitr::include_graphics('fig/attribut.png')
 - <a href="https://www.geoportail.gouv.fr/" target="_blank">Géoportail (portail national d’accès à l’information géographique de référence)</a>
 
 
-### Les organismes publics et les collectivités territoriales
-
+### Les organismes "spécialisés"
 - <a href="http://infoterre.brgm.fr" target="_blank">Bureau de Recherches Géologiques et Minières (BRGM)</a>
 - <a href="https://data.ademe.fr/" target="_blank">Agence de l'Environnement et de la Maîtrise de l'Energie (ADEME)</a>
 - <a href="https://www.onf.fr/onf/connaitre-lonf/+/35::open-data-pour-mieux-partager-les-donnees-forestieres.html" target="_blank">Office national des forêts</a>
-- Portail Open Data des régions : <a href="https://data.iledefrance.fr/pages/home/" target="_blank">Ile-de-France</a>,  <a href="https://opendata.hautsdefrance.fr/" target="_blank">Hauts-de-France</a>, <a href="https://data.bretagne.bzh/pages/home-page/" target="_blank">Bretagne</a>, etc. 
-- Portail Open Data des métropoles : <a href="https://metropole-grand-paris.opendata.arcgis.com/" target="_blank">Métropole du Grand Paris</a>, <a href="https://opendata.lillemetropole.fr/page/home/" target="_blank">Métropole Européenne de Lille</a>, <a href="https://data.rennesmetropole.fr/explore/?sort=modified" target="_blank">Rennes Métropole</a>, etc.
+- ...
+
 ]
+
 
 .pull-right[
 <br><br>
+### Les collectivités terrritoriales
+- Portail Open Data des régions : <a href="https://data.iledefrance.fr/pages/home/" target="_blank">Ile-de-France</a>,  <a href="https://opendata.hautsdefrance.fr/" target="_blank">Hauts-de-France</a>, <a href="https://data.bretagne.bzh/pages/home-page/" target="_blank">Bretagne</a>, etc. 
+- Portail Open Data des métropoles : <a href="https://metropole-grand-paris.opendata.arcgis.com/" target="_blank">Métropole du Grand Paris</a>, <a href="https://opendata.lillemetropole.fr/page/home/" target="_blank">Métropole Européenne de Lille</a>, <a href="https://data.rennesmetropole.fr/explore/?sort=modified" target="_blank">Rennes Métropole</a>, etc.
+
+
 ### Au niveau international
 
 - <a href="https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data" target="_blank">Eurostat - GISCO</a>
@@ -528,7 +532,7 @@ class: middle
 
 </br>
 
-D'un point de vue général, privilégiez l'usage de ressources gérées et maintenues par des **institutions**. 
+D'un point de vue général, privilégiez des ressources gérées et maintenues par des **institutions**. 
 
 ---
 
@@ -536,22 +540,19 @@ D'un point de vue général, privilégiez l'usage de ressources gérées et main
 
 Il existe **plusieurs formats de stockage de l'information géographique**. Les plus connus sont :</p>
 
-.medium[
 .pull-left[
-- **Shapefile (.shp)** : ou « fichier de couches » est le format de fichier **historique** des (SIG). Initialement développé par ESRI pour ses logiciels commerciaux, il est devenu un standard de facto, et est utilisé par un grand nombre de logiciels libres.
+- **Shapefile (.shp)** : ou « fichier de couches » est le format de fichier **historique** des (SIG). Initialement développé par ESRI pour ses logiciels commerciaux, il est devenu un standard de *facto*, malgré ses limitations (taille de fichiers, longueur texte, nombre maximal d'attributs)...
 
-- **Geographic JSON (.geojson)** : Un format ouvert d'encodage d'ensemble de données géospatiales simples utilisant la norme JSON (JavaScript Object Notation). Il permet de décrire des données de type point, ligne, chaîne de caractères, polygone et d'y ajouter des attributs d'information qui ne sont pas spatiaux. Le format GeoJSON, contrairement à la majorité des standards de systèmes d'informations géographiques, n'est pas écrit par l'Open Geospatial Consortium, mais par un groupe de travail de développeurs au travers d'internet. 
+- **Geographic JSON (.geojson)** : Un format ouvert d'encodage de données géospatiales utilisant la norme JSON (JavaScript Object Notation), assez répandu sur le Web (cartographie interactive, D3.js), etc. 
 ]
 
 
 .pull-right[
 
-- **GeoPackage (.gpkg)** : Un format de données géospatiales raster ou vecteur, ouvert, non propriétaire, non lié à un système d'exploitation. Conçu pour être aussi léger que possible, il permet notamment de stocker plusieurs couches géographiques dans un seul et même fichier. 
+- **GeoPackage (.gpkg)** : Un format de données géospatiales raster ou vecteur, ouvert, non lié à un système d'exploitation. Conçu pour être aussi léger que possible, il permet notamment de stocker plusieurs couches géographiques dans un seul et même fichier. 
 
 
-- **Keyhole Markup Language (.kml)** : ou « langage à base de balises géolocales », est fondé sur le formalisme XML et destiné à la gestion de l'affichage de données géospatiales dans les logiciels de SIG. Depuis 2008, le format est normalisé par l'Open Geospatial Consortium. Il s'agit, avec le .gpx, du format classique de données produites par GPS. 
-
-]
+- **Keyhole Markup Language (.kml)** : ou « langage à base de balises géolocales », est fondé sur le formalisme XML. Depuis 2008, le format est normalisé par l'Open Geospatial Consortium. Il s'agit, avec le .gpx, du format classique de données produites par GPS. 
 
 
 ]
@@ -562,12 +563,12 @@ Il existe **plusieurs formats de stockage de l'information géographique**. Les 
 ## Le shapefile
 
 
-Son extension est classiquement **.shp**, mais il est toujours accompagné de deux autres fichiers de même nom, mais aux extensions suivantes :
+Son extension est classiquement **.shp**, mais il est toujours accompagné de deux autres fichiers de même nom :
 
 
 .pull-left[
-- <span style="font-size:13pt;line-height:1.3;color:#9c2005;">**.dbf**</span><span style="font-size:13pt;line-height:1.3;"> : fichier qui contient les données attributaires</span> 
-- <span style="font-size:13pt;line-height:1.3;color:#9c2005;">**.shx**</span><span style="font-size:13pt;line-height:1.3;"> : fichier qui stocke l'index de la géométrie</span>   
+- <span style="font-size:13pt;line-height:1.3;color:#9c2005;">**.dbf**</span><span style="font-size:13pt;line-height:1.3;"> : contient les données attributaires</span> 
+- <span style="font-size:13pt;line-height:1.3;color:#9c2005;">**.shx**</span><span style="font-size:13pt;line-height:1.3;"> : stocke l'index de la géométrie</span>   
 
 
 <p style="font-size:13pt;line-height:1.3;">D'autres fichiers peuvent être également fournis :</p>   
@@ -587,7 +588,7 @@ Son extension est classiquement **.shp**, mais il est toujours accompagné de de
 
 ## Format de stockage des données attributaires
 
-**Les données attributaires peuvent être stockées dans des formats très différents**. Les SIG acceptent d'ailleurs de nombreux formats (.txt, .csv, .dbf, .xls, .xlsx, .ods, ...) en entrée pour importer des données attributaires. Ce n'est pas l'aspect le plus important.
+Les données attributaires peuvent être stockées dans des **formats très différents**. Les SIG acceptent de nombreux formats (.txt, .csv, .dbf, .xls, .xlsx, .ods, ...) de fichiers. 
 
 **L'identifiant géographique est en revanche primordial**. Il permet de faire le lien avec les géométries, et ainsi de les enrichir.
 
@@ -712,13 +713,13 @@ Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le
 
 **Le concept de Système d'Information Géographique s'est développé et a évolué avec le développement de l'informatique** :
 
-- **1950 – 1970** : début de l’informatique, premières cartographies automatiques
+- **1950 – 1970** : début de l’informatique, premières cartographies automatiques.
 
 - **1970 - 1980** : diffusion des outils de cartographie automatique/SIG dans les organismes d’État (armée, cadastre, services topographiques…
 
-- **1980 - 1990** : croissance du marché des logiciels SIG, développement des applications SIG
+- **1980 - 1990** : croissance du marché des logiciels SIG, développement des applications SIG.
 
-- **depuis les années 90 et 2000** : diffusion de SIG plus légers, libres, d'applications web et banalisation de l’usage de l’information géographique (cartographie en ligne, calcul d’itinéraires, utilisation de la géolocalisation, base de données participatives
+- **depuis les années 90 et 2000** : diffusion de SIG plus légers, libres, d'applications web et banalisation de l’usage de l’information géographique (cartographie en ligne, calcul d’itinéraires, utilisation de la géolocalisation, base de données participatives.
 
 .medium[
 **Les SIG sont aujourd’hui utilisés dans de nombreux domaines** : 
@@ -740,18 +741,20 @@ Les logiciels SIG permettent d'opérer sur l'intégralité de la chaîne de trai
 
 .pull-left[
 
-Pour **modéliser la réalité**, on superpose plusieurs couches d'information géographique,  **vecteur et/ou raster**, de différente nature, dans un même système de projection
+Pour **modéliser la réalité**,  plusieurs couches d'information géographique,  **vecteur et/ou raster**, de différente nature et dans un même système de projection sont **superposées**.
 
 Chaque **couche géographique contient des objets de même type** (adresses, parcelles, routes, bâtiments, cours d'eau, limites administratives...)
 
-**Une couche géographique = un type d'objet géographique** : point, ligne, polygone ou image géoréférencée (raster)
+**Une couche géographique = un seul type d'objet géographique** : point, ligne, polygone ou image géoréférencée (raster)
 
 Il est ensuite possible de réaliser de puissantes **analyses croisées**.
 
 ]
 
 .pull-right[
+.center[
 <img src="fig/GIS_SPAIN.jpg" height="350" />
+]
 ]
 
 
@@ -787,7 +790,7 @@ Ex : *Sélection d'objets géographiques ponctuels situés à une certaine dista
 ---
 
 
-## QGIS : Un outil parmi d'autres
+## QGIS : Un SIG parmi d'autres
 
 .center[
 <img src="fig/logiciels.PNG" height="500" />
@@ -811,26 +814,26 @@ Une fois <a href="https://www.qgis.org/fr/site/forusers/download.html" target="_
 ## Organiser son projet
 
 L'utilisation d'un SIG nécessite de la **rigueur méthodologique**, car l'on se retrouve vite submergé·e par un grand nombre de fichiers.  
-Vous devez veiller à :
 
 .left-column[
 <img src="fig/orgaprojet.png" height="200" />
 ]
 
 .right-column[
+Il est fortement conseillé de :
 
-- Travailler en **projet** (projet / enregistrer), à la racine du dossier contenant les données : .qgz ou .qmd dans QGIS. Un projet préserve l'ordre d'apparition des couches géographiques chargées dans l'application et leur style graphique associé 
+- Travailler en **projet** (projet / enregistrer), à la racine du dossier contenant les données (.qgz ou .qmd dans QGIS). Un projet préserve l'ordre d'apparition des couches géographiques chargées dans l'application et leur style graphique associé. 
 
-- Utiliser des **intitulés de fichiers** intelligibles
+- Utiliser des **intitulés de fichiers** intelligibles.
 
-- Ordonner votre travail en utilisant des **sous-répertoires**
-   * **GEOM** : les données géographiques d'entrée, à ne pas modifier
-   * **STAT** : les données statistiques d'entrée, à ne pas modifier
-   * **tmp** : les traitements intermédiaires
-   * **criteres** : les couches géographiques consolidées du projet
-   * **fig** : Un dossier dédié à l'export des images et figures issues de votre projet
+- Organiser son projet en utilisant des **sous-répertoires**
+   * **GEOM** : les données géographiques d'entrée, à ne pas modifier.
+   * **STAT** : les données statistiques d'entrée, à ne pas modifier.
+   * **tmp** : les traitements intermédiaires.
+   * **criteres** : les couches géographiques consolidées du projet.
+   * **fig** : Un dossier dédié à l'export des images et figures issues de votre projet.
    
-- Ne pas modifier les noms des couches géographiques et des répertoires de travail en cours de projet
+- Ne pas modifier les noms des couches géographiques et des répertoires de travail en cours de projet.
 
 ]
 
@@ -870,7 +873,7 @@ Vous devez veiller à :
 
 Choisissez l'icône **en fonction du type de données à importer** (vecteur, raster, csv...).
 
-Ces couches sont contenues dans le dossier **GEOM**
+Ces couches sont contenues dans le dossier **GEOM**.
 
 <br>
 Importez les couches **COMMUNES_METRO_LILLE.shp**   
@@ -890,7 +893,7 @@ et **IRIS_METRO_LILLE.shp**
 
 Choisissez l'icône **en fonction du type de données à importer** (vecteur, raster, csv...).
 
-Ces couches sont contenues dans le dossier **GEOM** 
+Ces couches sont contenues dans le dossier **GEOM**.
 
 <br>
 Importez les couches **COMMUNES_METRO_LILLE.shp**   
@@ -906,9 +909,9 @@ et **IRIS_METRO_LILLE.shp**
 .left-column[
 ## Sélection sur le canevas de la carte
 
-Cette option permet de sélectionner directement sur la carte des objets géographiques
+Cette option permet de sélectionner directement sur la carte des objets géographiques.
 
-<img src="fig/proj/intro_3_selec.PNG" height="200" />
+<img src="fig/proj/intro_3_selec.PNG" height="100" />
 
 ]
 
@@ -921,7 +924,7 @@ Cette option permet de sélectionner directement sur la carte des objets géogra
 .left-column[
 ## Sélection par attributs
 
-Il est possible de sélectionner les objets géographiques à partir de leur **table attributaire**
+La sélection des objets géographiques peut être réalisée à partir de leur **table attributaire**.
 
 1. Clic droit sur la couche IRIS
 <br>
@@ -982,9 +985,9 @@ Supprimer ensuite cette couche de la liste des couches (clic droit sur la couche
 .left-column[
 ## Gestion de l'affichage graphique
 
-Pour changer l'ordre d'affichage des couches, il suffit de les faire glisser dans les panneaux des couches à la position de son choix, comme des onglets dans un navigateur Web.
+Pour changer l'ordre d'affichage des couches géographiques, les faire glisser dans le panneaux des couches à disposition, comme des onglets dans un navigateur Web.
 
-Le **style graphique d'une couche** (couleur/transparence du fond et de la bordure, épaisseur de bordure, etc.), est paramétrable dans ses propriétés (symbologie) 
+Le **style graphique d'une couche** (couleur/transparence du fond et de la bordure, épaisseur de bordure, etc.), est paramétrable dans ses propriétés (symbologie). 
 
 ]
 
@@ -1003,9 +1006,9 @@ clic droit sur une des couches géographiques chargées > Propriétés > Symbolo
 .left-column[
 ## Gestion de l'affichage graphique
 
-Pour changer l'ordre d'affichage des couches, il suffit de les faire glisser dans les panneaux des couches à la position de son choix, comme des onglets dans un navigateur Web.
+Pour changer l'ordre d'affichage des couches géographiques, les faire glisser dans le panneaux des couches à disposition, comme des onglets dans un navigateur Web.
 
-Le **style graphique d'une couche** (couleur/transparence du fond et de la bordure, épaisseur de bordure, etc.), est paramétrable dans ses propriétés (symbologie) 
+Le **style graphique d'une couche** (couleur/transparence du fond et de la bordure, épaisseur de bordure, etc.), est paramétrable dans ses propriétés (symbologie). 
 
 ]
 
@@ -1014,7 +1017,7 @@ Le **style graphique d'une couche** (couleur/transparence du fond et de la bordu
 ![](fig/proj/intro_6_styles2.PNG)
 
 .center[
-Jouez sur le **style graphique** des couches IRIS et COMMUNES pour les visualiser correctement (jouer sur la transparence et la couleur du trait)
+Jouez sur le **style graphique** des couches IRIS et COMMUNES pour les visualiser correctement (transparence, couleur et épaisseur du trait).
 
 ]
 ]
@@ -1064,9 +1067,9 @@ Faites apparaître sur l'espace d'affichage **le nom des communes** de votre esp
 
 .right-column[
 **Vous pouvez exporter le visuel créé au format .png**. 
-Attention néanmoins, il **manque beaucoup d'éléments** (titre, légende, sources...) etc. pour que cette carte soit valable ! Cela peut néanmoins constituer une base de travail et de réflexion. 
+Attention néanmoins, il **manque beaucoup d'éléments** (titre, légende, sources...) etc. pour que cette carte soit diffusable ! Cela peut néanmoins constituer une base de travail et de réflexion. 
 
-**Enregistrez votre projet à la racine de votre dossier de travail**. Les couches que vous avez chargées et leur style associé seront ainsi enregistrées pour la prochaine utilisation 
+**Enregistrez votre projet à la racine de votre dossier de travail**. Les couches que vous avez chargées et leur style associé seront ainsi enregistrées pour la prochaine utilisation. 
 ]
 
 ---
@@ -1085,7 +1088,7 @@ class: middle
 
 ## Le géoïde terrestre
 
-**La Terre n'est pas une sphère** qui est une forme géométrie dite parfaite. **Elle est légèrement aplatie aux pôles et bosselée selon les continents**. Son apparence sphérique lorsqu'on l'observe depuis l'espace masque les nombreuses petites irrégularités de sa surface. On ne peut lui appliquer des **relations mathématiques**.
+La Terre n'a pas une forme géométrique parfaite : **Elle est légèrement aplatie aux pôles et bosselée selon les continents**. Son apparence sphérique lorsqu'on l'observe depuis l'espace masque les nombreuses irrégularités à sa surface. On ne peut lui appliquer des **relations mathématiques**.
 
 Toute mesure ayant besoin d'une référence, on modélise la forme de la Terre selon le modèle théorique du **géoïde**.
 
@@ -1120,14 +1123,14 @@ class: middle
 
 Positionner l'ellipsoïde en fonction du géoïde permet de construire un **système géodésique**. Le plus connu étant le **WGS84**, notamment utilisé pour le GPS. 
 
-Il sert à déterminer les coordonnées géographiques d'un on objet sur la surface de la Terre > une mesure d'**angles** au regard d'un parallèle (équateur) et un méridien (Greenwich) de référence. Ces coordonnées traduisent au minumum deux dimensions : la latitude et la longitude.
+Il sert à déterminer les coordonnées géographiques d'un objet sur la surface de la Terre = mesure d'**angles** au regard d'un parallèle (équateur) et un méridien (Greenwich) de référence, aussi appelées **latitude** et **longitude**.
 
-Nombreuses sont les couches géographiques référencées en WGS84 (EPSG:4326)
+Nombreuses sont les couches géographiques référencées en **WGS84** (EPSG:4326).
 ]
 
 .pull-right[
 
-```{r, echo=FALSE,out.width="48%", out.height="20%",fig.show='hold',fig.align='center'}
+```{r, echo=FALSE,out.width="48%", out.height="20%",fig.cap="Géoïde terrestre, ellipsoïde et mesure d'angles depuis l'ellipsoïde", fig.show='hold',fig.align='center'}
 knitr::include_graphics('fig/globe.gif')
 knitr::include_graphics('fig/AnimationSphere2.GIF')
 ```
@@ -1193,15 +1196,15 @@ Une **projection azimutale** est une manière de projeter une sphère sur un pla
 ## Le choix du centrage : pas de règle, mais le résultat n'est pas anodin !
 
 .pull-left[
-<img src="fig/US.jpg" width="350" />
-<br>
-<img src="fig/ONU.png" width="350" />
+<img src="fig/US.jpg" width="320" />
+<br><br>
+<img src="fig/ONU.png" width="320" />
 ]
 
 .pull-right[
-<img src="fig/chinese_world.jpeg" width="350" />
-<br>
-<img src="fig/australian.jpg" width="350" />
+<img src="fig/chinese_world.jpeg" width="320" />
+<br><br>
+<img src="fig/australian.jpg" width="320" />
 ]
 
 ---
@@ -1336,23 +1339,18 @@ Une forme géométrique (un cercle ou une ellipse) est répétée de manière r�
 
 ## Quelle projection choisir ? Des normes, des références et des choix
 
-**Le choix d'une projection cartographique** ne se fait pas aléatoirement.
+**Le choix d'une projection cartographique** ne se fait pas aléatoirement. **c'est la zone représentée, la thématique et l'objectif de la carte** qui vous permettront de choisir une projection :
 
--  En France, tout comme dans de nombreux pays, vous êtes soumis·e à des **normes** si vous travaillez dans le cadre d'une **mission de service public.**
+- Pour la navigation, les directions sont importantes.
+- Sur les cartes routières, les distances précises sont importantes.
 
--  Sinon, **c'est la zone représentée, la thématique et l'objectif de la carte** qui vous permettront de choisir une projection :
-.medium[
-* Pour la navigation, les directions sont importantes
-* Sur les cartes routières, les distances précises sont importantes
+**Des conventions sont admises pour certaines zones géographiques :**
 
-<br><br>
-** Des conventions pour certaines zones géographiques :**
-* Pour les régions de basse latitude (près de l'Équateur), utilisez des projections cylindriques
-* Pour les régions de latitude moyenne, les projections coniques sont plus adaptées
-* Pour les régions polaires, plutôt des projections azimutales
-]
+- Pour les régions de **basse latitude** (près de l'Équateur), utilisez des **projections cylindriques**.
+- Pour les régions de **latitude moyenne**, les **projections coniques** sont plus adaptées.
+- Pour les **régions polaires**, plutôt des **projections azimutales**.
 
-D'un point de vue général, les distorsions sont d'autant plus importantes que la surface à représenter l'est aussi.
+D'un point de vue général, les distorsions sont proportionnelles à la surface à représenter.
 
 ---
 
@@ -1361,20 +1359,19 @@ D'un point de vue général, les distorsions sont d'autant plus importantes que 
 .pull-left[
 Suite à un décret du [3 mars 2006](https://geodesie.ign.fr/contenu/fichiers/Decret2006-272_03-03-06MODdecret2000-1276.pdf) :
 
-.medium[
-Toutes les administrations de l'État, collectivités locales et entreprises chargées de l'exécution d'une mission de service public doivent utiliser le **système géodésique de référence RGF93** pour leurs échanges de données géoréférencées.
+Les administrations de l'État, collectivités locales et entreprises chargées de l'exécution d'une mission de service public doivent utiliser le **système géodésique de référence RGF93** pour leurs échanges de données géoréférencées. Il est compatible avec le système géodésique de **référence européen ETRS89** et avec le système géodésique de référence mondial **WGS84** (utilisé par le système GPS).
 
-Ce système géodésique est compatible avec le système géodésique de **référence européen ETRS89** et avec le système géodésique de référence mondial **WGS84** (utilisé par le système GPS).
+Les cartes officielles représentant la France métropolitaine doivent utiliser la projection de référence **Lambert93 Conique Conforme**. 9 variantes de cette projection existent, elles couvrent 9 zones s'étalant du Nord au Sud et doivent être utilisées pour la cartographie locale.
 
-Les cartes officielles représentant l'ensemble de la France métropolitaine doivent utiliser la projection de référence **Lambert93 Conique Conforme**. 9 variantes de cette projection existent, elles couvrent 9 zones s'étalant du Nord au Sud et doivent être utilisées pour la cartographie locale.]
+Pour les DROM, des variations de projections cylindriques (UTM). 
 
-.leg-fig[
-[Source : Géoréférencement et RGF93, théorie et concepts, 2008](http://gtsoft.ftpacs.com/RGF93_theorie_et_concept_T3.pdf?PHPSESSID=649823751d32b07817a3795a95f748aa)]
 ]
 
 .pull-right[
 
 <img src="fig/france_ref.png" width="550" />
+.leg-fig[
+[Source : Géoréférencement et RGF93, théorie et concepts, 2008](http://gtsoft.ftpacs.com/RGF93_theorie_et_concept_T3.pdf?PHPSESSID=649823751d32b07817a3795a95f748aa)]
 ]
 
 ---
@@ -1429,7 +1426,7 @@ Pour modifier le système de projection, il suffit d'enregistrer une nouvelle ve
 .medium[
 Exportez les couches géographiques des écoles et gymnases dans le même SCR que celui des IRIS et des communes (Lambert 93)
 
-Enregistrez ces couches dans votre dossier ***tmp***, puis nettoyer l'espace de travail (éviter de visualiser des couches géographiques dorénavant inutiles)
+Enregistrez ces couches dans votre dossier ***tmp***, puis nettoyer l'espace de travail (éviter de visualiser des couches géographiques inutiles)
 ]
 
 ]
@@ -1490,10 +1487,10 @@ class: middle
 
 Objectifs d'atelier :
 
- - extraire les gymnases où l'on pratique actuellement du roller
- - ne sélectionner que les gymnases inclus dans la MEL
- - sélectionner les gymnases de type "multi-activités"
- - sélectionner les gymnases d'une surface au moins 2 fois supérieure à l'emprise d'une piste de roller-derby (750 m²)
+ - extraire les gymnases où l'on pratique actuellement du roller.
+ - ne sélectionner que les gymnases inclus dans la MEL.
+ - sélectionner les gymnases de type "multi-activités".
+ - sélectionner les gymnases d'une surface au moins 2 fois supérieure à l'emprise d'une piste de roller-derby (750 m²).
 
 ]
 
@@ -1628,7 +1625,7 @@ Enregistrez cette sélection sous le nom ***gymnase_MEL_MULTI*** dans votre doss
 
 ### **Étape 3** - Sélectionner les gymnases d'une surface suffisante
 
-On estime qu'au moins 1500m² (2 fois l'emprise d'une piste de roller derby) est nécessaire pour la pratique de l'activité
+On estime qu'au moins 1500m² (2 fois l'emprise d'une piste de roller derby) est nécessaire pour la pratique de l'activité.
 
 .medium[
 Clic droit sur la couche ***gymnase_MEL_MULTI*** > ouvrir la table attributaire > sélection par expression
@@ -1649,7 +1646,7 @@ Clic droit sur la couche ***gymnase_MEL_MULTI*** > ouvrir la table attributaire 
 
 ### **Étape 3** - Sélectionner les gymnases d'une surface suffisante
 
-On estime qu'au moins 1500m² (2 fois l'emprise d'une piste de roller derby) est nécessaire pour la pratique de l'activité
+On estime qu'au moins 1500m² (2 fois l'emprise d'une piste de roller derby) est nécessaire pour la pratique de l'activité.
 
 .medium[
 **BRAVO ! VOUS AVEZ IDENTIFIÉ UN PREMIER CRITÈRE D'IMPLANTATION !!**  
@@ -1671,7 +1668,7 @@ Enregistrez cette sélection sous le nom ***CRITERE_1_MULTI_1500M_SQ*** dans vot
 class: middle
 
 .pull-left[
-## Deuxième critère : la proximité des foyers aux revenus les plus modestes
+## Deuxième critère : Accessible aux ménages les plus modestes
 
 ### Nouvelles notions SIG : import de données tabulaires, jointures attributaires
 
@@ -1684,7 +1681,9 @@ Objectifs d'atelier :
 ]
 
 .pull-right[
+.center[
 ![](fig/politique_de_la_ville.png)
+]
 ]
 
 ---
@@ -1709,7 +1708,7 @@ Les jointures attributaires sont utilisées pour introduire des informations nou
 ]
 
 ---
-## La proximité des foyers aux revenus les plus modestes
+## Accessible aux ménages les plus modeste
 
 .left-column[
 
@@ -1737,7 +1736,7 @@ Couche > Ajouter une couche > Ajouter une couche de texte délimité
 
 ---
 
-## La proximité des foyers aux revenus les plus modestes
+## Accessible aux ménages les plus modeste
 .left-column[
 
 ### **Étape 2** - Jointure attributaire
@@ -1760,7 +1759,7 @@ Clic droit sur la couche ***IRIS_METRO_LILLE*** > propriétés > jointure > cliq
 
 ---
 
-## La proximité des foyers aux revenus les plus modestes
+## Accessible aux ménages les plus modeste
 .left-column[
 
 ### **Étape 2** - Jointure attributaire
@@ -1783,7 +1782,7 @@ Au préalable, il faut s'assurer de la concordance des données statistiques ave
 
 ---
 
-## La proximité des foyers aux revenus les plus modestes
+## Accessible aux ménages les plus modeste
 .left-column[
 
 ### **Étape 2** - Jointure attributaire
@@ -1806,7 +1805,7 @@ Jointure de ce fichier de données non spatiales à la couche géographique des 
 
 ---
 
-## La proximité des foyers aux revenus les plus modestes
+## Accessible aux ménages les plus modeste
 .left-column[
 
 ### **Étape 3** - Statistiques basiques
@@ -1829,7 +1828,7 @@ Ouvrez le module de statistiques basiques et effectuez l'opération pour le cham
 
 ---
 
-## La proximité des foyers aux revenus les plus modestes
+## Accessible aux ménages les plus modeste
 .left-column[
 
 ### **Étape 3** - Statistiques basiques
@@ -1850,8 +1849,7 @@ La moyenne du revenu médian des IRIS qui composent la MEL s'élève à 20 625 e
 
 ---
 
-
-## La proximité des foyers aux revenus les plus modestes
+## Accessible aux ménages les plus modeste
 .left-column[
 
 ### **Étape 4** - Sélection par attributs
@@ -1871,8 +1869,7 @@ Sélectionner les IRIS sous la moyenne de la MEL au moyen d'une sélection par e
 
 ---
 
-
-## La proximité des foyers aux revenus les plus modestes
+## Accessible aux ménages les plus modeste
 .left-column[
 
 ### **Étape 4** - Sélection par attributs
@@ -2267,11 +2264,11 @@ Identifier une localisation optimale
 
 La modélisation graphique de la chaîne de traitement, aussi appelée *cheminement décisionnel* est particulièrement utile pour :
 
-- expliquer **les étapes de la réalisation** à d’autres personnes (reproductibilité des résultats, transposition à d'autres espaces d'études ou objets géographiques)
+- Expliquer **les étapes de la réalisation** à d’autres personnes (reproductibilité des résultats, transposition à d'autres espaces d'études ou objets géographiques).
 
-- apporter de la **rigueur méthodologique** à ses travaux (transparence de la procédure)
+- Apporter de la **rigueur méthodologique** à ses travaux (transparence de la procédure).
 
-- se rappeler comment sont **nommés et organisés les fichiers** (particulièrement utile d’une séance à l’autre)
+- Se rappeler comment sont **nommés et organisés les fichiers** (particulièrement utile d’une séance à l’autre).
 
 Nous vous conseillons de réaliser ce schéma au fur et à mesure de l’avancement de vos traitements ! 
 
@@ -2346,6 +2343,8 @@ class: inverse middle center
 
 Éléments fondamentaux de sémiologie graphique
 
+Discrétisation
+
 Typologies (catégories)
 
 Cartes choroplèthes (valeurs graduées, discrétisations)
@@ -2366,7 +2365,9 @@ Le **langage cartographique** a été théorisé par **Jacques Bertin** (1967)
 <img src="fig/bertin_2.jpg" width="250" />
 ]
 
-« ***La graphique*** *utilise les propriétés de l'image visuelle pour faire apparaître les* ***relations*** *de* ***différence***, ***d'ordre*** et de ***proportionnalité*** entre les données » : rendu possible grâce des variables visuelles (ou rétiniennes).
+« ***La graphique*** *utilise les propriétés de l'image visuelle pour faire apparaître les* ***relations*** *de* ***différence***, ***d'ordre*** et de ***proportionnalité*** entre les données » .
+
+Il conceptualise l'idée de variables visuelles (ou rétiniennes).
 ]
 
 
@@ -2493,6 +2494,10 @@ Objectifs d'atelier :
 
  - réaliser une carte du revenu par IRIS
 
+]
+
+.pull-right[
+<img src="fig/proj/choro_5_map.png" width="650" />
 ]
 
 ---
@@ -2817,6 +2822,10 @@ Objectifs d'atelier :
 
 ]
 
+
+.pull-right[
+<img src="fig/proj/mise_en_page_choro.png" width="800" />
+]
 
 
 ---
