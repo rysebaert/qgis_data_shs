@@ -2,7 +2,7 @@
 title: "Initiation au traitement de l'information géographique dans un environnement SIG (QGIS)"
 subtitle: "Journées Data SHS - PUD Lille - Décembre 2022"
 author:  
-- "Ronan Ysebaert (UAR RIATE, Université Paris Cité) / Violaine Jurie (Géoteca, Université Paris Cité)"
+- "Ronan Ysebaert (UAR RIATE, Université Paris Cité) / Violaine Jurie (Géotéca, Université Paris Cité)"
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -660,7 +660,7 @@ Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le
 
 .pull-right[
 ![](fig/map_snow.jpg)
-.leg-fig[**Carte de John Snow** avec la localisation des lieux de résidence des personnes décédées du choléra.]
+.leg-fig[**Carte de John Snow** avec la localisation des lieux de résidence des personnes décédées du choléra]
 ]
 
 ---
@@ -2857,6 +2857,52 @@ class: center
 <img src="fig/ref_2.jpg" width="280" style="border:1px solid grey" />
 <img src="fig/ref_3.jpg" width="280" style="border:1px solid grey"  />
 
+
+---
+
+class: center
+
+## Systèmes de référence et projections cartographiques
+
+.left-column[.center-left[
+
+<img src="fig/scandale.png"  width=350 />
+.leg-fig[ <a href="https://www.lessavoirsambulants.fr/p/le-scandale-de-mercator.html" target="_blank">le scandale de Mercator</a>
+ ]
+
+<img src="fig/westwing.png"  width=350 />
+.leg-fig[ <a href="https://www.youtube.com/watch?v=vVX-PrBRtTY" target="_blank">extrait de *The West Wing* saison 2 épisode 16 (vostfr)</a>, <a href="https://www.youtube.com/watch?v=Mjq8sXsUS30&feature=youtu.be" target="_blank">version française</a>
+]
+]]
+
+.right-column[.center-right[
+
+<img src="fig/allwrong.png"  width=350 />
+.leg-fig[ <a href="https://www.youtube.com/watch?v=kIID5FDi2JQ" target="_blank">Why all world maps are wrong (vostfr)</a>
+]
+
+<img src="fig/truesize.png"  width=350 />
+.leg-fig[ <a href="https://www.thetruesize.com" target="_blank">thetruesize.com</a>
+]
+]]
+
+---
+class: center
+
+## Mise en scène cartographique
+
+.pull-left[
+<img src="fig/emprise1.png"  width=600 />
+]
+
+.pull-right[
+<img src="fig/emprise2.png"  width=600 />
+.leg-fig[*Méfiez-vous des cartes, pas des migrant·e·s (2018)*]
+]
+<br>
+.center[sources : <a href="https://neocarto.hypotheses.org/4188" target="_blank">néocarto </a> avec une vidéo détaillant les étapes de création de ces cartes réalisées avec les mêmes données et des emprises spatiales différentes - tout est reproductible et présenté <a href="https://neocarto.github.io/syrians/" target="_blank">ici</a>
+]
+]
 
 ---
 class: middle center
