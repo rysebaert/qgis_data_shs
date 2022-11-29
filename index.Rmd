@@ -1708,7 +1708,7 @@ Les jointures attributaires sont utilisées pour introduire des informations nou
 ]
 
 ---
-## Accessible aux ménages les plus modeste
+## Accessible aux ménages les plus modestes
 
 .left-column[
 
@@ -1736,7 +1736,7 @@ Couche > Ajouter une couche > Ajouter une couche de texte délimité
 
 ---
 
-## Accessible aux ménages les plus modeste
+## Accessible aux ménages les plus modestes
 .left-column[
 
 ### **Étape 2** - Jointure attributaire
@@ -1759,7 +1759,7 @@ Clic droit sur la couche ***IRIS_METRO_LILLE*** > propriétés > jointure > cliq
 
 ---
 
-## Accessible aux ménages les plus modeste
+## Accessible aux ménages les plus modestes
 .left-column[
 
 ### **Étape 2** - Jointure attributaire
@@ -1782,7 +1782,7 @@ Au préalable, il faut s'assurer de la concordance des données statistiques ave
 
 ---
 
-## Accessible aux ménages les plus modeste
+## Accessible aux ménages les plus modestes
 .left-column[
 
 ### **Étape 2** - Jointure attributaire
@@ -1805,7 +1805,7 @@ Jointure de ce fichier de données non spatiales à la couche géographique des 
 
 ---
 
-## Accessible aux ménages les plus modeste
+## Accessible aux ménages les plus modestes
 .left-column[
 
 ### **Étape 3** - Statistiques basiques
@@ -1828,7 +1828,7 @@ Ouvrez le module de statistiques basiques et effectuez l'opération pour le cham
 
 ---
 
-## Accessible aux ménages les plus modeste
+## Accessible aux ménages les plus modestes
 .left-column[
 
 ### **Étape 3** - Statistiques basiques
@@ -1849,7 +1849,7 @@ La moyenne du revenu médian des IRIS qui composent la MEL s'élève à 20 625 e
 
 ---
 
-## Accessible aux ménages les plus modeste
+## Accessible aux ménages les plus modestes
 .left-column[
 
 ### **Étape 4** - Sélection par attributs
@@ -1869,7 +1869,7 @@ Sélectionner les IRIS sous la moyenne de la MEL au moyen d'une sélection par e
 
 ---
 
-## Accessible aux ménages les plus modeste
+## Accessible aux ménages les plus modestes
 .left-column[
 
 ### **Étape 4** - Sélection par attributs
@@ -2090,7 +2090,7 @@ class: middle
 
 Objectifs d'atelier :
 
- - ne sélectionner que les gymnases qui ont moins 3 écoles à moins de 1000 mètres
+ - ne sélectionner que les gymnases qui ont au moins 3 écoles à moins de 1000 mètres
 
 ]
 
@@ -2273,9 +2273,11 @@ La modélisation graphique de la chaîne de traitement, aussi appelée *cheminem
 Nous vous conseillons de réaliser ce schéma au fur et à mesure de l’avancement de vos traitements ! 
 
 ---
+class: center
+
 ## Modéliser sa chaine de traitement
 
-Insérer maj chemin décisionnel
+<img src="fig/chemin_decisionnel_vf.png" width="850" />
 
 ---
 
