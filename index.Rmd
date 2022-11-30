@@ -2273,8 +2273,6 @@ La modélisation graphique de la chaîne de traitement, aussi appelée *cheminem
 Nous vous conseillons de réaliser ce schéma au fur et à mesure de l’avancement de vos traitements ! 
 
 ---
-class: center
-
 ## Modéliser sa chaine de traitement
 
 <img src="fig/chemin_decisionnel_vf.png" width="850" />
