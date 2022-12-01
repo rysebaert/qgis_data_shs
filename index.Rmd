@@ -2289,7 +2289,7 @@ Outil de recherche > selection par localisation
 ]
 
 ---
-## Une possible procédure... 
+## Une procédure possible... 
 
 Parmi la sélection courante de ces gymnases, sélectionnez les gymnases à plus de 2000 mètres d'un gymnase où la pratique du roller est recensée <br>
 Exportez ensuite le résultat de la sélection dans le dossier **criteres** et nommez la couche **IMPLANTATION**
