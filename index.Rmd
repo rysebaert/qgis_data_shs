@@ -2905,17 +2905,37 @@ class: center
 ]
 
 ---
-class: middle center
+class: middle 
 
 # À vous de jouer ! 
 
-<center>
+<br><br>
 
-Présentation accessible et diffusable à l'adresse [rysebaert.github.io/qgis_data_shs](https://rysebaert.github.io/qgis_data_shs) 
+- Accéder à la présentation ou la réutiliser : [rysebaert.github.io/qgis_data_shs](https://rysebaert.github.io/qgis_data_shs/)
+- Accéder au dépôt github (données, figures, RMardown) : [github.com/rysebaert/qgis_data_shs](https://github.com/rysebaert/qgis_data_shs)
+- Pour proposer des améliorations, suggestions : [github.com/rysebaert/qgis_data_shs/issues](https://github.com/rysebaert/qgis_data_shs/issues)
 
-</center>
 
 <br><br><br><br>
 
+.pull-left[
+.medium[
+|                                                                                                            |                                   |
+| :--------------------------------------------------------------------------------------------------------- | :-------------------------------- |
+| `r icons::fontawesome("envelope")` | [ronan.ysebaert@cnrs.fr](mailto:ronan.ysebaert@cnrs.fr)       |
+| `r icons::fontawesome("home")` | [riate.cnrs.fr](https://riate.cnrs.fr/) |
+| `r icons::fontawesome("gitlab")` | [gitlab.huma-num.fr/rysebaert](https://gitlab.huma-num.fr/rysebaert)                         |
+| `r icons::fontawesome("github")` | [@rysebaert](https://github.com/rysebaert) |
 
+
+]]
+
+.pull-right[
+.medium[
+|                                                                                                            |                                   |
+| :--------------------------------------------------------------------------------------------------------- | :-------------------------------- |
+| `r icons::fontawesome("envelope")` | [violaine.jurie@u-paris.fr](mailto:violaine.jurie@u-paris.fr)       |
+| `r icons::fontawesome("home")` | [geoteca.u-paris.fr/](https://geoteca.u-paris.fr/) |
+| `r icons::fontawesome("gitlab")` | [gitlab.huma-num.fr/vjurie](https://gitlab.huma-num.fr/vjurie)                         |
+]]
 
