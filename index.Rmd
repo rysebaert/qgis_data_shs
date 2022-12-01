@@ -1,25 +1,4 @@
----
-title: "Initiation au traitement de l'information géographique dans un environnement SIG (QGIS)"
-subtitle: "Journées Data SHS - PUD Lille - Décembre 2022"
-author:  
-- "Ronan Ysebaert (UAR RIATE, Université Paris Cité) / Violaine Jurie (Géotéca, Université Paris Cité)"
-date: "Dernière mise à jour: `r Sys.Date()`"
-output:
-  xaringan::moon_reader:
-    self_contained: true
-    css: ["xaringan-themer.css", "css/rutgers-tidyverse.css"]
-    lib_dir: libs
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      highlightSpans: true
-      countIncrementalSlides: false
-      ratio: "16:9"
-    seal: true
-editor_options: 
-  chunk_output_type: console
----
-
+*
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE, crayon.enabled = TRUE)
 knitr::opts_chunk$set(cache = FALSE,
@@ -2275,7 +2254,7 @@ Nous vous conseillons de réaliser ce schéma au fur et à mesure de l’avancem
 ---
 ## Modéliser sa chaine de traitement
 
-<img src="fig/chemin_decisionnel_vf.png" width="850" />
+<img src="fig/chemin_decisionnel_vf_leg.png" width="1000"/>
 
 ---
 
