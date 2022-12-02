@@ -2920,11 +2920,11 @@ class: center
 ## Systèmes d'information géographique
 
 .pull-left[
-<img src="fig/ref_4.PNG" height="450"  />
+<img src="fig/ref_4.PNG" height="450"  style="border:1px solid grey"  />
 ]
 
 .pull-right[
-<img src="fig/ref_5.jpeg" height="450" />
+<img src="fig/ref_5.jpeg" height="450" style="border:1px solid grey"  />
 ]
 
 ---
@@ -2933,38 +2933,48 @@ class: center
 
 ## Cartographie thématique
 
-<img src="fig/ref_1.jpg" width="290" style="border:1px solid grey"  />
-<img src="fig/ref_2.jpg" width="280" style="border:1px solid grey" />
-<img src="fig/ref_3.jpg" width="280" style="border:1px solid grey"  />
-
+<img src="fig/ref_1.jpg" width="260" style="border:1px solid grey"  />
+<img src="fig/ref_2.jpg" width="250" style="border:1px solid grey" />
+<img src="fig/ref_3.jpg" width="250" style="border:1px solid grey"  />
+<img src="fig/monmonier.jpg" width="260" style="border:1px solid grey"  />
 
 ---
 
-class: center
+class: center middle
 
-## Systèmes de référence et projections cartographiques
+## Projections cartographiques
 
 .left-column[.center-left[
 
-<img src="fig/scandale.png"  width=350 />
-.leg-fig[ <a href="https://www.lessavoirsambulants.fr/p/le-scandale-de-mercator.html" target="_blank">le scandale de Mercator</a>
+
+<img src="fig/scandale.png"  width=300 style="border:1px solid grey" />
+.leg-fig[ <a href="https://www.lessavoirsambulants.fr/p/le-scandale-de-mercator.html" target="_blank">Le scandale de Mercator</a>
  ]
 
-<img src="fig/westwing.png"  width=350 />
-.leg-fig[ <a href="https://www.youtube.com/watch?v=vVX-PrBRtTY" target="_blank">extrait de *The West Wing* saison 2 épisode 16 (vostfr)</a>, <a href="https://www.youtube.com/watch?v=Mjq8sXsUS30&feature=youtu.be" target="_blank">version française</a>
+<img src="fig/westwing.png"  width=300 style="border:1px solid grey"/>
+.leg-fig[ <a href="https://www.youtube.com/watch?v=vVX-PrBRtTY" target="_blank">Extrait de *The West Wing* saison 2 épisode 16 (vostfr)</a>, <a href="https://www.youtube.com/watch?v=Mjq8sXsUS30&feature=youtu.be" target="_blank">version française</a>
 ]
 ]]
 
 .right-column[.center-right[
 
-<img src="fig/allwrong.png"  width=350 />
+.pull-left[
+<img src="fig/allwrong.png"  width=300 style="border:1px solid grey" />
 .leg-fig[ <a href="https://www.youtube.com/watch?v=kIID5FDi2JQ" target="_blank">Why all world maps are wrong (vostfr)</a>
 ]
 
-<img src="fig/truesize.png"  width=350 />
+<img src="fig/truesize.png"  width=300 style="border:1px solid grey"/>
 .leg-fig[ <a href="https://www.thetruesize.com" target="_blank">thetruesize.com</a>
 ]
-]]
+]
+
+.pull-right[
+
+<br><br><br>
+<img src="fig/dessous_cartes.PNG"  width=300 style="border:1px solid grey"/>
+.leg-fig[ <a href="https://https://www.youtube.com/watch?v=WJUMOyreOAM" target="_blank">*Géopolitique et usage cartographique*</a>
+]
+]]]
 
 ---
 class: center
@@ -2972,11 +2982,11 @@ class: center
 ## Mise en scène cartographique
 
 .pull-left[
-<img src="fig/emprise1.png"  width=600 />
+<img src="fig/emprise1.png"  width=600 style="border:1px solid grey"/>
 ]
 
 .pull-right[
-<img src="fig/emprise2.png"  width=600 />
+<img src="fig/emprise2.png"  width=600 style="border:1px solid grey"/>
 .leg-fig[*Méfiez-vous des cartes, pas des migrant·e·s (2018)*]
 ]
 <br>
