@@ -54,7 +54,6 @@ class: middle
 
 - Bref historique du développement des SIG
 - Principes et fonctionnalités
-- Principaux SIG
 - Présentation de QGIS
 
 
@@ -68,9 +67,9 @@ class: middle
 - Gérer les projections de ses couches géographiques dans QGIS 
 
 ### Manipulations de base (données vectorielles) *(11h30 - 12h30)*
+
 - Import de données tabulaires
 - Jointure attributaire
-- Jointure spatiale
 - Sélections attributaires
 
 #### Déjeuner 12h30 - 13h30
@@ -82,9 +81,11 @@ class: middle
 
 .pull-left[.center-left[
 ### Géotraitements et statistiques spatiales *(13h30 - 15h)*
+
 - Présentation et mise en pratique
 
 ### Mise en cohérence des critères *(15h - 15h30)*
+
 - Modéliser sa chaîne de traitement
 - Identifier une localisation optimale
 
@@ -94,12 +95,14 @@ class: middle
 .pull-right[.center-right[
 
 ### Cartographie thématique dans QGIS *(15h30 - 16h15)*
+
 - Éléments fondamentaux de sémiologie graphique
 - Typologies (variables qualitatives)
 - Cartes choroplèthes (variables quantitatives de taux)
 
 
 ### Mettre en page une carte *(16h15 - 17h)*
+
 - Eléments fondamentaux sur l'habillage cartographique
 - Créer une mise en page avec QGIS
 
@@ -148,11 +151,16 @@ Puis cliquez sur *data > data.zip > download*. Décompresser ensuite l'archive.
 ### Découpages géographiques 
 
 Le découpage géographique 2019 des IRIS et des communes (polygones) de la Métropole Européenne de Lille. (Source : <a href="https://geoservices.ign.fr/adminexpress" target="_blank">Admin Express, IGN</a>)
+]
 
-*Fichiers : [data/GEOM/IRIS_METRO_LILLE.shp et data/GEOM/COMMUNES_METRO_LILLE.shp]*
+.small[
+Fichiers : 
 
+- data/GEOM/IRIS_METRO_LILLE.shp 
+- data/GEOM/COMMUNES_METRO_LILLE.shp
 ]
 ]
+
 .right-column[
 <center>
 ```{r, eval = TRUE, echo = FALSE, message=FALSE, warning=FALSE, fig.height=5, dpi=150}
@@ -194,8 +202,12 @@ mf_title("Contour des IRIS et des communes")
 ### Gymnases  
 
 L'emprise géographique des gymnases (polygones) et quelques attributs associés : surface, nom, type de sport pratiqués dans le gymnase (Source : <a href="https://www.openstreetmap.org/#map=11/50.6273/3.0563" target="_blank">OpenStreetMap</a>, librairie R <a href="https://cran.r-project.org/web/packages/osmdata/index.html" target="_blank">`osmdata`</a>)
+]
 
-*Fichier : [data/GEOM/gym_osm.shp]*
+.small[
+Fichier : 
+
+- data/GEOM/gym_osm.shp
 
 ]
 ]
@@ -228,8 +240,12 @@ mf_title("Emprise des gymnases")
 
 La localisation (points) des écoles élémentaires en 2018 (Source : <a href="https://www.insee.fr/fr/statistiques/3568638?sommaire=3568656
 " target="_blank">Dénombrement des équipements en 2021, INSEE</a>)
+]
 
-*Fichier : [data/GEOM/LILLE_ECOLE.shp]*
+.small[
+Fichier : 
+
+- data/GEOM/LILLE_ECOLE.shp
 
 ]
 ]
@@ -259,8 +275,12 @@ mf_title("Localisation des écoles primaires")
 
 Le revenu médian de la population en 2019 à l'échelle des IRIS / Communes (Source :  <a href="https://www.insee.fr/fr/statistiques/6049648
 " target="_blank">Revenu, pauvreté et niveau de vie en 2019 (Iris), INSEE</a>)
+]
 
-*Fichier : [data/STAT/data_INSEE.xlsx]*
+.small[
+Fichier : 
+
+- data/STAT/data_INSEE.xlsx
 
 ]
 ]
@@ -442,7 +462,6 @@ knitr::include_graphics('fig/topologie.gif')
 ```
 
 .medium[
-Exemples :
 
 - Multipoint / Linestring : Quel bâtiment touche le tracé d'une route en construction ?
 - Multipoint / Polygon : Quelle équipement est inclu / en dehors de tel espace d'étude ?
@@ -479,11 +498,11 @@ knitr::include_graphics('fig/attribut.png')
 
 .pull-left[
 
-## Les sources de l'IG (France)
+## Les sources de l'IG
 
-### Un incontournable : l'Institut Géographique National
+### En France, un incontournable : l'IGN
 
-- <a href="https://geoservices.ign.fr/telechargement" target="_blank">Géoservices de l'IGN</a>
+- <a href="https://geoservices.ign.fr/telechargement" target="_blank">Géoservices de l'IGN (Institut National de l'information géographique et forestière) </a>
 - <a href="https://www.geoportail.gouv.fr/" target="_blank">Géoportail (portail national d’accès à l’information géographique de référence)</a>
 
 
@@ -789,14 +808,17 @@ Ex : *Sélection d'objets géographiques ponctuels situés à une certaine dista
 
 ---
 
+class: middle
 
 ## QGIS : Un SIG parmi d'autres
 
-.center[
-<img src="fig/logiciels.PNG" height="500" />
-
+.pull-left[
+<img src="fig/logiciels.PNG" width="500" />
 ]
 
+.pull-right[
+<img src="fig/query_sig.PNG" width="500" />
+]
 
 ---
 
@@ -813,7 +835,7 @@ Une fois <a href="https://www.qgis.org/fr/site/forusers/download.html" target="_
 
 ## Organiser son projet
 
-L'utilisation d'un SIG nécessite de la **rigueur méthodologique**, car l'on se retrouve vite submergé·e par un grand nombre de fichiers.  
+L'utilisation d'un SIG nécessite de la **rigueur méthodologique** : on est vite submergé par beaucoup de fichiers.  
 
 .left-column[
 <img src="fig/orgaprojet.png" height="200" />
@@ -924,9 +946,9 @@ Cette option permet de sélectionner directement sur la carte des objets géogra
 .left-column[
 ## Sélection par attributs
 
-La sélection des objets géographiques peut être réalisée à partir de leur **table attributaire**.
+Il est possible de sélectionner les objets géographiques à partir de leur **table attributaire**
 
-1. Clic droit sur la couche IRIS
+1. Clic droit sur la couche IRIS 
 <br>
 2. Ouvrir la table d'attributs
 
@@ -946,7 +968,7 @@ Clic droit sur la couche > Ouvrir la Table d'Attributs
 
 Il est possible de sélectionner les objets géographiques à partir de leur **table attributaire**
 
-1. Clic droit sur la couche 
+1. Clic droit sur la couche IRIS 
 <br>
 2. Ouvrir la table d'attributs
 <br>
@@ -978,7 +1000,7 @@ Supprimer ensuite cette couche de la liste des couches (clic droit sur la couche
 
 .pull-right[
 <br><br><br>
-<img src="fig/proj/intro_5_selec_attr2.PNG" height="450" />
+![](fig/proj/intro_5_selec_attr2.PNG)
 ]
 
 ---
@@ -1047,7 +1069,7 @@ Clic-droit sur la couche ***COMMUNES*** > puis propriétés > étiquettes
 Des **labels (étiquettes)** peuvent faciliter le repérage / la lecture de la carte.
 
 <br>
-Faites apparaître sur l'espace d'affichage **le nom des communes** de votre espace d'étude
+Faites apparaître sur l'espace d'affichage **le nom des communes** de votre espace d'étude.
 
 ]
 
@@ -1146,7 +1168,7 @@ knitr::include_graphics('fig/sphere_lat_long.png')
 ## Les projections cartographiques
 
 .center[
-**Un système géodésique permet de localiser un objet sur une surface en 3 dimensions**    
+Un **système géodésique** permet de **localiser un objet sur une surface en 3 dimensions**.    
 
 ```{r, echo = FALSE, out.width = "800px", fig.align='center'}
 knitr::include_graphics('fig/orange.png')
@@ -1361,9 +1383,7 @@ Suite à un décret du [3 mars 2006](https://geodesie.ign.fr/contenu/fichiers/De
 
 Les administrations de l'État, collectivités locales et entreprises chargées de l'exécution d'une mission de service public doivent utiliser le **système géodésique de référence RGF93** pour leurs échanges de données géoréférencées. Il est compatible avec le système géodésique de **référence européen ETRS89** et avec le système géodésique de référence mondial **WGS84** (utilisé par le système GPS).
 
-Les cartes officielles représentant la France métropolitaine doivent utiliser la projection de référence **Lambert93 Conique Conforme**. 9 variantes de cette projection existent, elles couvrent 9 zones s'étalant du Nord au Sud et doivent être utilisées pour la cartographie locale.
-
-Pour les DROM, des variations de projections cylindriques (UTM). 
+Les cartes officielles représentant la France métropolitaine doivent utiliser la projection de référence **Lambert-93**. Pour les DROM, des variations de projections cylindriques (UTM). 
 
 ]
 
@@ -1371,7 +1391,7 @@ Pour les DROM, des variations de projections cylindriques (UTM).
 
 <img src="fig/france_ref.png" width="550" />
 .leg-fig[
-[Source : Géoréférencement et RGF93, théorie et concepts, 2008](http://gtsoft.ftpacs.com/RGF93_theorie_et_concept_T3.pdf?PHPSESSID=649823751d32b07817a3795a95f748aa)]
+[Source : Repères de référence géodésiques en France métropolitaine, IGN, 2022](https://geodesie.ign.fr/contenu/fichiers/documentation/pedagogiques/TransformationsCoordonneesGeodesiques.pdf)]
 ]
 
 ---
@@ -1395,9 +1415,9 @@ Le **code EPSG** est un identifiant unique pour qualifier un système de project
 
 Si les couches géographiques de votre projet ne sont pas dans le même système de coordonnées de référence, vous exposez vos manipulations à de nombreux désagréments ! 
 
-**La projection** d'une couche géographique **est indiquée dans ses propriétés générales**
+**La projection** d'une couche géographique **est indiquée dans ses propriétés générales**.
 
-Importez les couches géographiques des gymnases et des écoles élémentaires de la MEL
+Importez les couches géographiques des gymnases et des écoles élémentaires de la MEL.
 
 ]
 
@@ -1487,10 +1507,10 @@ class: middle
 
 Objectifs d'atelier :
 
- - extraire les gymnases où l'on pratique actuellement du roller.
- - ne sélectionner que les gymnases inclus dans la MEL.
- - sélectionner les gymnases de type "multi-activités".
- - sélectionner les gymnases d'une surface au moins 2 fois supérieure à l'emprise d'une piste de roller-derby (750 m²).
+ - Extraire les gymnases où l'on pratique actuellement du roller.
+ - Ne sélectionner que les gymnases inclus dans la MEL.
+ - Sélectionner les gymnases de type "multi-activités".
+ - Sélectionner les gymnases d'une surface au moins 2 fois supérieure à l'emprise d'une piste de roller-derby (750 m²).
 
 ]
 
@@ -1554,7 +1574,7 @@ On ne recherche pas à pratiquer l'activité en Belgique !
 .medium[
 Vecteur > Outil de recherche > Sélection par localisation. 
 
-Sur les 324 gymnases de la couches géographiques initiale, seuls 265 sont inclus dans la MEL. 
+Sur les 324 gymnases de la couches géographiques initiale, seuls 265 sont inclus dans la MEL 
 
 Enregistrer cette sélection sous le nom ***gymnase_MEL*** dans votre dossier ***tmp***
 
@@ -1652,7 +1672,7 @@ On estime qu'au moins 1500m² (2 fois l'emprise d'une piste de roller derby) est
 **BRAVO ! VOUS AVEZ IDENTIFIÉ UN PREMIER CRITÈRE D'IMPLANTATION !!**  
 Sur les 52 gymnases restants, 24 présentent une surface favorable ! 
 
-Enregistrez cette sélection sous le nom ***CRITERE_1_MULTI_1500M_SQ*** dans votre dossier ***criteres*** et nettoyez votre espace de travail. 
+Enregistrez cette sélection sous le nom ***CRITERE_1_MULTI_1500M_SQ*** dans votre dossier ***criteres*** et nettoyez votre espace de travail 
 ]
 ]
 
@@ -1674,9 +1694,9 @@ class: middle
 
 Objectifs d'atelier :
 
-- importer des données issues d'un fichier Excel (revenu médian à l'échelle des IRIS)
-- les joindre à une couche géographique
-- réaliser une sélection par expression sur ces données
+- Importer des données issues d'un fichier Excel (revenu médian à l'échelle des IRIS).
+- Les joindre à une couche géographique.
+- Réaliser une sélection par expression sur ces données.
 
 ]
 
@@ -1692,7 +1712,7 @@ Objectifs d'atelier :
 
 .pull-left[
 <br>
-Une **jointure attributaire** permet de joindre **deux tables attributaires décrivant des entités communes et partageant un champ commun**. L'opération produit **une seule table** juxtaposant les champs de la table à joindre à ceux de la table d'origine.
+Une **jointure attributaire** permet d"associer  **deux tables attributaires décrivant des entités communes et partageant un champ commun**. L'opération produit **une seule table** juxtaposant les champs de la table à joindre à ceux de la table d'origine.
 
 Dans un SIG la table d'origine est souvent celle associée aux entités localisées d'**une couche géographique**, ce qui permet par exemple de cartographier les **données d'un tableau statistique sans dimension spatiale**. 
 
@@ -1769,9 +1789,9 @@ Jointure de ce fichier de données non spatiales à la couche géographique des 
 
 Au préalable, il faut s'assurer de la concordance des données statistiques avec les géométries et identifier le nom de la colonne (identifiant unique) sur laquelle portera la jointure.
 
-- choisir les deux champs à mettre en lien : consulter attentivement la table attributaire pour choisir les bons noms de colonne
-- choisir les champs de la table jointe à ajouter en évitant les redondances
-- supprimer le préfixe du nom de champ
+- Choisir les deux champs à mettre en lien : consulter attentivement la table attributaire pour choisir les bons noms de colonne.
+- Choisir les champs de la table jointe à ajouter en évitant les redondances.
+- Supprimer le préfixe du nom de champ.
 ]
 ]
 
@@ -1878,7 +1898,7 @@ Sélectionner les IRIS sous la moyenne de la MEL au moyen d'une sélection par e
 .medium[
 Sélectionner les IRIS sous la moyenne de la MEL au moyen d'une sélection par expression...
 
-... puis enregistrer la sélection sous le nom ***CRITERE_2_REVENU*** de votre dossier ***criteres***
+... puis enregistrer la sélection sous le nom ***CRITERE_2_REVENU*** de votre dossier ***criteres***.
 ]
 ]
 
@@ -2000,7 +2020,7 @@ class: middle
 
 Objectifs d'atelier :
 
- - extraire l'espace à plus de 2000 mètres d'un lieu de pratique de roller connu
+ - Extraire l'espace à plus de 2000 mètres d'un lieu de pratique de roller connu.
 
 
 ]
@@ -2063,7 +2083,7 @@ Importez la couche ***MEL*** (dossier ***GEOM***), puis réaliser la **différen
 
 ### **Étape 3** - Export du résultat
 
-Nous avons sous les yeux l'espace situé à plus de 2000 mètres d'un gymnase où une pratique du roller est inventoriée ! 
+Voici représenté en bleu l'espace situé à plus de 2000 mètres d'un gymnase où une pratique du roller est inventoriée ! 
 
 .medium[
 
@@ -2090,7 +2110,7 @@ class: middle
 
 Objectifs d'atelier :
 
- - ne sélectionner que les gymnases qui ont au moins 3 écoles à moins de 1000 mètres
+ - Ne sélectionner que les gymnases qui ont au moins 3 écoles à moins de 1000 mètres.
 
 ]
 
@@ -2109,9 +2129,9 @@ QGIS offre plusieurs [fonctionnalités](https://docs.qgis.org/2.8/fr/docs/traini
 
 - **Calculer une matrice de distance** : calculer des distances entre les points d'une couche géographique et indicateurs dérivés (distance minimale, moyenne, maximale, etc.)
 
-- **Coordonnées moyennes** : obtenir le centre géométrique d'une couche de polygones
+- **Coordonnées moyennes** : obtenir le centre géométrique d'une couche de polygones.
 
-- **Dénombrement de points dans des polygones** : le nombre de points inclus dans un polygone  
+- **Dénombrement de points dans des polygones** : le nombre de points inclus dans un polygone.  
 
 ... et beaucoup d'autres !
 
@@ -2126,7 +2146,7 @@ QGIS offre plusieurs [fonctionnalités](https://docs.qgis.org/2.8/fr/docs/traini
 
 .medium[
 
-Nettoyez votre espace de travail (supprimer les couches géographiques inutiles).
+Nettoyez votre espace de travail (supprimer les couches géographiques inutiles)
 
 Importez la couche ***CRITERE_1_MULTI_1500M_SQ*** précédemment créée (dossier ***criteres***), la couche ***ecoles*** correctement projetée (EPSG 2154, dossier ***tmp***)  
 
@@ -2260,6 +2280,9 @@ Modéliser sa chaîne de traitement
 Identifier une localisation optimale
 
 ---
+
+class: middle
+
 ## Modéliser sa chaine de traitement
 
 La modélisation graphique de la chaîne de traitement, aussi appelée *cheminement décisionnel* est particulièrement utile pour :
@@ -2279,23 +2302,23 @@ Nous vous conseillons de réaliser ce schéma au fur et à mesure de l’avancem
 
 ---
 
+class: middle
+
 ## Quelle implantation ? Une procédure possible :
 
 Nous avons créé 4 couches géographiques qui constituent nos critères pour l'implantation d'une nouvelle piste de roller derby :
 
-- **CRITERE_1_MULTI_1500M_SQ** : gymnases de plus de 1500 m², multi-activité, localisé dans la MEL
-- **CRITERE_2_REVENU** : les IRIS dont le revenu médian est inférieur à la moyenne de la MEL
-- **CRITERE_3_DISTANCE_2000_ROLLER** : l'espace à plus de 2000m d'un gymnase avec une activité de roller existante  
-- **CRITERE_1_4_3ECOLES_1000M** : à partir du critère 1, les gymnases qui comprennent au moins 3 écoles situées à moins de 1000 mètres
-
-<br>
+- **CRITERE_1_MULTI_1500M_SQ** : gymnases de plus de 1500 m², multi-activité, localisé dans la MEL.
+- **CRITERE_2_REVENU** : les IRIS dont le revenu médian est inférieur à la moyenne de la MEL.
+- **CRITERE_3_DISTANCE_2000_ROLLER** : l'espace à plus de 2000m d'un gymnase avec une activité de roller existante.  
+- **CRITERE_1_4_3ECOLES_1000M** : à partir du critère 1, les gymnases qui comprennent au moins 3 écoles situées à moins de 1000 mètres.
 
 Dans notre cas, nous cherchons à identifier les gymnases qui répondent à l'ensemble de ces critères...
 
 ---
 ## Une procédure possible
 
-Sélectionnez les gymnases issus du critère 4 qui recoupent les IRIS à plus faible revenu
+Sélectionnez les gymnases issus du critère 4 qui recoupent les IRIS à plus faible revenu.
 
 .medium[
 Outil de recherche > selection par localisation
@@ -2312,8 +2335,7 @@ Outil de recherche > selection par localisation
 ---
 ## Une procédure possible... 
 
-Parmi la sélection courante de ces gymnases, sélectionnez les gymnases à plus de 2000 mètres d'un gymnase où la pratique du roller est recensée <br>
-Exportez ensuite le résultat de la sélection dans le dossier **criteres** et nommez la couche **IMPLANTATION**
+Parmi la sélection courante de ces gymnases, sélectionnez les gymnases à plus de 2000 mètres d'un gymnase où la pratique du roller est recensée. Exportez ensuite le résultat de la sélection dans le dossier **criteres** et nommez la couche **IMPLANTATION**.
 
 
 .pull-left[
@@ -2352,10 +2374,10 @@ Cartes choroplèthes (valeurs graduées, discrétisations)
 
 ---
 
-## Les Règles de la sémiologie graphique
+## Aux origines de la sémiologie graphique
 
 .center[
-Le **langage cartographique** a été théorisé par **Jacques Bertin** (1967)
+Le **langage cartographique**  a été théorisé par **Jacques Bertin** (1967)
 
 .pull-left[
 <img src="fig/bertin_1.jpg" width="250" />
@@ -2365,29 +2387,81 @@ Le **langage cartographique** a été théorisé par **Jacques Bertin** (1967)
 <img src="fig/bertin_2.jpg" width="250" />
 ]
 
-« ***La graphique*** *utilise les propriétés de l'image visuelle pour faire apparaître les* ***relations*** *de* ***différence***, ***d'ordre*** et de ***proportionnalité*** entre les données » .
+« *Si pour obtenir une réponse correcte et complète à une question donnée, et, toutes choses égales, une construction requiert un temps d’observation plus court qu’une autre construction, on dira qu’elle est plus efficace pour cette question* » .
 
-Il conceptualise l'idée de variables visuelles (ou rétiniennes).
+Il développe une grammaire graphique en lien avec l'information à représenter (les données).
 ]
 
 
 ---
 
-## Le lien entre données statistiques et variables visuelles
+## Variables visuelles et implantation
 
-.center[
-<img src="fig/categories-de-VV.png" width="800" />
+.pull-left[
+<img src="fig/VV_valeur.png" width="420" />
+<img src="fig/VV_harmonique.png" width="420" />
+<img src="fig/VV_intensite.png" width="420" />
+<img src="fig/VV_couleur.png" width="420" />
+<img src="fig/VV_taille_ordre.png" width="420" />
 
-.leg-fig[Source : *Manuel de cartographie : principes, méthodes, applications* (Lambert, Zanin, 2016)
+]
+
+.pull-right[
+<img src="fig/VV_forme.png" width="420" />
+<img src="fig/VV_grain.png" width="420" />
+<img src="fig/VV_orientation.png" width="420" />
+<img src="fig/VV_texture_diff.png" width="420" />
+
+.small[
+Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)
 ]
 ]
 
 ---
 
-## Le lien entre données statistiques et variables visuelles
+## Les propriétés des variables visuelles
 
 .center[
-<img src="fig/arbre_type_data.png" width="720" />
+<img src="fig/VV_prop.png" width="800" />
+
+.small[
+Source : *Manuel de cartographie : principes, méthodes, applications* (Lambert, Zanin, 2016)
+]
+]
+]
+
+---
+
+## Des données aux variables visuelles
+
+.center[
+<img src="fig/VV_categories.png" width="800" />
+
+.small[
+Source : *Manuel de cartographie : principes, méthodes, applications* (Lambert, Zanin, 2016)
+]
+]
+]
+
+---
+
+## Des données aux variables visuelles
+
+.center[
+<img src="fig/VV_donnee_carte.png" width="800" />
+
+.small[
+Source : *Manuel de cartographie : principes, méthodes, applications* (Lambert, Zanin, 2016)
+]
+]
+]
+
+---
+
+## Des données aux variables visuelles
+
+.center[
+<img src="fig/VV_arbre.png" width="720" />
 ]
 
 
@@ -2428,11 +2502,11 @@ La **discrétisation** est un mode de *simplification de l'information* (quantit
 .pull-left[
 ### Conserver l'essentiel de l'information
 
-* **Regrouper les valeurs qui se ressemblent** et qui sont différentes des autres ; donner des **seuils** qui ont du sens
+* **Regrouper les valeurs qui se ressemblent** et qui sont différentes des autres ; donner des **seuils** qui ont du sens.
 
-* Conserver l'ordre de grandeur, la dispersion, la forme de la distribution
+* Conserver l'ordre de grandeur, la dispersion, la forme de la distribution.
 
-* Rendre compte de la **structure interne** du jeu de données
+* Rendre compte de la **structure interne** du jeu de données.
 ]
 
 .pull-right[
@@ -2442,9 +2516,9 @@ La **discrétisation** est un mode de *simplification de l'information* (quantit
 
 $$N(cl) = 1 + 3,3 \log10(N)$$
 
-où $N$ est le nombre d'observations et $N(cl)$ le nombre de classes
+où $N$ est le nombre d'observations et $N(cl)$ le nombre de classes.
 
-* Faciliter la mémorisation
+* Faciliter la mémorisation.
 
 On a coutume de dire que 10 classes est un maximum.
 
@@ -2455,19 +2529,19 @@ On a coutume de dire que 10 classes est un maximum.
 
 ## Quelques principes fondamentaux : >> Compromis entre **information** et **démonstration** 
 
-* Les classes ne doivent **pas être vides**
+* Les classes ne doivent **pas être vides**.
 
-* Les classes doivent couvrir l'**ensemble** de la distribution, et être **contiguës** (elles s'arrêtent là où une autre commence)
+* Les classes doivent couvrir l'**ensemble** de la distribution, et être **contiguës** (elles s'arrêtent là où une autre commence).
 
-* Les classes doivent être  **distinctes** (les valeurs ne doivent pas se superposer)
+* Les classes doivent être  **distinctes** (les valeurs ne doivent pas se superposer).
 
 * Les caractéristiques essentielles de la distribution de l'indicateur doivent être conservées, et permettre de perdre le moins d'information possible.
 
-* Le nombre de classes doit être inférieur au nombre d'observations
+* Le nombre de classes doit être inférieur au nombre d'observations.
 
 ---
 
-## Les méthodes
+## Les méthodes de discrétisation
 
 .pull-left[
 
@@ -2477,8 +2551,10 @@ On a coutume de dire que 10 classes est un maximum.
 
 .pull-right[
 ![](fig/discretisation_italie.png)
+.small[
+Source : *Manuel de cartographie : principes, méthodes, applications* (Lambert, Zanin, 2016)
 ]
-
+]
 
 ---
 
@@ -2492,7 +2568,7 @@ class: middle
 
 Objectifs d'atelier :
 
- - réaliser une carte du revenu par IRIS
+ - Réaliser une carte du revenu par IRIS.
 
 ]
 
@@ -2507,13 +2583,13 @@ class: middle
 .pull-left[
 ## Préalable
 
-- nettoyer son espace de travail (supprimer les couches géographiques inutiles)
-- n'importer que les couches géographiques utiles : communes, IRIS
-- importer le fichier de données data_INSEE
-- réaliser une jointure entre la couche IRIS et les données INSEE pour récupérer les revenus
-- éventuellement, ajouter des labels pour faciliter la localisation
+- Nettoyer son espace de travail.
+- N'importer que les couches géographiques utiles : communes, IRIS.
+- Importer le fichier de données data_INSEE.
+- Réaliser une jointure entre la couche IRIS et les données INSEE pour récupérer les revenus.
+- Éventuellement, ajouter des labels pour faciliter la localisation.
 
--> Astuce, créez un nouveau projet QGIS pour éviter de supprimer vos précédentes analyses.
+**Astuce !**  Créez un nouveau projet QGIS pour éviter de supprimer vos précédentes analyses.
 ]
 
 .pull-right[
@@ -2531,11 +2607,11 @@ Une fois la jointure attributaire réalisée :
 .medium[
 clic droit sur la couche > IRIS > Propriétés > Symbologie
 
-- sélectionnez "Gradué"
-- sélectionnez le nom du champ d'intérêt (variable quantitative relative)
-- sélectionnez le nombre de classes désirées
-- paramétrez la palette de couleur (en cohérence avec la méthode de discrétisation)
-- sélectionnez la méthode de discrétisation désirée
+- Sélectionnez "Gradué"
+- Sélectionnez le nom du champ d'intérêt (variable quantitative relative)
+- Sélectionnez le nombre de classes désirées
+- Paramétrez la palette de couleur (en cohérence avec la méthode de discrétisation)
+- Sélectionnez la méthode de discrétisation désirée
 
 **IL FAUT ÊTRE EN MESURE DE JUSTIFIER SES CHOIX**
 ]
@@ -2580,11 +2656,11 @@ Les palettes de couleur QGIS ne sont pas optimales. Préférez utiliser des pale
 .medium[
 - **Discrétisation (stat)** : gaussienne à tendance dissymétrique à droite, les quantiles sont adaptés
 
-- **Discrétisation (message véhiculé par la carte**) : permettre d'identifier visuellement les 20 % des territoires au plus haut/faible revenu. 
+- **Discrétisation (message véhiculé par la carte**) : permettre d'identifier visuellement les 33 % des territoires au plus haut/faible revenu. 
 
-- **Nombre de classes** : 8 (indice d'Huntsberger indique 1+3.3(log10(502)) = 9.9
+- **Nombre de classes** : 6 (indice d'Huntsberger indique 1+3.3(log10(502)) = 9.9
 
-- **Palette** : Opposition rouge/bleu autour de la médiane. Usage d'une convention européennes de couleurs (rouge = valeur négatives, "mal", inverse en France).
+- **Palette de couleurs** : Opposition rouge/bleu autour de la médiane. Usage d'une convention de couleur française (couleurs chaudes = élevé, positif / couleurs froides = faible, négatif).
 ]
 ]
 
@@ -2606,7 +2682,7 @@ class: middle
 
 Objectifs d'atelier :
 
- - réaliser une carte des types d'IRIS (activité, habitation, espaces naturels)
+ - Réaliser une carte des types d'IRIS (activité, habitation, espaces naturels).
 
 ]
 
@@ -2619,11 +2695,11 @@ Objectifs d'atelier :
 .medium[
 clic droit sur la couche > IRIS > Propriétés > Symbologie
 
-- sélectionnez "Catégorisé"
+- Sélectionnez "Catégorisé"
 
-- sélectionnez le nom du champ d'intérêt (variable qualitative non ordonnée)
+- Sélectionnez le nom du champ d'intérêt (variable qualitative non ordonnée)
 
-- classez les valeurs du champ (toutes valeurs uniques)
+- Classez les valeurs du champ (toutes valeurs uniques)
 
 - paramétrez la palette de couleur. Choisissez des couleurs qui font "sens"
 
@@ -2644,13 +2720,13 @@ clic droit sur la couche > IRIS > Propriétés > Symbologie
 .medium[
 clic droit sur la couche > IRIS > Propriétés > Symbologie
 
-- sélectionnez "Catégorisé"
+- Sélectionnez "Catégorisé"
 
-- sélectionnez le nom du champ d'intérêt (variable qualitative non ordonnée)
+- Sélectionnez le nom du champ d'intérêt (variable qualitative non ordonnée)
 
-- classez les valeurs du champ (toutes valeurs uniques)
+- Classez les valeurs du champ (toutes valeurs uniques)
 
-- paramétrez la palette de couleur. Choisissez des couleurs qui font "sens"
+- Paramétrez la palette de couleur. Choisissez des couleurs qui font "sens"
 
 ]
 ]
@@ -2661,6 +2737,8 @@ clic droit sur la couche > IRIS > Propriétés > Symbologie
 ]
 
 ---
+
+class: middle center
 
 ## Et pour une carte en figurés proportionnels (données quantitatives de stock) ? 
 
@@ -2686,12 +2764,14 @@ Nous conseillons l'usage de logiciels de cartographie dédiés, comme  <a href="
 
 ---
 
+class: middle center
+
 ## Et pour une carte en figurés proportionnels (données quantitatives de stock) ? 
 
 .pull-left[
 
 C'est possible avec QGIS, mais cela nécessite quelques
- <a href="https://ouvrir.passages.cnrs.fr/tutoqgis/10_01_representation.php#:~:text=Dans%20QGIS%2C%20la%20visualisation%20de,d'une%20couche%20de%20points" target="_blank">manipulations</a>)...
+ <a href="https://ouvrir.passages.cnrs.fr/tutoqgis/10_01_representation.php#:~:text=Dans%20QGIS%2C%20la%20visualisation%20de,d'une%20couche%20de%20points" target="_blank">manipulations</a>...
 
 ![](fig/qgis_cercles_proportionnels.PNG)
 
@@ -2778,7 +2858,7 @@ Créer une mise en page avec QGIS
 - Les éléments graphiques doivent être hiérarchisés. 
 - La **légende** résume les éléments présentés sur la carte. Celle-ci peut être organisée par sous-titres de légende pour mieux contextualiser l'information que vous présentez (*par ex : équipements existants, caractéristiques socio-économiques, distances aux équipements*).
 - Ne pas trop surcharger la carte : ne pas hésiter à produire des cartes plutôt qu'une. 
-- N'hésitez pas à jouer sur la transparence, les hachures, ajouter des labels, des encadrés etc. pour améliorer la lisibilité de votre carte
+- N'hésitez pas à jouer sur la transparence, les hachures, ajouter des labels, des encadrés etc. pour améliorer la lisibilité de votre carte.
 ]
 ]
 
@@ -2818,7 +2898,7 @@ class: middle
 
 Objectifs d'atelier :
 
- - mettre en page la carte des revenus d'IRIS ou des types d'IRIS avec QGIS
+ - Mettre en page la carte des revenus d'IRIS ou des types d'IRIS avec QGIS.
 
 ]
 
