@@ -2915,28 +2915,28 @@ class: inverse middle center
 
 ---
 
-class: center
+class: center middle
 
 ## Systèmes d'information géographique
 
-.pull-left[
-<img src="fig/ref_4.PNG" height="450"  style="border:1px solid grey"  />
-]
+<br>
 
-.pull-right[
-<img src="fig/ref_5.jpeg" height="450" style="border:1px solid grey"  />
-]
+<img src="fig/ref_4.PNG" height="400"  style="border:1px solid grey"  />
+<img src="fig/ref_5.jpeg" height="400" style="border:1px solid grey"  />
+<img src="fig/sig-libre.PNG" height="400" style="border:1px solid grey"  />
 
 ---
 
-class: center
+class: center middle
 
 ## Cartographie thématique
 
-<img src="fig/ref_1.jpg" width="260" style="border:1px solid grey"  />
-<img src="fig/ref_2.jpg" width="250" style="border:1px solid grey" />
-<img src="fig/ref_3.jpg" width="250" style="border:1px solid grey"  />
-<img src="fig/monmonier.jpg" width="260" style="border:1px solid grey"  />
+<br>
+
+<img src="fig/ref_1.jpg" height="360" style="border:1px solid grey"  />
+<img src="fig/ref_2.jpg" height="360" style="border:1px solid grey" />
+<img src="fig/lambert-zanin.jpeg" height="360" style="border:1px solid grey"  />
+<img src="fig/monmonier.jpg" height="360" style="border:1px solid grey"  />
 
 ---
 
