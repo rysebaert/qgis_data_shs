@@ -137,7 +137,7 @@ class: middle
 ---
 ## Télécharger les données de l'atelier : <a href="https://github.com/rysebaert/qgis_data_shs" target="_blank">https://github.com/rysebaert/qgis_data_shs</a>
 
-Puis cliquez sur *data > data.zip > download*. Décompresser ensuite l'archive. 
+Puis cliquez sur *data > qgis_atelier_dataSHS.zip > download*. Décompresser ensuite l'archive. 
 .center[
 <img src="fig/git.PNG" width="800" />
 ]
